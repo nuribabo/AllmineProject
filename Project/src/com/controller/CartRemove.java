@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.model.CartDAO;
 
-
 @WebServlet("/Cart")
 public class CartRemove extends HttpServlet {
 	private static final long serialVersionUID = 1L;
