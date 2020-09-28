@@ -62,7 +62,7 @@
 	      <div class="col-md pr-4 d-flex topper align-items-center " display = flex;>
 					    	<!-- <div class="col-md-5 pr-4 d-flex topper align-items-center"></div> -->
 						    
-						    <div class="text"><a href = "member.html">회원가입</a></div>
+						    <div class="text"><a href = "login">회원가입</a></div>
 						    <div class="text"><a href = "member.html">로그인</a></div>
 						    <div class="text"><a href = "member.html">고객센터</a></div>
 			</div>
