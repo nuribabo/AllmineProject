@@ -8,6 +8,7 @@ public class ProductDTO {
 	private String discount_rate;
 	private String weight;
 	private String origin;
+	
 	public String getProduct_id() {
 		return product_id;
 	}
