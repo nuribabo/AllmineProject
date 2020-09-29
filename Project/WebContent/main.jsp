@@ -31,6 +31,25 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+    
+    <style type="text/css">
+    
+    	.container1{
+    	
+    		display : flex;
+    		width : 200px;
+    		justify-content: align-items;
+    	}
+    
+    	#item5{
+    	
+    		
+    	}
+    
+    
+    
+    </style>
+    
   </head>
   <body class="goto-here">
   <%
@@ -72,7 +91,7 @@
 	          <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
-              	<a class="dropdown-item" href="shop.html">Shop</a>
+              	<a class="dropdown-item" href="shop.html">전체상품</a>
               	<a class="dropdown-item" href="wishlist.html">Wishlist</a>
                 <a class="dropdown-item" href="product-single.html">Single Product</a>
                 <a class="dropdown-item" href="cart.html">Cart</a>
@@ -83,30 +102,37 @@
 	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
 	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
 	          <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
-
-	        </ul>
-	      </div>
-	      
-							
-	      <div class="col-md pr-4 d-flex topper align-items-center " display = flex;>
+<ul>
+<div class="col-md pr-4 d-flex topper align-items-center ">
 					    	<!-- <div class="col-md-5 pr-4 d-flex topper align-items-center"></div> -->
+						  
 						    <%if(info != null){ %>
-							<%if(info.getMember_id().equals("admin")){ %>
-							<div class="text"><a href = "admin.jsp">관리자페이지</a></div>
-							<%}%>
-						    <div class="text"><a href = "mypage.jsp">마이페이지</a></div>
-						    <div class="text"><a href = "logout.jsp">로그아웃</a></div>
-						    <div class="text"><a href = "member.html">고객센터</a></div>
-						    
+						    	<div class = "container1" text-align = center fot-size= 15> 
+								<%if(info.getMember_id().equals("admin")){ %>
+									<div class="text item1"><a href = "admin.jsp">관리자페이지</a></div>
+									<div class="text item3"><a href = "Logout">로그아웃</a></div>
+								<%}%>
+						   		    <div class="text item2"><a href = "mypage.jsp">마이페이지</a></div>
+						    		<div class="text item3"><a href = "Logout">로그아웃</a></div>
+						    		<div class="text item4"><a href = "member.html">고객센터</a></div>
+						    	</div>
 						    <%}else{ %>
-						    <div class="text"><a href = "join.jsp">회원가입</a></div>
-						    <div class="text"><a href = "login.jsp">로그인</a></div>
-						    
-						    <div class="text"><a href = "member.html">고객센터</a></div>
+						   		<div class = "container1" text-align = center fot-size= 15> 
+						    		<div class="text" id = "item5"><a href = "join.jsp">회원가입</a></div>
+						    		<div class="text item6"><a href = "login.jsp">로그인</a></div>
+						   			<div class="text item7"><a href = "member.html">고객센터</a></div>
+						   		 </div>
 						    <%}%>
-			
+						   </ul>
+			</ul>
 			</div>
 	    </div>
+
+	       
+	      </div><br>
+	      
+							
+	      
 	  </nav>
     <!-- END nav -->
 
