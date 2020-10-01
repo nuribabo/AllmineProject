@@ -13,7 +13,7 @@
 		class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
 		id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="index.html">Vegefoods</a>
+			<a class="navbar-brand" href="main.jsp">Vegefoods</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#ftco-nav" aria-controls="ftco-nav"
 				aria-expanded="false" aria-label="Toggle navigation">
@@ -240,8 +240,8 @@
 					<button type="submit" id="join-submit" class="btn btn-primary">
 						회원가입<i class="fa fa-check spaceLeft"></i>
 					</button>
-					<button onclick='location.href="main.jsp"' class="btn btn-warning">
-						가입취소
+					<input type="button" onclick="location.href='main.jsp'" class="btn btn-warning" value= "가입취소">
+						
 					</button>
 				</div>
 			</form>
