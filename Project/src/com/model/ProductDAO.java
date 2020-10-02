@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 
 
@@ -15,12 +16,13 @@ public class ProductDAO {
 	ResultSet rs = null;
 	PreparedStatement psmt = null;
 	int cnt = 0;
-	
+	ArrayList<ProductDTO> list = new ArrayList<ProductDTO>() ;
+	ProductDTO p = new ProductDTO();
 	public void conn() {
 		
 			try {
 				Class.forName("oracle.jdbc.driver.OracleDriver");
-				String db_url = "jdbc:oracle:thin:121.147.213.53:1521:xe";
+				String db_url = "jdbc:oracle:thin:@121.147.213.53:1521:xe";
 				String db_id = "pro2";
 				String db_pw = "pro2";
 				conn = DriverManager.getConnection(db_url, db_id, db_pw);
@@ -48,22 +50,26 @@ public class ProductDAO {
 
 	
 	//제품 이름으로 검색하기
-	public ProductDTO select_by_name(String name) {
+	public ArrayList<ProductDTO> select_by_name(String name) {
 		// TODO Auto-generated method stub
-		ProductDTO p = new ProductDTO();
+		
 		conn();
 		try {
-			String sql = "select * from product where name = ?";
+			String sql = "select * from product where product_name like ?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, name);
+			psmt.setString(1,'%'+name+'%');
 			ResultSet rs = psmt.executeQuery();
 			while (rs.next()) {
-				p.setProduct_id(rs.getString("id"));
-				p.setProduct_name(rs.getString("name"));
-				p.setPrice(rs.getString("price"));
-				p.setDiscount_rate(rs.getString("discount_rate"));
-				p.setWeight(rs.getString("weight"));
-				p.setOrigin(rs.getString("origin"));
+				String product_id = rs.getString(1);
+				System.out.println(product_id);
+				String product_name = rs.getString(2);
+				int price = rs.getInt(3);
+				int discount_rate = rs.getInt(4);
+				int weight = rs.getInt(5);
+				String origin = rs.getString(6);
+				String IMG_ADDR = rs.getString(7);
+				ProductDTO item = new ProductDTO(product_id, product_name, price, discount_rate, weight, origin,IMG_ADDR);
+				list.add(item);
 			}
 
 		} catch (SQLException e) {
@@ -71,7 +77,36 @@ public class ProductDAO {
 			e.printStackTrace();
 		}
 
-		return p;
+		return list;
+	}
+	// 전체 상품 검색
+	
+	public ArrayList<ProductDTO> select_by_All() {
+		conn();
+		try {
+			
+			String sql = "select * from product";
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			
+			while (rs.next()) {
+				String product_id = rs.getString(1);
+				String product_name = rs.getString(2);
+				int price = rs.getInt(3);
+				int discount_rate = rs.getInt(4);
+				int weight = rs.getInt(5);
+				String origin = rs.getString(6);
+				String IMG_ADDR = rs.getString(7);
+				ProductDTO item = new ProductDTO(product_id, product_name, price, discount_rate, weight, origin,IMG_ADDR);
+				list.add(item);
+				
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
 	}
 	
 
@@ -84,9 +119,9 @@ public class ProductDAO {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1,dto.getProduct_id());
 			psmt.setString(2,dto.getProduct_name());
-			psmt.setString(3,dto.getPrice());
-			psmt.setString(4,dto.getDiscount_rate());
-			psmt.setString(5,dto.getWeight());
+			psmt.setInt(3,dto.getPrice());
+			psmt.setInt(4,dto.getDiscount_rate());
+			psmt.setInt(5,dto.getWeight());
 			psmt.setString(6,dto.getOrigin());
 			psmt.executeUpdate();
 			
@@ -115,6 +150,8 @@ public class ProductDAO {
 	}
 	
 	//상품 정렬하기
+	
+	
 	
 
 	
