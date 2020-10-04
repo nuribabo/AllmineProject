@@ -24,11 +24,14 @@ public class searchWord_controller extends HttpServlet {
 		request.setCharacterEncoding("EUC-KR");
 		
 		
+		
 		String search =request.getParameter("sword");
 		search.replace(" ", ""); //띄어쓰기 없애주는거임;;
 		 		System.out.println(search);
-		ProductDAO dao = new ProductDAO();
+		 		
 		ArrayList<ProductDTO> list = new ArrayList<ProductDTO>();
+		
+		ProductDAO dao = new ProductDAO();
 		list = dao.select_by_name(search);
 		System.out.println("컨트롤러");
 		

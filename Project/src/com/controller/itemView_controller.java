@@ -33,7 +33,7 @@ public class itemView_controller extends HttpServlet {
 		}else {
 			System.out.println("¾øÂÇ¿°");
 		}
-		response.sendRedirect("shop.jsp");
+		response.sendRedirect("shop1.jsp");
 		
 		
 		

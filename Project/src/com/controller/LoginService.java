@@ -32,7 +32,7 @@ public class LoginService extends HttpServlet {
 			System.out.println("로그인 성공!");
 			HttpSession session = request.getSession();
 			session.setAttribute("info", info);
-			response.sendRedirect("main.jsp");
+			response.sendRedirect("main1.jsp");
 		}else {
 			System.out.println("로그인 실패");
 		}

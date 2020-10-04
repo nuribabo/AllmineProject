@@ -1,14 +1,11 @@
-<%@page import="com.model.MemberDTO"%>
-<%@page import="com.model.ProductDTO"%>
-<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Vegefoods - Free Bootstrap 4 Template by Colorlib</title>
+  <head>olorlib</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width,
+    <title>Vegefoods - Free Bootstrap 4 Template by C initial-scale=1, shrink-to-fit=no">
     
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
@@ -33,204 +30,305 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
     
-     <style type="text/css">
-.container1 {
-	display: flex;
-	width: 250px;
-	justify-content: align-items;
-}
-
-.container2 {
-	display: flex;
-	width: 200px;
-	justify-content: align-items;
-}
-
-.dan2 {
-	list-style: none;
-	padding-left: 0px;
-}
-
-.dan1 {
-	list-style: none;
-}
-
-.btn_search {gnb .gnb_search .btn_search { position:absolute;
-	right: 10px;
-	top: 3px;
-	width: 30px;
-	height: 30px;
-}
-
-#item5 {
-	
-}
-</style>
+    <style type="text/css">
+    
+    	.container1{
+    	
+    		display : flex;
+    		width : 250px;
+    		justify-content: align-items;
+    	}
+    	.container2{
+    	
+    		display : flex;
+    		width : 200px;
+    		justify-content: align-items;
+    	}
+    	.dan2{
+    	
+    	list-style:none;
+    	padding-left:0px;
+    	}
+    	.dan1{
+    	
+    	list-style:none;
+    	
+    	}
+    .btn_search{
+    gnb .gnb_search .btn_search {
+    position: absolute;
+    right: 10px;
+    top: 3px;
+    width: 30px;
+    height: 30px;}
+    	#item5{
+    	
+    		
+    	}
+    
+    
+    
+    </style>
+    
   </head>
   <body class="goto-here">
-  
-  
-  <%ArrayList<ProductDTO> selectlist = (ArrayList<ProductDTO>)session.getAttribute("selectlist");	 %>
-		<%
-		MemberDTO info = (MemberDTO) session.getAttribute("info");
-	
-	%>
+  <%
 		
-		<div class="py-1 bg-primary">
+		 MemberDTO info = (MemberDTO)session.getAttribute("info");
+		ArrayList<ProductDTO> itemlist = (ArrayList<ProductDTO>)session.getAttribute("list");	
+	%>
+	
+	
+		 <div class="py-1 bg-primary">
     	<div class="container">
     		<div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
 	    		<div class="col-lg-12 d-block">
 		    		<div class="row d-flex">
 		    			<div class="col-md pr-4 d-flex topper align-items-center">
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
-						    <span class="text">+ 1235 2355 98</span>
+						    <span class="text"></span>
 					    </div>
 					    <div class="col-md pr-4 d-flex topper align-items-center">
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
-						    <span class="text">youremail@email.com</span>
+						    <span class="text"></span>
 					    </div>
 					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
-						    <span class="text">3-5 Business days delivery &amp; Free Returns</span>
+						    <span class="text"></span>
 					    </div>
 				    </div>
 			    </div>
-		    </div>
+		    </div> 
 		  </div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Vegefoods</a>
+	      <a class="navbar-brand" href="main.jsp">2Ï∞®ÌîÑÎ°úÏ†ùÌãê„Öã</a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="main.jsp"
-						class="nav-link">Home</a></li>
-					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="shop.html" id="dropdown04"
-						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">¿¸√ºªÛ«∞</a>
-						<div class="dropdown-menu" aria-labelledby="dropdown04">
-							<a class="dropdown-item" href="./itemView_controller">¿¸√º ªÛ«∞</a> <a
-								class="dropdown-item" href="wishlist.html">¿¸√ºªÛ«∞</a> <a
-								class="dropdown-item" href="product-single.html">∞˙¿œ</a> <a
-								class="dropdown-item" href="cart.html">√§º“</a> <a
-								class="dropdown-item" href="checkout.html">¡§¿∞</a>
-						</div></li>
-					<li class="nav-item"><a href="about.html" class="nav-link">Ω≈ªÛ«∞</a></li>
-					<li class="nav-item"><a href="blog.html" class="nav-link">∫£Ω∫∆Æ</a></li>
-					<li class="nav-item"><a href="contact.html" class="nav-link">æÀ∂„ºÓ«Œ</a></li>
-
-					<li class="nav-item cta cta-colored"><a href="cart.jsp"
-						class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
-					<ul class="dan2">
-						<li>
-							<div class="col-md pr-4 d-flex topper align-items-center ">
-								<%
-									if (info != null) {
-								%>
-								<div class="container1" text-align=center fot-size=15>
-									<%
-										if (info.getMember_id().equals("admin")) {
-									%>
-									<div class="text item1">
-										<a href="admin.jsp">∞¸∏Æ¿⁄∆‰¿Ã¡ˆ</a>
-									</div>
-									<div class="text item3">
-										<a href="Logout">∑Œ±◊æ∆øÙ</a>
-									</div>
-									<%
-										}
-									%>
-									<div class="text item2" style="color: black;">
-										<%=info.getName()%>¥‘</a>
-									</div>
-									<div class="text item2">
-										<a href="mypage.jsp">∏∂¿Ã∆‰¿Ã¡ˆ</a>
-									</div>
-									<div class="text item3">
-										<a href="Logout"> ∑Œ±◊æ∆øÙ</a>
-									</div>
-									<div class="text item4">
-										<a href="member.html"> ∞Ì∞¥ºæ≈Õ</a>
-									</div>
-								</div>
-								<%
-									} else {
-								%>
-								<div class="container2" text-align=center fot-size=15>
-									<div class="text" id="item5">
-										<a href="join.jsp">»∏ø¯∞°¿‘</a>
-									</div>
-									<div class="text item6">
-										<a href="login.jsp">∑Œ±◊¿Œ</a>
-									</div>
-									<div class="text item7">
-										<a href="member.html">∞Ì∞¥ºæ≈Õ</a>
-									</div>
-								</div>
-								<%
-									}
-								%></li>
-						<ul class="dan1">
-							<li><div>
-									<form action="searchWord_controller">
-										<input name="sword" type="text" id="" value=""
-											required="required" label="∞ÀªˆæÓ" class="inp_search">
-										<input type="button"
-											src="https://res.kurly.com/pc/service/common/1908/ico_search_x2.png"
-											class="btn_search">
-									</form>
-								</div></li>
-						</ul>
-					</ul>
+	          <li class="nav-item active"><a href="main.jsp" class="nav-link">Home</a></li>
+	          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="shop.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ï†ÑÏ≤¥ÏÉÅÌíà</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+              	<a class="dropdown-item" href="./itemView_controller">Ï†ÑÏ≤¥ ÏÉÅÌíà</a>
+              	<a class="dropdown-item" href="wishlist.html">Ï†ÑÏ≤¥ÏÉÅÌíà</a>
+                <a class="dropdown-item" href="product-single.html">Í≥ºÏùº</a>
+                <a class="dropdown-item" href="cart.html">Ï±ÑÏÜå</a>
+                <a class="dropdown-item" href="checkout.html">Ï†ïÏú°</a>
+              </div>
+            </li>
+	          <li class="nav-item"><a href="about.html" class="nav-link">Ïã†ÏÉÅÌíà</a></li>
+	          <li class="nav-item"><a href="blog.html" class="nav-link">Î≤†Ïä§Ìä∏</a></li>
+	          <li class="nav-item"><a href="contact.html" class="nav-link">ÏïåÎú∞ÏáºÌïë</a></li>
+	          
+	          <li class="nav-item cta cta-colored"><a href="cart.jsp" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+<ul class= "dan2"><li>
+<div class="col-md pr-4 d-flex topper align-items-center ">
+					    	<!-- <div class="col-md-5 pr-4 d-flex topper align-items-center"></div> -->
+						  
+						    <%if(info != null){ %>
+						    	<div class = "container1" text-align = center fot-size= 15> 
+								<%if(info.getMember_id().equals("admin")){ %>
+									<div class="text item1"><a href = "admin.jsp">Í¥ÄÎ¶¨ÏûêÌéòÏù¥ÏßÄ</a></div>
+									<div class="text item3"><a href = "Logout">Î°úÍ∑∏ÏïÑÏõÉ</a></div>
+								<%}%>
+								<div class="text item2" style="color: black;" >
+								<%=info.getName()%>Îãò</a></div>
+						   		    <div class="text item2"><a href = "mypage.jsp">ÎßàÏù¥ÌéòÏù¥ÏßÄ</a></div>
+						    		<div class="text item3"><a href = "Logout">„ÄÄÎ°úÍ∑∏ÏïÑÏõÉ</a></div>
+						    		<div class="text item4"><a href = "member.html">„ÄÄÍ≥†Í∞ùÏÑºÌÑ∞</a></div>
+						    	</div>
+						    <%}else{ %>
+						   		<div class = "container2" text-align = center fot-size= 15> 
+						    		<div class="text" id = "item5"><a href = "join.jsp">ÌöåÏõêÍ∞ÄÏûÖ</a></div>
+						    		<div class="text item6"><a href = "login.jsp">Î°úÍ∑∏Ïù∏</a></div>
+						   			<div class="text item7"><a href = "member.html">Í≥†Í∞ùÏÑºÌÑ∞</a></div>
+						   		 </div>
+						    <%}%></li>
+						    <ul class="dan1">
+						   <li><div><form action = "searchWord_controller"><input name="sword" type="text" id="" value="" required="required" label="Í≤ÄÏÉâÏñ¥" class="inp_search" >
+						   <input  type="button" src="https://res.kurly.com/pc/service/common/1908/ico_search_x2.png" class="btn_search" ></form></div></li></ul>
+						   </ul>
+						   
+					</div>	  
+			</ul>
+			
 	    </div>
+
+	       
+	      </div><br>
+	      
+							
+	      
 	  </nav>
     <!-- END nav -->
 
-    <div class="hero-wrap hero-bread" style="background-image: url('images/bg_1.jpg');">
-      <div class="container">
-        <div class="row no-gutters slider-text align-items-center justify-content-center">
-          <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Products</span></p>
-            <h1 class="mb-0 bread">Products</h1>
+    <section id="home-section" class="hero">
+		  <div class="home-slider owl-carousel">
+	      <div class="slider-item" style="background-image: url(images/bg_1.jpg);">
+	      	<div class="overlay"></div>
+	        <div class="container">
+	          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+
+	            <div class="col-md-12 ftco-animate text-center">
+	              <h1 class="mb-2">We serve Fresh Vegestables &amp; Fruits</h1>
+	              <h2 class="subheading mb-4">We deliver organic vegetables &amp; fruits</h2>
+	              <p><a href="#" class="btn btn-primary">View Details</a></p>
+	            </div>
+
+	          </div>
+	        </div>
+	      </div>
+
+	      <div class="slider-item" style="background-image: url(images/bg_2.jpg);">
+	      	<div class="overlay"></div>
+	        <div class="container">
+	          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+
+	            <div class="col-sm-12 ftco-animate text-center">
+	              <h1 class="mb-2">100% Fresh &amp; Organic Foods</h1>
+	              <h2 class="subheading mb-4">We deliver organic vegetables &amp; fruits</h2>
+	              <p><a href="#" class="btn btn-primary">View Details</a></p>
+	            </div>
+
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+    </section>
+
+    <section class="ftco-section">
+    
+			<div class="container">
+				<div class="row no-gutters ftco-services">
+          <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services mb-md-0 mb-4">
+              <div class="icon bg-color-1 active d-flex justify-content-center align-items-center mb-2">
+            		<span class="flaticon-shipped"></span>
+              </div>
+              <div class="media-body">
+                <h3 class="heading">Free Shipping</h3>
+                <span>On order over $100</span>
+              </div>
+            </div>      
+          </div>
+          <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services mb-md-0 mb-4">
+              <div class="icon bg-color-2 d-flex justify-content-center align-items-center mb-2">
+            		<span class="flaticon-diet"></span>
+              </div>
+              <div class="media-body">
+                <h3 class="heading">Always Fresh</h3>
+                <span>Product well package</span>
+              </div>
+            </div>    
+          </div>
+          <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services mb-md-0 mb-4">
+              <div class="icon bg-color-3 d-flex justify-content-center align-items-center mb-2">
+            		<span class="flaticon-award"></span>
+              </div>
+              <div class="media-body">
+                <h3 class="heading">Superior Quality</h3>
+                <span>Quality Products</span>
+              </div>
+            </div>      
+          </div>
+          <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services mb-md-0 mb-4">
+              <div class="icon bg-color-4 d-flex justify-content-center align-items-center mb-2">
+            		<span class="flaticon-customer-service"></span>
+              </div>
+              <div class="media-body">
+                <h3 class="heading">Support</h3>
+                <span>24/7 Support</span>
+              </div>
+            </div>      
           </div>
         </div>
-      </div>
-    </div>
+			</div>
+		</section>
+
+		<section class="ftco-section ftco-category ftco-no-pt">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8">
+						<div class="row">
+							<div class="col-md-6 order-md-last align-items-stretch d-flex">
+								<div class="category-wrap-2 ftco-animate img align-self-stretch d-flex" style="background-image: url(images/category.jpg);">
+									<div class="text text-center">
+										<h2>Vegetables</h2>
+										<p>Protect the health of every home</p>
+										<p><a href="#" class="btn btn-primary">Shop now</a></p>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="category-wrap ftco-animate img mb-4 d-flex align-items-end" style="background-image: url(images/category-1.jpg);">
+									<div class="text px-3 py-1">
+										<h2 class="mb-0"><a href="#">Fruits</a></h2>
+									</div>
+								</div>
+								<div class="category-wrap ftco-animate img d-flex align-items-end" style="background-image: url(images/category-2.jpg);">
+									<div class="text px-3 py-1">
+										<h2 class="mb-0"><a href="#">Vegetables</a></h2>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="category-wrap ftco-animate img mb-4 d-flex align-items-end" style="background-image: url(images/category-3.jpg);">
+							<div class="text px-3 py-1">
+								<h2 class="mb-0"><a href="#">Juices</a></h2>
+							</div>		
+						</div>
+						<div class="category-wrap ftco-animate img d-flex align-items-end" style="background-image: url(images/category-4.jpg);">
+							<div class="text px-3 py-1">
+								<h2 class="mb-0"><a href="#">Dried</a></h2>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
     <section class="ftco-section">
     	<div class="container">
-    		<div class="row justify-content-center">
-    			<div class="col-md-10 mb-5 text-center">
-    				<ul class="product-category">
-    					<li><a href="#" class="active">¿¸√º∫∏±‚</a></li>
-    					<li><a href="#">∞˙¿œ</a></li>
-    					<li><a href="#">√§º“</a></li>
-    					<li><a href="#">¡§¿∞</a></li>
-    					<li><a href="#">∞Ë∂ı/¿Ø¡¶«∞</a></li>
-    					<li><a href="#">ºˆªÍ/∞«æÓπ∞</a></li>
-    				
-    				
-    				</ul>
-    			</div>
-    		</div>
-    		
+				<div class="row justify-content-center mb-3 pb-3">
+          <div class="col-md-12 heading-section text-center ftco-animate">
+          	<span class="subheading">Featured Products</span>
+            <h2 class="mb-4">Our Products</h2>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+          </div>
+        </div>   		
+    	</div>
+    	
+    	<!-- ÏÉÅÌíàÎ¶¨Ïä§Ìä∏ Ïª®ÌÖåÏù¥ÎÑà ÏãúÏûë-->
+    	
+    	
+    	
+    	<div class="container">
     		<div class="row">
-    		<%if(selectlist != null){ %>
-    		<%for(int i=0; i<selectlist.size(); i++){ %>
+    		
+    		<%if(itemlist != null){ %>
+    		<%for(int i=0; i<itemlist.size(); i++){ %>
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
-    					<a href="#" class="img-prod"><img class="img-fluid" src="<%=selectlist.get(i).getIMG_ADDR() %>" alt="Colorlib Template">
+    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-1.jpg" alt="Colorlib Template">
     						<span class="status">30%</span>
     						<div class="overlay"></div>
     					</a>
     					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="#"><%=selectlist.get(i).getProduct_name() %></a></h3>
+    						<h3><a href="#"><%=itemlist.get(i).getProduct_name()%></a></h3>
     						<div class="d-flex">
     							<div class="pricing">
-		    						<p class="price"><span class="mr-2 price-dc"><%=selectlist.get(i).getPrice() %></span><span class="price-sale">$80.00</span></p>
+		    						<p class="price"><span class="mr-2 price-dc"><%=itemlist.get(i).getPrice() %></span>
+		    						<span class="price-sale">Ìï†Ïù∏Í∞ÄÍ≤©</span></p>
 		    					</div>
 	    					</div>
 	    					<div class="bottom-area d-flex px-3">
@@ -450,136 +548,139 @@
     					</div>
     				</div>
     			</div>
-
-    			<div class="col-md-6 col-lg-3 ftco-animate">
-    				<div class="product">
-    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-9.jpg" alt="Colorlib Template">
-    						<span class="status">30%</span>
-    						<div class="overlay"></div>
-    					</a>
-    					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="#">Onion</a></h3>
-    						<div class="d-flex">
-    							<div class="pricing">
-		    						<p class="price"><span class="mr-2 price-dc">$120.00</span><span class="price-sale">$80.00</span></p>
-		    					</div>
-	    					</div>
-	    					<div class="bottom-area d-flex px-3">
-	    						<div class="m-auto d-flex">
-	    							<a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-	    								<span><i class="ion-ios-menu"></i></span>
-	    							</a>
-	    							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-	    								<span><i class="ion-ios-cart"></i></span>
-	    							</a>
-	    							<a href="#" class="heart d-flex justify-content-center align-items-center ">
-	    								<span><i class="ion-ios-heart"></i></span>
-	    							</a>
-    							</div>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-md-6 col-lg-3 ftco-animate">
-    				<div class="product">
-    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-10.jpg" alt="Colorlib Template">
-    						<div class="overlay"></div>
-    					</a>
-    					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="#">Apple</a></h3>
-    						<div class="d-flex">
-    							<div class="pricing">
-		    						<p class="price"><span>$120.00</span></p>
-		    					</div>
-	    					</div>
-    						<div class="bottom-area d-flex px-3">
-	    						<div class="m-auto d-flex">
-	    							<a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-	    								<span><i class="ion-ios-menu"></i></span>
-	    							</a>
-	    							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-	    								<span><i class="ion-ios-cart"></i></span>
-	    							</a>
-	    							<a href="#" class="heart d-flex justify-content-center align-items-center ">
-	    								<span><i class="ion-ios-heart"></i></span>
-	    							</a>
-    							</div>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-md-6 col-lg-3 ftco-animate">
-    				<div class="product">
-    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-11.jpg" alt="Colorlib Template">
-	    					<div class="overlay"></div>
-	    				</a>
-    					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="#">Garlic</a></h3>
-    						<div class="d-flex">
-    							<div class="pricing">
-		    						<p class="price"><span>$120.00</span></p>
-		    					</div>
-	    					</div>
-    						<div class="bottom-area d-flex px-3">
-	    						<div class="m-auto d-flex">
-	    							<a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-	    								<span><i class="ion-ios-menu"></i></span>
-	    							</a>
-	    							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-	    								<span><i class="ion-ios-cart"></i></span>
-	    							</a>
-	    							<a href="#" class="heart d-flex justify-content-center align-items-center ">
-	    								<span><i class="ion-ios-heart"></i></span>
-	    							</a>
-    							</div>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-md-6 col-lg-3 ftco-animate">
-    				<div class="product">
-    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-12.jpg" alt="Colorlib Template">
-    						<div class="overlay"></div>
-    					</a>
-    					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="#">Chilli</a></h3>
-    						<div class="d-flex">
-    							<div class="pricing">
-		    						<p class="price"><span>$120.00</span></p>
-		    					</div>
-	    					</div>
-    						<div class="bottom-area d-flex px-3">
-	    						<div class="m-auto d-flex">
-	    							<a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-	    								<span><i class="ion-ios-menu"></i></span>
-	    							</a>
-	    							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-	    								<span><i class="ion-ios-cart"></i></span>
-	    							</a>
-	    							<a href="#" class="heart d-flex justify-content-center align-items-center ">
-	    								<span><i class="ion-ios-heart"></i></span>
-	    							</a>
-    							</div>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
     		</div>
-    		<div class="row mt-5">
-          <div class="col text-center">
-            <div class="block-27">
-              <ul>
-                <li><a href="#">&lt;</a></li>
-                <li class="active"><span>1</span></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">&gt;</a></li>
-              </ul>
+    	</div>
+    </section>
+		
+		<section class="ftco-section img" style="background-image: url(images/bg_3.jpg);">
+    	<div class="container">
+				<div class="row justify-content-end">
+          <div class="col-md-6 heading-section ftco-animate deal-of-the-day ftco-animate">
+          	<span class="subheading">Best Price For You</span>
+            <h2 class="mb-4">Deal of the day</h2>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+            <h3><a href="#">Spinach</a></h3>
+            <span class="price">$10 <a href="#">now $5 only</a></span>
+            <div id="timer" class="d-flex mt-5">
+						  <div class="time" id="days"></div>
+						  <div class="time pl-3" id="hours"></div>
+						  <div class="time pl-3" id="minutes"></div>
+						  <div class="time pl-3" id="seconds"></div>
+						</div>
+          </div>
+        </div>   		
+    	</div>
+    </section>
+
+    <section class="ftco-section testimony-section">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section ftco-animate text-center">
+          	<span class="subheading">Testimony</span>
+            <h2 class="mb-4">Our satisfied customer says</h2>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
+          </div>
+        </div>
+        <div class="row ftco-animate">
+          <div class="col-md-12">
+            <div class="carousel-testimony owl-carousel">
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url(images/person_1.jpg)">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="name">Garreth Smith</p>
+                    <span class="position">Marketing Manager</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url(images/person_2.jpg)">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="name">Garreth Smith</p>
+                    <span class="position">Interface Designer</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url(images/person_3.jpg)">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="name">Garreth Smith</p>
+                    <span class="position">UI Designer</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url(images/person_1.jpg)">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="name">Garreth Smith</p>
+                    <span class="position">Web Developer</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url(images/person_1.jpg)">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="name">Garreth Smith</p>
+                    <span class="position">System Analyst</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <hr>
+
+		<section class="ftco-section ftco-partner">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-sm ftco-animate">
+    				<a href="#" class="partner"><img src="images/partner-1.png" class="img-fluid" alt="Colorlib Template"></a>
+    			</div>
+    			<div class="col-sm ftco-animate">
+    				<a href="#" class="partner"><img src="images/partner-2.png" class="img-fluid" alt="Colorlib Template"></a>
+    			</div>
+    			<div class="col-sm ftco-animate">
+    				<a href="#" class="partner"><img src="images/partner-3.png" class="img-fluid" alt="Colorlib Template"></a>
+    			</div>
+    			<div class="col-sm ftco-animate">
+    				<a href="#" class="partner"><img src="images/partner-4.png" class="img-fluid" alt="Colorlib Template"></a>
+    			</div>
+    			<div class="col-sm ftco-animate">
+    				<a href="#" class="partner"><img src="images/partner-5.png" class="img-fluid" alt="Colorlib Template"></a>
+    			</div>
+    		</div>
     	</div>
     </section>
 
