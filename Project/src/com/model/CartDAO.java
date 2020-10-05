@@ -43,15 +43,19 @@ public class CartDAO {
 	
 	
 	
-	public void insert() { // 장바구니 담기 메소드
+	public int select (String id) { //장바구니에 넣을 아이템 찾아오기
 		conn();
-		String sql = "select * from product where product_id";
 		try {
+			String sql = "select * from product where product_id = ?";
 			psmt = conn.prepareStatement(sql);
-			
+			psmt.setString(1, id);
+			rs = psmt.executeQuery();
+			while(rs.next()) {
+				
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}
+		}return cnt;
 	}
 	
 	public int remove(String product_id) {

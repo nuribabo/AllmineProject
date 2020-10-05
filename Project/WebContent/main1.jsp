@@ -65,8 +65,11 @@ olorlib
 .dan1 {
 	list-style: none;
 }
-.dan1 .serch1 .serch .btn_search {
-    position: absolute;
+.inp_search{
+	position : relative;
+}
+.btn_search {
+    
     right: 10px;
     top: 3px;
     width: 30px;
@@ -146,7 +149,7 @@ olorlib
 					<li class="nav-item"><a href="blog.jsp" class="nav-link">베스트</a></li>
 					<li class="nav-item"><a href="contact.jsp" class="nav-link">알뜰쇼핑</a></li>
 
-					<li class="nav-item cta cta-colored"><a href="cart.jsp"
+					<li class="nav-item cta cta-colored"><a href="wishlist.jsp"
 						class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
 					<ul class="dan2">
 						<li>
@@ -208,7 +211,7 @@ olorlib
 											required="required" label="검색어" class="inp_search">
 										<input type="image"
 											src="https://res.kurly.com/pc/service/common/1908/ico_search_x2.png"
-											class="btn_search" position= absolute>
+											class="btn_search" >
 									</form>
 								</div></li>
 						</ul>
@@ -228,33 +231,9 @@ olorlib
 	<!-- END nav -->
 	
 	
-<!--//이벤트  -->
-	<section class="ftco-section img"
-		style="background-image: url(images/bg_3.jpg);">
-		<div class="container">
-			<div class="row justify-content-end">
-				<div
-					class="col-md-6 heading-section ftco-animate deal-of-the-day ftco-animate">
-					<span class="subheading">Best Price For You</span>
-					<h2 class="mb-4">Deal of the day</h2>
-					<p>Far far away, behind the word mountains, far from the
-						countries Vokalia and Consonantia</p>
-					<h3>
-						<a href="#">Spinach</a>
-					</h3>
-					<span class="price">$10 <a href="#">now $5 only</a></span>
-					<div id="timer" class="d-flex mt-5">
-						<div class="time" id="days"></div>
-						<div class="time pl-3" id="hours"></div>
-						<div class="time pl-3" id="minutes"></div>
-						<div class="time pl-3" id="seconds"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+
 	
-	 <!-- <section id="home-section" class="hero">
+	  <section id="home-section" class="hero">
 		<div class="home-slider owl-carousel">
 			<div class="slider-item"
 				style="background-image: url(images/bg_1.jpg);">
@@ -301,7 +280,7 @@ olorlib
 		</div>
 		
 		
-	</section>  -->
+	</section>  
 
 	<section class="ftco-section">
 
@@ -472,7 +451,7 @@ olorlib
 							</div>
 							<div class="bottom-area d-flex px-3">
 								<div class="m-auto d-flex">
-									<a href="#"
+									<a href="./Cart_controller"
 										class="add-to-cart d-flex justify-content-center align-items-center text-center">
 										<span><i class="ion-ios-menu"></i></span>
 									</a> <a href="#"
@@ -726,6 +705,32 @@ olorlib
 								</div>
 							</div>
 						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<!--//이벤트  -->
+	<section class="ftco-section img"
+		style="background-image: url(images/bg_3.jpg);">
+		<div class="container">
+			<div class="row justify-content-end">
+				<div
+					class="col-md-6 heading-section ftco-animate deal-of-the-day ftco-animate">
+					<span class="subheading">Best Price For You</span>
+					<h2 class="mb-4">Deal of the day</h2>
+					<p>Far far away, behind the word mountains, far from the
+						countries Vokalia and Consonantia</p>
+					<h3>
+						<a href="#">Spinach</a>
+					</h3>
+					<span class="price">$10 <a href="#">now $5 only</a></span>
+					<div id="timer" class="d-flex mt-5">
+						<div class="time" id="days"></div>
+						<div class="time pl-3" id="hours"></div>
+						<div class="time pl-3" id="minutes"></div>
+						<div class="time pl-3" id="seconds"></div>
 					</div>
 				</div>
 			</div>
