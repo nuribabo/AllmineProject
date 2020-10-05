@@ -185,8 +185,7 @@ public class ProductDAO {
 		}finally {
 			close();
 		}
-		System.out.println(list.get(0).getPrice());
-		System.out.println(list.get(1).getPrice());
+	
 		
 		return list;
 	}
