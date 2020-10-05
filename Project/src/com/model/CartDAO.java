@@ -11,6 +11,7 @@ public class CartDAO {
 	PreparedStatement psmt = null;
 	int cnt;
 	ResultSet rs;
+	ProductDTO pdto = null;
 	
 	public void conn() {
 		try {
@@ -43,7 +44,7 @@ public class CartDAO {
 	
 	
 	
-	public int select (String id) { //장바구니에 넣을 아이템 찾아오기
+	public ProductDTO select (String id) { //장바구니에 넣을 아이템 찾아오기
 		conn();
 		try {
 			String sql = "select * from product where product_id = ?";
@@ -51,12 +52,36 @@ public class CartDAO {
 			psmt.setString(1, id);
 			rs = psmt.executeQuery();
 			while(rs.next()) {
-				
+				String product_id = rs.getString(1);
+				String product_name = rs.getString(2);
+				int price = rs.getInt(3);
+				int discount_rate = rs.getInt(4);
+				int weight = rs.getInt(5);
+				String origin = rs.getString(6);
+				String img_addr = rs.getString(7);
+				pdto = new ProductDTO(product_id, product_name, price, discount_rate, weight, origin, img_addr);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}return cnt;
+		}return pdto;
 	}
+	public int insert_cart(CartDTO cdto) {
+		
+		try {
+			conn();
+			String sql = "insert into cart_product(QUANTITY, MEMBER_ID,PRODUCT_ID) values(?,?,?)";
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, cdto.getQuantity());
+			psmt.setString(2, cdto.getMember_id());
+			psmt.setString(3, cdto.getProduct_id());
+			cnt = psmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}return cnt;
+		
+	}
+	
 	
 	public int remove(String product_id) {
 		conn();

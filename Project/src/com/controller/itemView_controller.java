@@ -27,7 +27,6 @@ public class itemView_controller extends HttpServlet {
 		
 		
 		if(list != null) {
-			System.out.println("°ªÀÖÀ½");
 			HttpSession session = request.getSession();
 			session.setAttribute("list", list );
 		}else {
