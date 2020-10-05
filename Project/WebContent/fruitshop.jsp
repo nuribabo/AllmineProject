@@ -68,9 +68,10 @@
 </style>
   </head>
   <body class="goto-here">
-    <%ArrayList<ProductDTO> itemlist = (ArrayList<ProductDTO>)session.getAttribute("list");	 %>
+    <%ArrayList<ProductDTO> fruitlist = (ArrayList<ProductDTO>)session.getAttribute("flist");	 %>
     <%
 		MemberDTO info = (MemberDTO) session.getAttribute("info");
+	
 	%>
 		<div class="py-1 bg-primary">
     	<div class="container">
@@ -205,30 +206,30 @@
     			<div class="col-md-10 mb-5 text-center">
     				<ul class="product-category">
     					<li><a href="#" class="active">전체보기</a></li>
-    					<li><a href="./fruitView_controller?name=<%="2"%>">과일</a></li>
-    					<li><a href="#">채소</a></li>
-    					<li><a href="#">정육</a></li>
-    					<li><a href="#">계란/유제품</a></li>
-    					<li><a href="#">수산/건어물</a></li>
+    					<li><a href="./fruitView_controller?name=<%="1"%>">과일</a></li>
+    					<li><a href="./fruitView_controller?name=<%="2"%>">채소</a></li>
+    					<li><a href="./fruitView_controller?name=<%="3"%>">정육</a></li>
+    					<li><a href="./fruitView_controller?name=<%="4"%>">계란/유제품</a></li>
+    					<li><a href="./fruitView_controller?name=<%="5"%>">수산/건어물</a></li>
     				
     				
     				</ul>
     			</div>
     		</div>
     		<div class="row">
-    		<%if(itemlist != null){ %>
-    		<%for(int i=0; i<itemlist.size(); i++){ %>
+    		<%if(fruitlist != null){ %>
+    		<%for(int i=0; i<fruitlist.size(); i++){ %>
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
-    					<a href="product-single.jsp" class="img-prod"><img class="img-fluid" src=<%=itemlist.get(i).getIMG_ADDR() %>alt="Colorlib Template">
-    						<span class="status"><%=itemlist.get(i).getDiscount_rate() %>%</span>
+    					<a href="product-single.jsp" class="img-prod"><img class="img-fluid" src=<%=fruitlist.get(i).getIMG_ADDR() %>alt="Colorlib Template">
+    						<span class="status"><%=fruitlist.get(i).getDiscount_rate() %>%</span>
     						<div class="overlay"></div>
     					</a>
     					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="product-single.jsp"><%=itemlist.get(i).getProduct_name() %></a></h3>
+    						<h3><a href="product-single.jsp"><%=fruitlist.get(i).getProduct_name() %></a></h3>
     						<div class="d-flex">
     							<div class="pricing">
-		    						<p class="price"><span class="mr-2 price-dc"><%=itemlist.get(i).getPrice() %></span><span class="price-sale">$80.00</span></p>
+		    						<p class="price"><span class="mr-2 price-dc"><%=fruitlist.get(i).getPrice() %></span><span class="price-sale">$80.00</span></p>
 		    					</div>
 	    					</div>
 	    					<div class="bottom-area d-flex px-3">

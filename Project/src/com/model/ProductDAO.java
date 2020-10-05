@@ -100,12 +100,17 @@ public class ProductDAO {
 				ProductDTO item = new ProductDTO(product_id, product_name, price, discount_rate, weight, origin,IMG_ADDR);
 				list.add(item);
 				
+				
 			}
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally {
+			close();
 		}
+		
+		
 		return list;
 	}
 	
@@ -147,6 +152,43 @@ public class ProductDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	public ArrayList<ProductDTO> select_by_Fruit(String cnt) {
+		conn();
+		
+		try {
+			
+			String sql = "select * from Product where product_id like ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, cnt+"%");
+			rs = psmt.executeQuery();
+			
+			
+			while (rs.next()) {
+				
+				String product_id = rs.getString(1);
+				String product_name = rs.getString(2);
+				int price = rs.getInt(3);
+				int discount_rate = rs.getInt(4);
+				int weight = rs.getInt(5);
+				String origin = rs.getString(6);
+				String IMG_ADDR = rs.getString(7);
+				ProductDTO item = new ProductDTO(product_id, product_name, price, discount_rate, weight, origin,IMG_ADDR);
+				list.add(item);
+				
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		System.out.println(list.get(0).getPrice());
+		System.out.println(list.get(1).getPrice());
+		
+		return list;
 	}
 	
 	//상품 정렬하기
