@@ -26,14 +26,6 @@ public class ProductDTO {
 		IMG_ADDR = iMG_ADDR;
 	}
 
-	public ProductDTO(String product_name, int price, int discount_rate, String iMG_ADDR) {
-		
-		this.product_name = product_name;
-		this.price = price;
-		this.discount_rate = discount_rate;
-		IMG_ADDR = iMG_ADDR;
-	}
-
 	public String getIMG_ADDR() {
 		return IMG_ADDR;
 	}

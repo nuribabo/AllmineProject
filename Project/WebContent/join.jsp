@@ -1,19 +1,93 @@
+<%@page import="com.model.ProductDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
+olorlib
+</title>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width,
+    <title>Vegefoods - Free Bootstrap 4 Template by C initial-scale=1, shrink-to-fit=no">
+
+<link
+	href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap"
+	rel="stylesheet">
+
+<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+<link rel="stylesheet" href="css/animate.css">
+
+<link rel="stylesheet" href="css/owl.carousel.min.css">
+<link rel="stylesheet" href="css/owl.theme.default.min.css">
+<link rel="stylesheet" href="css/magnific-popup.css">
+
+<link rel="stylesheet" href="css/aos.css">
+
+<link rel="stylesheet" href="css/ionicons.min.css">
+
+<link rel="stylesheet" href="css/bootstrap-datepicker.css">
+<link rel="stylesheet" href="css/jquery.timepicker.css">
+
+
+<link rel="stylesheet" href="css/flaticon.css">
+<link rel="stylesheet" href="css/icomoon.css">
 <link rel="stylesheet" href="css/style.css">
+
+<style type="text/css">
+.container1 {
+	display: flex;
+	width: 250px;
+	justify-content: align-items;
+}
+
+.container2 {
+	display: flex;
+	width: 200px;
+	justify-content: align-items;
+}
+
+.dan2 {
+	list-style: none;
+	padding-left: 0px;
+}
+
+.dan1 {
+	list-style: none;
+}
+.dan1 .serch1 .serch .btn_search {
+    position: absolute;
+    right: 10px;
+    top: 3px;
+    width: 30px;
+    height: 30px;
+}
+
+
+#item5 {
+	
+}
+</style>
 </head>
 <body>
+<%
+		MemberDTO info = (MemberDTO) session.getAttribute("info");
+	ArrayList<ProductDTO> itemlist = (ArrayList<ProductDTO>) session.getAttribute("list");
+	%>
 
 	<nav
 		class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
 		id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="main.jsp">Vegefoods</a>
+			<a class="navbar-brand" href="main1.jsp">2차프로젝트ㅋ</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#ftco-nav" aria-controls="ftco-nav"
 				aria-expanded="false" aria-label="Toggle navigation">
@@ -22,40 +96,102 @@
 
 			<div class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active"><a href="index.html"
+					<li class="nav-item active"><a href="main1.jsp"
 						class="nav-link">Home</a></li>
 					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="#" id="dropdown04"
-						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
+						class="nav-link dropdown-toggle" href="shop.html" id="dropdown04"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">전체상품</a>
 						<div class="dropdown-menu" aria-labelledby="dropdown04">
-							<a class="dropdown-item" href="shop.html">Shop</a> <a
-								class="dropdown-item" href="wishlist.html">Wishlist</a> <a
-								class="dropdown-item" href="product-single.html">Single
-								Product</a> <a class="dropdown-item" href="cart.html">Cart</a> <a
-								class="dropdown-item" href="checkout.html">Checkout</a>
+							<a class="dropdown-item" href="./itemView_controller">전체 상품</a> <a
+								class="dropdown-item" href="./fruitView_controller?name=<%="1"%>">과일</a> <a
+								class="dropdown-item" href="./fruitView_controller?name=<%="2"%>">채소</a> <a
+								class="dropdown-item" href="./fruitView_controller?name=<%="3"%>">정육</a> <a
+								class="dropdown-item" href="./fruitView_controller?name=<%="4"%>">계란/유제품</a> <a
+								class="dropdown-item" href="./fruitView_controller?name=<%="5"%>">수산/건어물</a>
 						</div></li>
-					<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-					<li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-					<li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-					<li class="nav-item cta cta-colored"><a href="cart.html"
+					<li class="nav-item"><a href="about.jsp" class="nav-link">신상품</a></li>
+					<li class="nav-item"><a href="blog.jsp" class="nav-link">베스트</a></li>
+					<li class="nav-item"><a href="contact.jsp" class="nav-link">알뜰쇼핑</a></li>
+
+					<li class="nav-item cta cta-colored"><a href="cart.jsp"
 						class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+					<ul class="dan2">
 
-				</ul>
+	<li>
+							<div class="col-md pr-4 d-flex topper align-items-center ">
+								<!-- <div class="col-md-5 pr-4 d-flex topper align-items-center"></div> -->
+
+								<%
+									if (info != null) {
+								%>
+								<div class="container1" text-align=center fot-size=15>
+									<%
+										if (info.getMember_id().equals("admin")) {
+									%>
+									<div class="text item1">
+										<a href="admin.jsp">관리자페이지</a>
+									</div>
+									<div class="text item3">
+										<a href="Logout">로그아웃</a>
+									</div>
+									<%
+										}
+									%>
+									<div class="text item2" style="color: black;">
+										<%=info.getName()%>님</a>
+									</div>
+									<div class="text item2">
+										<a href="mypage.jsp">마이페이지</a>
+									</div>
+									<div class="text item3">
+										<a href="Logout"> 로그아웃</a>
+									</div>
+									<div class="text item4">
+										<a href="member.html"> 고객센터</a>
+									</div>
+								</div>
+								<%
+									} else {
+								%>
+								<div class="container2" text-align=center fot-size=15>
+									<div class="text" id="item5">
+										<a href="join.jsp">회원가입</a>
+									</div>
+									<div class="text item6">
+										<a href="login.jsp">로그인</a>
+									</div>
+									<div class="text item7">
+										<a href="member.html">고객센터</a>
+									</div>
+								</div>
+								<%
+									}
+								%>
+							
+						</li>
+						<ul class="dan1">
+							<li class="search1"><div class="search">
+									<form action="searchWord_controller">
+										<input name="sword" type="text" id="" value=""
+											required="required" label="검색어" class="inp_search">
+										<input type="image"
+											src="https://res.kurly.com/pc/service/common/1908/ico_search_x2.png"
+											class="btn_search" position= absolute>
+									</form>
+								</div></li>
+						</ul>
+					</ul> 
 			</div>
-
-			<div class="col-md pr-4 d-flex topper align-items-center"
-				display=flex;>
-				<!-- <div class="col-md-5 pr-4 d-flex topper align-items-center"></div> -->
-
-				
-						    <div class="text"><a href = "join.jsp">회원가입</a></div>
-						    <div class="text"><a href = "login.jsp">로그인</a></div>
-						    
-						    <div class="text"><a href = "member.html">고객센터</a></div>
-						    
-			</div>
+			</ul>
 
 		</div>
+
+
+		</div>
+		<br>
+
+
+
 	</nav>
 
 	<article class="container">

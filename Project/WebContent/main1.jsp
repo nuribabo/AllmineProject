@@ -136,14 +136,15 @@ olorlib
 						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">전체상품</a>
 						<div class="dropdown-menu" aria-labelledby="dropdown04">
 							<a class="dropdown-item" href="./itemView_controller">전체 상품</a> <a
-								class="dropdown-item" href="wishlist.html">과일</a> <a
-								class="dropdown-item" href="product-single.html">채소</a> <a
-								class="dropdown-item" href="cart.html">정육</a> <a
-								class="dropdown-item" href="checkout.html">계란유제품</a>
+								class="dropdown-item" href="./fruitView_controller?name=<%="1"%>">과일</a> <a
+								class="dropdown-item" href="./fruitView_controller?name=<%="2"%>">채소</a> <a
+								class="dropdown-item" href="./fruitView_controller?name=<%="3"%>">정육</a> <a
+								class="dropdown-item" href="./fruitView_controller?name=<%="4"%>">계란/유제품</a> <a
+								class="dropdown-item" href="./fruitView_controller?name=<%="5"%>">수산/건어물</a>
 						</div></li>
-					<li class="nav-item"><a href="about.html" class="nav-link">신상품</a></li>
-					<li class="nav-item"><a href="blog.html" class="nav-link">베스트</a></li>
-					<li class="nav-item"><a href="contact.html" class="nav-link">알뜰쇼핑</a></li>
+					<li class="nav-item"><a href="about.jsp" class="nav-link">신상품</a></li>
+					<li class="nav-item"><a href="blog.jsp" class="nav-link">베스트</a></li>
+					<li class="nav-item"><a href="contact.jsp" class="nav-link">알뜰쇼핑</a></li>
 
 					<li class="nav-item cta cta-colored"><a href="cart.jsp"
 						class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>

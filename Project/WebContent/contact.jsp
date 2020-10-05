@@ -7,9 +7,16 @@
 <html>
 <head>
 olorlib
-<meta charset="utf-8">
+<meta charset="EUC-KR">
 <title>Insert title here</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Vegefoods - Free Bootstrap 4 Template by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
@@ -33,7 +40,7 @@ olorlib
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-    
+  </head>
     <style type="text/css">
 .container1 {
 	display: flex;
@@ -67,9 +74,8 @@ olorlib
 	
 }
 </style>
-  </head>
   <body class="goto-here">
-    <%ArrayList<ProductDTO> fruitlist = (ArrayList<ProductDTO>)session.getAttribute("flist");	 %>
+   <%ArrayList<ProductDTO> fruitlist = (ArrayList<ProductDTO>)session.getAttribute("flist");	 %>
     <%
 		MemberDTO info = (MemberDTO) session.getAttribute("info");
 	
@@ -95,7 +101,7 @@ olorlib
 		    </div>
 		  </div>
     </div>
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
 			<a class="navbar-brand" href="main1.jsp">2차프로젝트ㅋ</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -197,100 +203,67 @@ olorlib
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Products</span></p>
-            <h1 class="mb-0 bread">Products</h1>
+          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Contact us</span></p>
+            <h1 class="mb-0 bread">Contact us</h1>
           </div>
         </div>
       </div>
     </div>
 
-    <section class="ftco-section">
-    	<div class="container">
-    		<div class="row justify-content-center">
-    			<div class="col-md-10 mb-5 text-center">
-    				<ul class="product-category">
-    					<li><a href="./itemView_controller" class="active">전체보기</a></li>
-    					<li><a href="./fruitView_controller?name=<%="1"%>">과일</a></li>
-    					<li><a href="./fruitView_controller?name=<%="2"%>">채소</a></li>
-    					<li><a href="./fruitView_controller?name=<%="3"%>">정육</a></li>
-    					<li><a href="./fruitView_controller?name=<%="4"%>">계란/유제품</a></li>
-    					<li><a href="./fruitView_controller?name=<%="5"%>">수산/건어물</a></li>
-    				
-    				
-    				</ul>
-    			</div>
-    		</div>
-    		<div class="row">
-    		<%if(fruitlist != null){ %>
-    		<%for(int i=0; i<fruitlist.size(); i++){ %>
-    			<div class="col-md-6 col-lg-3 ftco-animate">
-    				<div class="product">
-    					<a href="product-single.jsp" class="img-prod"><img class="img-fluid" src=<%=fruitlist.get(i).getIMG_ADDR() %>alt="Colorlib Template">
-    						<span class="status"><%=fruitlist.get(i).getDiscount_rate() %>%</span>
-    						<div class="overlay"></div>
-    					</a>
-    					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="product-single.jsp"><%=fruitlist.get(i).getProduct_name() %></a></h3>
-    						<div class="d-flex">
-    							<div class="pricing">
-		    						<p class="price"><span class="mr-2 price-dc"><%=fruitlist.get(i).getPrice() %></span><span class="price-sale">$80.00</span></p>
-		    					</div>
-	    					</div>
-	    					<div class="bottom-area d-flex px-3">
-	    						<div class="m-auto d-flex">
-	    							<a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-	    								<span><i class="ion-ios-menu"></i></span>
-	    							</a>
-	    							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-	    								<span><i class="ion-ios-cart"></i></span>
-	    							</a>
-	    							<a href="#" class="heart d-flex justify-content-center align-items-center ">
-	    								<span><i class="ion-ios-heart"></i></span>
-	    							</a>
-    							</div>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<%} %>
-    			<%} %>
-    			
-    		<div class="row mt-5">
-          <div class="col text-center">
-            <div class="block-27">
-              <ul>
-                <li><a href="#">&lt;</a></li>
-                <li class="active"><span>1</span></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">&gt;</a></li>
-              </ul>
-            </div>
+    <section class="ftco-section contact-section bg-light">
+      <div class="container">
+      	<div class="row d-flex mb-5 contact-info">
+          <div class="w-100"></div>
+          <div class="col-md-3 d-flex">
+          	<div class="info bg-white p-4">
+	            <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
+	          </div>
+          </div>
+          <div class="col-md-3 d-flex">
+          	<div class="info bg-white p-4">
+	            <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+	          </div>
+          </div>
+          <div class="col-md-3 d-flex">
+          	<div class="info bg-white p-4">
+	            <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+	          </div>
+          </div>
+          <div class="col-md-3 d-flex">
+          	<div class="info bg-white p-4">
+	            <p><span>Website</span> <a href="#">yoursite.com</a></p>
+	          </div>
           </div>
         </div>
-    	</div>
-    </section>
-
-		<section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light">
-      <div class="container py-4">
-        <div class="row d-flex justify-content-center py-5">
-          <div class="col-md-6">
-          	<h2 style="font-size: 22px;" class="mb-0">Subcribe to our Newsletter</h2>
-          	<span>Get e-mail updates about our latest shops and special offers</span>
-          </div>
-          <div class="col-md-6 d-flex align-items-center">
-            <form action="#" class="subscribe-form">
-              <div class="form-group d-flex">
-                <input type="text" class="form-control" placeholder="Enter email address">
-                <input type="submit" value="Subscribe" class="submit px-3">
+        <div class="row block-9">
+          <div class="col-md-6 order-md-last d-flex">
+            <form action="#" class="bg-white p-5 contact-form">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Your Name">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Your Email">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Subject">
+              </div>
+              <div class="form-group">
+                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+              </div>
+              <div class="form-group">
+                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
               </div>
             </form>
+          
+          </div>
+
+          <div class="col-md-6 d-flex">
+          	<div id="map" class="bg-white"></div>
           </div>
         </div>
       </div>
     </section>
+
     <footer class="ftco-footer ftco-section">
       <div class="container">
       	<div class="row">
@@ -387,8 +360,8 @@ olorlib
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
-  
-  
     
   </body>
+</html>
+</body>
 </html>
