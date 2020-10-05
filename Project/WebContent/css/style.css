@@ -205,7 +205,12 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit; }
-
+.dan1 li div form .btn_search {
+	position: absolute;
+    left: 1460px;
+	width:30px;
+	height:30px;
+}
 button,
 input {
   overflow: visible; }

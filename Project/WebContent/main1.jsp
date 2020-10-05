@@ -34,20 +34,25 @@ olorlib
 
 <link rel="stylesheet" href="css/aos.css">
 
-<link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
 
+    <link rel="stylesheet" href="css/aos.<link rel="stylesheet" href="css/ionicons.min.css">
 <link rel="stylesheet" href="css/bootstrap-datepicker.css">
 <link rel="stylesheet" href="css/jquery.timepicker.css">
-
-
-<link rel="stylesheet" href="css/flaticon.css">
-<link rel="stylesheet" href="css/icomoon.css">
-<link rel="stylesheet" href="css/style.css">
-
-<style type="text/css">
+ink rel="stylesheet" href="css/style.css">
+    
+    <style type="text/css">
 .container1 {
 	display: flex;
-	width: 250px;
+	width: <link rel="stylesheet" href="css/flaticon.css">
+<link rel="stylesheet" href="css/icomoon.css">
+<link rel="stylesheet" href="css/style.css">
+250px;
 	justify-content: align-items;
 }
 
@@ -58,24 +63,20 @@ olorlib
 }
 
 .dan2 {
-	list-style: none;
-	padding-left: 0px;
-}
-
-.dan1 {
-	list-style: none;
-}
-.inp_search{
-	position : relative;
-}
-.btn_search {
-    
-    right: 10px;
-    top: 3px;
+	lis<style type="text/css">
+3px;
     width: 30px;
     height: 30px;
 }
+=======
+>>>>>>> branch 'master' of https://github.com/nuribabo/AllmineProject.git
 
+.dan1 .search1 .search .btn_search {
+	position: absolute;
+    left: 1460px;
+	width:30px;
+	height:30px;
+}
 
 #item5 {
 	
@@ -139,17 +140,15 @@ olorlib
 						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">전체상품</a>
 						<div class="dropdown-menu" aria-labelledby="dropdown04">
 							<a class="dropdown-item" href="./itemView_controller">전체 상품</a> <a
-								class="dropdown-item" href="./fruitView_controller?name=<%="1"%>">과일</a> <a
+								class="dropdown-item" href="./fruitView_controller?name=<%="VF"%>">과일·채소류</a> <a
+								class="dropdown-item" href="./fruitView_controller?name=<%="SF"%>">해·수산물류</a> <a
+								class="dropdown-item								class="dropdown-item" href="./fruitView_controller?name=<%="1"%>">과일</a> <a
 								class="dropdown-item" href="./fruitView_controller?name=<%="2"%>">채소</a> <a
 								class="dropdown-item" href="./fruitView_controller?name=<%="3"%>">정육</a> <a
 								class="dropdown-item" href="./fruitView_controller?name=<%="4"%>">계란/유제품</a> <a
 								class="dropdown-item" href="./fruitView_controller?name=<%="5"%>">수산/건어물</a>
-						</div></li>
-					<li class="nav-item"><a href="about.jsp" class="nav-link">신상품</a></li>
-					<li class="nav-item"><a href="blog.jsp" class="nav-link">베스트</a></li>
-					<li class="nav-item"><a href="contact.jsp" class="nav-link">알뜰쇼핑</a></li>
-
-					<li class="nav-item cta cta-colored"><a href="wishlist.jsp"
+ontact.jsp" class="					<li class="nav-item"><a href="about.jsp" class="nav-link">신상품</a></li>
+"wishlist.jsp"
 						class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
 					<ul class="dan2">
 						<li>
@@ -204,12 +203,37 @@ olorlib
 								%>
 							
 						</li>
-						<ul class="dan1">
-							<li class="search1"><div class="search">
+						<											class="btn_search" position= absolute>
+s="search1"><div class="search">
 									<form action="searchWord_controller">
 										<input name="sword" type="text" id="" value=""
-											required="required" label="검색어" class="inp_search">
-										<input type="image"
+											required="required" label="<!--//이벤트  -->
+	<section class="ftco-section img"
+		style="background-image: url(images/bg_3.jpg);">
+		<div class="container">
+			<div class="row justify-content-end">
+				<div
+					class="col-md-6 heading-section ftco-animate deal-of-the-day ftco-animate">
+					<span class="subheading">Best Price For You</span>
+					<h2 class="mb-4">Deal of the day</h2>
+					<p>Far far away, behind the word mountains, far from the
+						countries Vokalia and Consonantia</p>
+					<h3>
+						<a href="#">Spinach</a>
+					</h3>
+					<span class="price">$10 <a href="#">now $5 only</a></span>
+					<div id="timer" class="d-flex mt-5">
+						<div class="time" id="days"></div>
+						<div class="time pl-3" id="hours"></div>
+						<div class="time pl-3" id="minutes"></div>
+						<div class="time pl-3" id="seconds"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+어" 	 <!-- <section id="home-section" class="hero">
+mage"
 											src="https://res.kurly.com/pc/service/common/1908/ico_search_x2.png"
 											class="btn_search" >
 									</form>
@@ -246,9 +270,8 @@ olorlib
 						<div class="col-md-12 ftco-animate text-center">
 							<h1 class="mb-2">We serve Fresh Vegestables &amp; Fruits</h1>
 							<h2 class="subheading mb-4">We deliver organic vegetables
-								&amp; fruits</h2>
-							<p>
-								<a href="#" class="btn btn-primary">View Details</a>
+			 <!-- <section id="home-section" class="hero">
+ref="#" class="btn btn-primary">View Details</a>
 							</p>
 						</div>
 
@@ -463,10 +486,8 @@ olorlib
 									</a>
 								</div>
 							</div>
-						</div>
-					</div>
-				</div>
-				<%
+						<									<a href="#"
+
 					}
 				%>
 				<%

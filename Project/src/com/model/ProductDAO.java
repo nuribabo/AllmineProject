@@ -154,6 +154,8 @@ public class ProductDAO {
 		}
 	}
 
+	
+	
 	public ArrayList<ProductDTO> select_by_Fruit(String cnt) {
 		conn();
 		
@@ -190,7 +192,7 @@ public class ProductDAO {
 		return list;
 	}
 	
-	//상품 정렬하기
+	
 	
 	
 	

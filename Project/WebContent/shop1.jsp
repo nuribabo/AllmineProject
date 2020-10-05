@@ -230,7 +230,7 @@ olorlib
     						<h3><a href="product-single.jsp"><%=itemlist.get(i).getProduct_name() %></a></h3>
     						<div class="d-flex">
     							<div class="pricing">
-		    						<p class="price"><span class="mr-2 price-dc"><%=itemlist.get(i).getPrice() %></span><span class="price-sale"><%= itemlist.get(i).getPrice() * (float)(100-itemlist.get(i).getDiscount_rate())/100 %></span></p>
+		    						<p class="price"><span class="mr-2 price-dc"><%=itemlist.get(i).getPrice() %></span><span class="price-sale">$80.00</span></p>
 		    					</div>
 	    					</div>
 	    					<div class="bottom-area d-flex px-3">
@@ -238,7 +238,7 @@ olorlib
 	    							<a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
 	    								<span><i class="ion-ios-menu"></i></span>
 	    							</a>
-	    							<a href="Cart_controller?name=<%=itemlist.get(i).getProduct_id()%>" class="buy-now d-flex justify-content-center align-items-center mx-1">
+	    							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
 	    								<span><i class="ion-ios-cart"></i></span>
 	    							</a>
 	    							<a href="#" class="heart d-flex justify-content-center align-items-center ">

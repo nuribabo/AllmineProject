@@ -20,10 +20,7 @@ public class searchWord_controller extends HttpServlet {
 
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		request.setCharacterEncoding("EUC-KR");
-		
-		
+
 		
 		String search =request.getParameter("sword");
 		search.replace(" ", ""); //띄어쓰기 없애주는거임;;
