@@ -95,74 +95,32 @@ olorlib
 		    </div>
 		  </div>
     </div>
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-	    <div class="container">
+   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+		<div class="container">
 			<a class="navbar-brand" href="main1.jsp">2차프로젝트ㅋ</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse"
-				data-target="#ftco-nav" aria-controls="ftco-nav"
-				aria-expanded="false" aria-label="Toggle navigation">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
 			</button>
 
-	      <div class="col-md pr-4 d-flex topper align-items-center ">
-								<!-- <div class="col-md-5 pr-4 d-flex topper align-items-center"></div> -->
-<div class="collapse navbar-collapse" id="ftco-nav">
+			<div class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active"><a href="main1.jsp"
-						class="nav-link">Home</a></li>
-					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="shop.html" id="dropdown04"
-						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">전체상품</a>
+					<li class="nav-item active"><a href="main1.jsp" class="nav-link">Home</a></li>
+					<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="shop.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">전체상품</a>
 						<div class="dropdown-menu" aria-labelledby="dropdown04">
-							<a class="dropdown-item" href="./itemView_controller">전체 상품</a> <a
-								class="dropdown-item" href="./fruitView_controller?name=<%="1"%>">과일</a> <a
-								class="dropdown-item" href="./fruitView_controller?name=<%="2"%>">채소</a> <a
-								class="dropdown-item" href="./fruitView_controller?name=<%="3"%>">정육</a> <a
-								class="dropdown-item" href="./fruitView_controller?name=<%="4"%>">계란/유제품</a> <a
-								class="dropdown-item" href="./fruitView_controller?name=<%="5"%>">수산/건어물</a>
+							<a class="dropdown-item" href="./itemView_controller">전체 상품</a> <a class="dropdown-item" href="./fruitView_controller?name=VF">과일·채소류</a> <a class="dropdown-item" href="./fruitView_controller?name=SF">해·수산물류</a> <a class="dropdown-item" href="./fruitView_controller?name=MP">정육·알·육가공품류</a> <a class="dropdown-item" href="./fruitView_controller?name=SC">향신료·양념류</a> <a class="dropdown-item" href="./fruitView_controller?name=RS">가공·간편식류</a> <a class="dropdown-item" href="./fruitView_controller?name=GD">곡물·견과류</a> <a class="dropdown-item" href="./fruitView_controller?name=MI">유제품류</a> <a class="dropdown-item" href="./fruitView_controller?name=SS">면·가루·유지류</a> <a class="dropdown-item" href="./fruitView_controller?name=FO">반찬류</a> <a class="dropdown-item" href="./fruitView_controller?name=DR">음료·주류</a> <a class="dropdown-item" href="./fruitView_controller?name=NA">자연산물</a>
 						</div></li>
-					<li class="nav-item"><a href="about.jsp" class="nav-link">신상품</a></li>
+					<li class="nav-item"><a href="about.jsp" class="nav-link">레시피</a></li>
 					<li class="nav-item"><a href="blog.jsp" class="nav-link">베스트</a></li>
 					<li class="nav-item"><a href="contact.jsp" class="nav-link">알뜰쇼핑</a></li>
 
-					<li class="nav-item cta cta-colored"><a href="cart.jsp"
-						class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+					<li class="nav-item cta cta-colored"><a href="cart.jsp" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
 					<ul class="dan2">
 						<li>
 							<div class="col-md pr-4 d-flex topper align-items-center ">
-								<%
-									if (info != null) {
-								%>
-								<div class="container1" text-align=center fot-size=15>
-									<%
-										if (info.getMember_id().equals("admin")) {
-									%>
-									<div class="text item1">
-										<a href="admin.jsp">관리자페이지</a>
-									</div>
-									<div class="text item3">
-										<a href="Logout">로그아웃</a>
-									</div>
-									<%
-										}
-									%>
-									<div class="text item2" style="color: black;">
-										<%=info.getName()%>님</a>
-									</div>
-									<div class="text item2">
-										<a href="mypage.jsp">마이페이지</a>
-									</div>
-									<div class="text item3">
-										<a href="Logout"> 로그아웃</a>
-									</div>
-									<div class="text item4">
-										<a href="member.html"> 고객센터</a>
-									</div>
-								</div>
-								<%
-									} else {
-								%>
-								<div class="container2" text-align=center fot-size=15>
+								<!-- <div class="col-md-5 pr-4 d-flex topper align-items-center"></div> -->
+
+								
+								<div class="container2" text-align="center" fot-size="15">
 									<div class="text" id="item5">
 										<a href="join.jsp">회원가입</a>
 									</div>
@@ -173,26 +131,30 @@ olorlib
 										<a href="member.html">고객센터</a>
 									</div>
 								</div>
-								<%
-									}
-								%>
-								</li>
+								
+							
+						</div></li>
 						<ul class="dan1">
-							<li><div>
+							<li class="search1"><div class="search">
 									<form action="searchWord_controller">
-										<input name="sword" type="text" id="" value=""
-											required="required" label="검색어" class="inp_search">
-										<input type="image"
-											src="https://res.kurly.com/pc/service/common/1908/ico_search_x2.png"
-											class="btn_search">
+										<input name="sword" type="text" id="" value="" required="required" label="검색어" class="inp_search">
+										<input type="image" src="https://res.kurly.com/pc/service/common/1908/ico_search_x2.png" class="btn_search" position="absolute">
 									</form>
 								</div></li>
 						</ul>
-					</ul>
-	    </div>
-	  </nav>
-    <!-- END nav -->
+					</ul> 
+			</ul></div>
+			
 
+		</div>
+
+
+		
+		<br>
+
+
+
+	</nav>
     <div class="hero-wrap hero-bread" style="background-image: url('images/bg_1.jpg');">
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -210,11 +172,18 @@ olorlib
     			<div class="col-md-10 mb-5 text-center">
     				<ul class="product-category">
     					<li><a href="./itemView_controller" class="active">전체보기</a></li>
-    					<li><a href="./fruitView_controller?name=<%="1"%>">과일</a></li>
-    					<li><a href="./fruitView_controller?name=<%="2"%>">채소</a></li>
-    					<li><a href="./fruitView_controller?name=<%="3"%>">정육</a></li>
-    					<li><a href="./fruitView_controller?name=<%="4"%>">계란/유제품</a></li>
-    					<li><a href="./fruitView_controller?name=<%="5"%>">수산/건어물</a></li>
+    					<li><a href="./fruitView_controller?name=<%="VF"%>">과일·채소류</a></li>
+    					<li><a href="./fruitView_controller?name=<%="SF"%>">해·수산물류</a></li>
+    					<li><a href="./fruitView_controller?name=<%="MP"%>">정육·알·육가공품류</a></li>
+    					<li><a href="./fruitView_controller?name=<%="SC"%>">향신료·양념류</a></li>
+    					<li><a href="./fruitView_controller?name=<%="RS"%>">가공·간편식류</a></li>
+    					<li><a href="./fruitView_controller?name=<%="GD"%>">곡물·견과류</a></li>
+    					<li><a href="./fruitView_controller?name=<%="MI"%>">유제품류</a></li>
+    					<li><a href="./fruitView_controller?name=<%="SS"%>">면·가루·유지류</a></li>
+    					<li><a href="./fruitView_controller?name=<%="FO"%>">반찬류</a></li>
+    					<li><a href="./fruitView_controller?name=<%="DR"%>">음료·주류</a></li>
+    					<li><a href="./fruitView_controller?name=<%="NA"%>">자연산물</a></li>
+    					
     				
     				
     				</ul>
@@ -233,7 +202,7 @@ olorlib
     						<h3><a href="product-single.jsp"><%=fruitlist.get(i).getProduct_name() %></a></h3>
     						<div class="d-flex">
     							<div class="pricing">
-		    						<p class="price"><span class="mr-2 price-dc"><%=fruitlist.get(i).getPrice() %></span><span class="price-sale">$80.00</span></p>
+		    						<p class="price"><span class="mr-2 price-dc"><%=fruitlist.get(i).getPrice() %></span><span class="price-sale"><%= fruitlist.get(i).getPrice()*fruitlist.get(i).getDiscount_rate()/100.0%></span></p>
 		    					</div>
 	    					</div>
 	    					<div class="bottom-area d-flex px-3">

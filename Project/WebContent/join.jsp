@@ -109,7 +109,7 @@ olorlib
 								class="dropdown-item" href="./fruitView_controller?name=<%="4"%>">계란/유제품</a> <a
 								class="dropdown-item" href="./fruitView_controller?name=<%="5"%>">수산/건어물</a>
 						</div></li>
-					<li class="nav-item"><a href="about.jsp" class="nav-link">신상품</a></li>
+					<li class="nav-item"><a href="about.jsp" class="nav-link">레시피</a></li>
 					<li class="nav-item"><a href="blog.jsp" class="nav-link">베스트</a></li>
 					<li class="nav-item"><a href="contact.jsp" class="nav-link">알뜰쇼핑</a></li>
 

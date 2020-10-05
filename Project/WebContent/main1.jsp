@@ -9,42 +9,34 @@
 <html lang="en">
 <head>
 olorlib
-</title>
 <meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width,
-    <title>Vegefoods - Free Bootstrap 4 Template by C initial-scale=1, shrink-to-fit=no">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
 
-<link
-	href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"
-	rel="stylesheet">
-<link
-	href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap"
-	rel="stylesheet">
-<link
-	href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap"
-	rel="stylesheet">
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
 
-<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-<link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/aos.css">
 
-<link rel="stylesheet" href="css/owl.carousel.min.css">
-<link rel="stylesheet" href="css/owl.theme.default.min.css">
-<link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
 
-<link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
 
-<link rel="stylesheet" href="css/ionicons.min.css">
-
-<link rel="stylesheet" href="css/bootstrap-datepicker.css">
-<link rel="stylesheet" href="css/jquery.timepicker.css">
-
-
-<link rel="stylesheet" href="css/flaticon.css">
-<link rel="stylesheet" href="css/icomoon.css">
-<link rel="stylesheet" href="css/style.css">
-
-<style type="text/css">
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style type="text/css">
 .container1 {
 	display: flex;
 	width: 250px;
@@ -65,14 +57,13 @@ olorlib
 .dan1 {
 	list-style: none;
 }
-.dan1 .serch1 .serch .btn_search {
-    position: absolute;
-    right: 10px;
-    top: 3px;
-    width: 30px;
-    height: 30px;
-}
 
+.dan1 .search1 .search .btn_search {
+	position: absolute;
+    left: 1460px;
+	width:30px;
+	height:30px;
+}
 
 #item5 {
 	
@@ -136,13 +127,19 @@ olorlib
 						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">전체상품</a>
 						<div class="dropdown-menu" aria-labelledby="dropdown04">
 							<a class="dropdown-item" href="./itemView_controller">전체 상품</a> <a
-								class="dropdown-item" href="./fruitView_controller?name=<%="1"%>">과일</a> <a
-								class="dropdown-item" href="./fruitView_controller?name=<%="2"%>">채소</a> <a
-								class="dropdown-item" href="./fruitView_controller?name=<%="3"%>">정육</a> <a
-								class="dropdown-item" href="./fruitView_controller?name=<%="4"%>">계란/유제품</a> <a
-								class="dropdown-item" href="./fruitView_controller?name=<%="5"%>">수산/건어물</a>
+								class="dropdown-item" href="./fruitView_controller?name=<%="VF"%>">과일·채소류</a> <a
+								class="dropdown-item" href="./fruitView_controller?name=<%="SF"%>">해·수산물류</a> <a
+								class="dropdown-item" href="./fruitView_controller?name=<%="MP"%>">정육·알·육가공품류</a> <a
+								class="dropdown-item" href="./fruitView_controller?name=<%="SC"%>">향신료·양념류</a> <a
+								class="dropdown-item" href="./fruitView_controller?name=<%="RS"%>">가공·간편식류</a> <a
+								class="dropdown-item" href="./fruitView_controller?name=<%="GD"%>">곡물·견과류</a> <a
+								class="dropdown-item" href="./fruitView_controller?name=<%="MI"%>">유제품류</a> <a
+								class="dropdown-item" href="./fruitView_controller?name=<%="SS"%>">면·가루·유지류</a> <a
+								class="dropdown-item" href="./fruitView_controller?name=<%="FO"%>">반찬류</a> <a
+								class="dropdown-item" href="./fruitView_controller?name=<%="DR"%>">음료·주류</a> <a
+								class="dropdown-item" href="./fruitView_controller?name=<%="NA"%>">자연산물</a>
 						</div></li>
-					<li class="nav-item"><a href="about.jsp" class="nav-link">신상품</a></li>
+					<li class="nav-item"><a href="about.jsp" class="nav-link">레시피</a></li>
 					<li class="nav-item"><a href="blog.jsp" class="nav-link">베스트</a></li>
 					<li class="nav-item"><a href="contact.jsp" class="nav-link">알뜰쇼핑</a></li>
 
