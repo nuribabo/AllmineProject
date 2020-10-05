@@ -1,6 +1,3 @@
-<%@page import="com.model.MemberDTO"%>
-<%@page import="com.model.ProductDTO"%>
-<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -32,50 +29,8 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-    
-     <style type="text/css">
-.container1 {
-	display: flex;
-	width: 250px;
-	justify-content: align-items;
-}
-
-.container2 {
-	display: flex;
-	width: 200px;
-	justify-content: align-items;
-}
-
-.dan2 {
-	list-style: none;
-	padding-left: 0px;
-}
-
-.dan1 {
-	list-style: none;
-}
-
-.btn_search {gnb .gnb_search .btn_search { position:absolute;
-	right: 10px;
-	top: 3px;
-	width: 30px;
-	height: 30px;
-}
-
-#item5 {
-	
-}
-</style>
   </head>
   <body class="goto-here">
-  
-  
-  <%ArrayList<ProductDTO> selectlist = (ArrayList<ProductDTO>)session.getAttribute("selectlist");	 %>
-		<%
-		MemberDTO info = (MemberDTO) session.getAttribute("info");
-	
-	%>
-		
 		<div class="py-1 bg-primary">
     	<div class="container">
     		<div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
@@ -99,92 +54,31 @@
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="main1.jsp">Vegefoods</a>
+	      <a class="navbar-brand" href="index.html">Vegefoods</a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="main.jsp"
-						class="nav-link">Home</a></li>
-					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="shop.html" id="dropdown04"
-						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">전체상품</a>
-						<div class="dropdown-menu" aria-labelledby="dropdown04">
-							<a class="dropdown-item" href="./itemView_controller">전체 상품</a> <a
-								class="dropdown-item" href="wishlist.html">전체상품</a> <a
-								class="dropdown-item" href="product-single.html">과일</a> <a
-								class="dropdown-item" href="cart.html">채소</a> <a
-								class="dropdown-item" href="checkout.html">정육</a>
-						</div></li>
-					<li class="nav-item"><a href="about.html" class="nav-link">신상품</a></li>
-					<li class="nav-item"><a href="blog.html" class="nav-link">베스트</a></li>
-					<li class="nav-item"><a href="contact.html" class="nav-link">알뜰쇼핑</a></li>
+	          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+	          <li class="nav-item active dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+              	<a class="dropdown-item" href="shop.html">Shop</a>
+              	<a class="dropdown-item" href="wishlist.html">Wishlist</a>
+                <a class="dropdown-item" href="product-single.html">Single Product</a>
+                <a class="dropdown-item" href="cart.html">Cart</a>
+                <a class="dropdown-item" href="checkout.html">Checkout</a>
+              </div>
+            </li>
+	          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+	          <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
 
-					<li class="nav-item cta cta-colored"><a href="cart.jsp"
-						class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
-					<ul class="dan2">
-						<li>
-							<div class="col-md pr-4 d-flex topper align-items-center ">
-								<%
-									if (info != null) {
-								%>
-								<div class="container1" text-align=center fot-size=15>
-									<%
-										if (info.getMember_id().equals("admin")) {
-									%>
-									<div class="text item1">
-										<a href="admin.jsp">관리자페이지</a>
-									</div>
-									<div class="text item3">
-										<a href="Logout">로그아웃</a>
-									</div>
-									<%
-										}
-									%>
-									<div class="text item2" style="color: black;">
-										<%=info.getName()%>님</a>
-									</div>
-									<div class="text item2">
-										<a href="mypage.jsp">마이페이지</a>
-									</div>
-									<div class="text item3">
-										<a href="Logout"> 로그아웃</a>
-									</div>
-									<div class="text item4">
-										<a href="member.html"> 고객센터</a>
-									</div>
-								</div>
-								<%
-									} else {
-								%>
-								<div class="container2" text-align=center fot-size=15>
-									<div class="text" id="item5">
-										<a href="join.jsp">회원가입</a>
-									</div>
-									<div class="text item6">
-										<a href="login.jsp">로그인</a>
-									</div>
-									<div class="text item7">
-										<a href="member.html">고객센터</a>
-									</div>
-								</div>
-								<%
-									}
-								%></li>
-						<ul class="dan1">
-							<li><div>
-									<form action="searchWord_controller">
-										<input name="sword" type="text" id="" value=""
-											required="required" label="검색어" class="inp_search">
-										<input type="image"
-											src="https://res.kurly.com/pc/service/common/1908/ico_search_x2.png"
-											class="btn_search">
-									</form>
-								</div></li>
-						</ul>
-					</ul>
+	        </ul>
+	      </div>
 	    </div>
 	  </nav>
     <!-- END nav -->
@@ -193,8 +87,8 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Products</span></p>
-            <h1 class="mb-0 bread">Products</h1>
+          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span class="mr-2"><a href="index.html">Product</a></span> <span>Product Single</span></p>
+            <h1 class="mb-0 bread">Product Single</h1>
           </div>
         </div>
       </div>
@@ -202,35 +96,93 @@
 
     <section class="ftco-section">
     	<div class="container">
-    		<div class="row justify-content-center">
-    			<div class="col-md-10 mb-5 text-center">
-    				<ul class="product-category">
-    					<li><a href="#" class="active">전체보기</a></li>
-    					<li><a href="#">과일</a></li>
-    					<li><a href="#">채소</a></li>
-    					<li><a href="#">정육</a></li>
-    					<li><a href="#">계란/유제품</a></li>
-    					<li><a href="#">수산/건어물</a></li>
-    				
-    				
-    				</ul>
+    		<div class="row">
+    			<div class="col-lg-6 mb-5 ftco-animate">
+    				<a href="images/product-1.jpg" class="image-popup"><img src="images/product-1.jpg" class="img-fluid" alt="Colorlib Template"></a>
+    			</div>
+    			<div class="col-lg-6 product-details pl-md-5 ftco-animate">
+    				<h3>Bell Pepper</h3>
+    				<div class="rating d-flex">
+							<p class="text-left mr-4">
+								<a href="#" class="mr-2">5.0</a>
+								<a href="#"><span class="ion-ios-star-outline"></span></a>
+								<a href="#"><span class="ion-ios-star-outline"></span></a>
+								<a href="#"><span class="ion-ios-star-outline"></span></a>
+								<a href="#"><span class="ion-ios-star-outline"></span></a>
+								<a href="#"><span class="ion-ios-star-outline"></span></a>
+							</p>
+							<p class="text-left mr-4">
+								<a href="#" class="mr-2" style="color: #000;">100 <span style="color: #bbb;">Rating</span></a>
+							</p>
+							<p class="text-left">
+								<a href="#" class="mr-2" style="color: #000;">500 <span style="color: #bbb;">Sold</span></a>
+							</p>
+						</div>
+    				<p class="price"><span>$120.00</span></p>
+    				<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until.
+						</p>
+						<div class="row mt-4">
+							<div class="col-md-6">
+								<div class="form-group d-flex">
+		              <div class="select-wrap">
+	                  <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+	                  <select name="" id="" class="form-control">
+	                  	<option value="">Small</option>
+	                    <option value="">Medium</option>
+	                    <option value="">Large</option>
+	                    <option value="">Extra Large</option>
+	                  </select>
+	                </div>
+		            </div>
+							</div>
+							<div class="w-100"></div>
+							<div class="input-group col-md-6 d-flex mb-3">
+	             	<span class="input-group-btn mr-2">
+	                	<button type="button" class="quantity-left-minus btn"  data-type="minus" data-field="">
+	                   <i class="ion-ios-remove"></i>
+	                	</button>
+	            		</span>
+	             	<input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
+	             	<span class="input-group-btn ml-2">
+	                	<button type="button" class="quantity-right-plus btn" data-type="plus" data-field="">
+	                     <i class="ion-ios-add"></i>
+	                 </button>
+	             	</span>
+	          	</div>
+	          	<div class="w-100"></div>
+	          	<div class="col-md-12">
+	          		<p style="color: #000;">600 kg available</p>
+	          	</div>
+          	</div>
+          	<p><a href="cart.html" class="btn btn-black py-3 px-5">Add to Cart</a></p>
     			</div>
     		</div>
-    		
+    	</div>
+    </section>
+
+    <section class="ftco-section">
+    	<div class="container">
+				<div class="row justify-content-center mb-3 pb-3">
+          <div class="col-md-12 heading-section text-center ftco-animate">
+          	<span class="subheading">Products</span>
+            <h2 class="mb-4">Related Products</h2>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+          </div>
+        </div>   		
+    	</div>
+    	<div class="container">
     		<div class="row">
-    		<%if(selectlist != null){ %>
-    		<%for(int i=0; i<selectlist.size(); i++){ %>
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
-    					<a href="product-single.jsp" class="img-prod"><img class="img-fluid" src="<%=selectlist.get(i).getIMG_ADDR() %>" alt="Colorlib Template">
-    						<span class="status"><%=selectlist.get(i).getDiscount_rate() %>%</span>
+    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-1.jpg" alt="Colorlib Template">
+    						<span class="status">30%</span>
     						<div class="overlay"></div>
     					</a>
     					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="product-single.jsp"><%=selectlist.get(i).getProduct_name() %></a></h3>
+    						<h3><a href="#">Bell Pepper</a></h3>
     						<div class="d-flex">
     							<div class="pricing">
-		    						<p class="price"><span class="mr-2 price-dc"><%=selectlist.get(i).getPrice() %></span><span class="price-sale">$80.00</span></p>
+		    						<p class="price"><span class="mr-2 price-dc">$120.00</span><span class="price-sale">$80.00</span></p>
 		    					</div>
 	    					</div>
 	    					<div class="bottom-area d-flex px-3">
@@ -249,24 +201,91 @@
     					</div>
     				</div>
     			</div>
-    			<%} %>
-    			<%} %>
-    			<br>
-    		<div class="row mt-5">
-          <div class="col text-center">
-            <div class="block-27">
-              <ul>
-                <li><a href="#">&lt;</a></li>
-                <li class="active"><span>1</span></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">&gt;</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+    			<div class="col-md-6 col-lg-3 ftco-animate">
+    				<div class="product">
+    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-2.jpg" alt="Colorlib Template">
+    						<div class="overlay"></div>
+    					</a>
+    					<div class="text py-3 pb-4 px-3 text-center">
+    						<h3><a href="#">Strawberry</a></h3>
+    						<div class="d-flex">
+    							<div class="pricing">
+		    						<p class="price"><span>$120.00</span></p>
+		    					</div>
+	    					</div>
+    						<div class="bottom-area d-flex px-3">
+	    						<div class="m-auto d-flex">
+	    							<a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+	    								<span><i class="ion-ios-menu"></i></span>
+	    							</a>
+	    							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
+	    								<span><i class="ion-ios-cart"></i></span>
+	    							</a>
+	    							<a href="#" class="heart d-flex justify-content-center align-items-center ">
+	    								<span><i class="ion-ios-heart"></i></span>
+	    							</a>
+    							</div>
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="col-md-6 col-lg-3 ftco-animate">
+    				<div class="product">
+    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-3.jpg" alt="Colorlib Template">
+	    					<div class="overlay"></div>
+	    				</a>
+    					<div class="text py-3 pb-4 px-3 text-center">
+    						<h3><a href="#">Green Beans</a></h3>
+    						<div class="d-flex">
+    							<div class="pricing">
+		    						<p class="price"><span>$120.00</span></p>
+		    					</div>
+	    					</div>
+    						<div class="bottom-area d-flex px-3">
+	    						<div class="m-auto d-flex">
+	    							<a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+	    								<span><i class="ion-ios-menu"></i></span>
+	    							</a>
+	    							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
+	    								<span><i class="ion-ios-cart"></i></span>
+	    							</a>
+	    							<a href="#" class="heart d-flex justify-content-center align-items-center ">
+	    								<span><i class="ion-ios-heart"></i></span>
+	    							</a>
+    							</div>
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="col-md-6 col-lg-3 ftco-animate">
+    				<div class="product">
+    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-4.jpg" alt="Colorlib Template">
+    						<div class="overlay"></div>
+    					</a>
+    					<div class="text py-3 pb-4 px-3 text-center">
+    						<h3><a href="#">Purple Cabbage</a></h3>
+    						<div class="d-flex">
+    							<div class="pricing">
+		    						<p class="price"><span>$120.00</span></p>
+		    					</div>
+	    					</div>
+    						<div class="bottom-area d-flex px-3">
+	    						<div class="m-auto d-flex">
+	    							<a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+	    								<span><i class="ion-ios-menu"></i></span>
+	    							</a>
+	    							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
+	    								<span><i class="ion-ios-cart"></i></span>
+	    							</a>
+	    							<a href="#" class="heart d-flex justify-content-center align-items-center ">
+	    								<span><i class="ion-ios-heart"></i></span>
+	    							</a>
+    							</div>
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
     	</div>
     </section>
 
@@ -384,6 +403,43 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
+
+  <script>
+		$(document).ready(function(){
+
+		var quantitiy=0;
+		   $('.quantity-right-plus').click(function(e){
+		        
+		        // Stop acting like a button
+		        e.preventDefault();
+		        // Get the field name
+		        var quantity = parseInt($('#quantity').val());
+		        
+		        // If is not undefined
+		            
+		            $('#quantity').val(quantity + 1);
+
+		          
+		            // Increment
+		        
+		    });
+
+		     $('.quantity-left-minus').click(function(e){
+		        // Stop acting like a button
+		        e.preventDefault();
+		        // Get the field name
+		        var quantity = parseInt($('#quantity').val());
+		        
+		        // If is not undefined
+		      
+		            // Increment
+		            if(quantity>0){
+		            $('#quantity').val(quantity - 1);
+		            }
+		    });
+		    
+		});
+	</script>
     
   </body>
 </html>

@@ -178,7 +178,7 @@
 									<form action="searchWord_controller">
 										<input name="sword" type="text" id="" value=""
 											required="required" label="°Ë»ö¾î" class="inp_search">
-										<input type="button"
+										<input type="image"
 											src="https://res.kurly.com/pc/service/common/1908/ico_search_x2.png"
 											class="btn_search">
 									</form>
@@ -221,12 +221,12 @@
     		<%for(int i=0; i<itemlist.size(); i++){ %>
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
-    					<a href="#" class="img-prod"><img class="img-fluid" src=<%=itemlist.get(i).getIMG_ADDR() %>alt="Colorlib Template">
-    						<span class="status">30%</span>
+    					<a href="product-single.jsp" class="img-prod"><img class="img-fluid" src=<%=itemlist.get(i).getIMG_ADDR() %>alt="Colorlib Template">
+    						<span class="status"><%=itemlist.get(i).getDiscount_rate() %>%</span>
     						<div class="overlay"></div>
     					</a>
     					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="#"><%=itemlist.get(i).getProduct_name() %></a></h3>
+    						<h3><a href="product-single.jsp"><%=itemlist.get(i).getProduct_name() %></a></h3>
     						<div class="d-flex">
     							<div class="pricing">
 		    						<p class="price"><span class="mr-2 price-dc"><%=itemlist.get(i).getPrice() %></span><span class="price-sale">$80.00</span></p>

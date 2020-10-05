@@ -65,13 +65,14 @@ olorlib
 .dan1 {
 	list-style: none;
 }
-
-.btn_search {gnb .gnb_search .btn_search { position:absolute;
-	right: 10px;
-	top: 3px;
-	width: 30px;
-	height: 30px;
+.dan1 .serch1 .serch .btn_search {
+    position: absolute;
+    right: 10px;
+    top: 3px;
+    width: 30px;
+    height: 30px;
 }
+
 
 #item5 {
 	
@@ -135,10 +136,10 @@ olorlib
 						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">전체상품</a>
 						<div class="dropdown-menu" aria-labelledby="dropdown04">
 							<a class="dropdown-item" href="./itemView_controller">전체 상품</a> <a
-								class="dropdown-item" href="wishlist.html">전체상품</a> <a
-								class="dropdown-item" href="product-single.html">과일</a> <a
-								class="dropdown-item" href="cart.html">채소</a> <a
-								class="dropdown-item" href="checkout.html">정육</a>
+								class="dropdown-item" href="wishlist.html">과일</a> <a
+								class="dropdown-item" href="product-single.html">채소</a> <a
+								class="dropdown-item" href="cart.html">정육</a> <a
+								class="dropdown-item" href="checkout.html">계란유제품</a>
 						</div></li>
 					<li class="nav-item"><a href="about.html" class="nav-link">신상품</a></li>
 					<li class="nav-item"><a href="blog.html" class="nav-link">베스트</a></li>
@@ -200,17 +201,17 @@ olorlib
 							
 						</li>
 						<ul class="dan1">
-							<li><div>
+							<li class="search1"><div class="search">
 									<form action="searchWord_controller">
 										<input name="sword" type="text" id="" value=""
 											required="required" label="검색어" class="inp_search">
-										<input type="button"
+										<input type="image"
 											src="https://res.kurly.com/pc/service/common/1908/ico_search_x2.png"
-											class="btn_search">
+											class="btn_search" position= absolute>
 									</form>
 								</div></li>
 						</ul>
-					</ul>
+					</ul> 
 			</div>
 			</ul>
 
@@ -224,8 +225,35 @@ olorlib
 
 	</nav>
 	<!-- END nav -->
-
-	<section id="home-section" class="hero">
+	
+	
+<!--//이벤트  -->
+	<section class="ftco-section img"
+		style="background-image: url(images/bg_3.jpg);">
+		<div class="container">
+			<div class="row justify-content-end">
+				<div
+					class="col-md-6 heading-section ftco-animate deal-of-the-day ftco-animate">
+					<span class="subheading">Best Price For You</span>
+					<h2 class="mb-4">Deal of the day</h2>
+					<p>Far far away, behind the word mountains, far from the
+						countries Vokalia and Consonantia</p>
+					<h3>
+						<a href="#">Spinach</a>
+					</h3>
+					<span class="price">$10 <a href="#">now $5 only</a></span>
+					<div id="timer" class="d-flex mt-5">
+						<div class="time" id="days"></div>
+						<div class="time pl-3" id="hours"></div>
+						<div class="time pl-3" id="minutes"></div>
+						<div class="time pl-3" id="seconds"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	 <!-- <section id="home-section" class="hero">
 		<div class="home-slider owl-carousel">
 			<div class="slider-item"
 				style="background-image: url(images/bg_1.jpg);">
@@ -264,12 +292,15 @@ olorlib
 								<a href="#" class="btn btn-primary">View Details</a>
 							</p>
 						</div>
+						
 
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
+		
+		
+	</section>  -->
 
 	<section class="ftco-section">
 
@@ -422,13 +453,13 @@ olorlib
 				%>
 				<div class="col-md-6 col-lg-3 ftco-animate">
 					<div class="product">
-						<a href="#" class="img-prod"><img class="img-fluid"
-							src="images/product-1.jpg" alt="Colorlib Template"> <span
-							class="status">30%</span>
+						<a href="product-single.jsp" class="img-prod"><img class="img-fluid"
+							src=<%=itemlist.get(i).getIMG_ADDR() %> alt="Colorlib Template"> <span
+							class="status"><%=itemlist.get(i).getDiscount_rate() %>%</span>
 							<div class="overlay"></div> </a>
 						<div class="text py-3 pb-4 px-3 text-center">
 							<h3>
-								<a href="#"><%=itemlist.get(i).getProduct_name()%></a>
+								<a href="product-single.jsp"><%=itemlist.get(i).getProduct_name()%></a>
 							</h3>
 							<div class="d-flex">
 								<div class="pricing">
@@ -700,30 +731,6 @@ olorlib
 		</div>
 	</section>
 
-	<section class="ftco-section img"
-		style="background-image: url(images/bg_3.jpg);">
-		<div class="container">
-			<div class="row justify-content-end">
-				<div
-					class="col-md-6 heading-section ftco-animate deal-of-the-day ftco-animate">
-					<span class="subheading">Best Price For You</span>
-					<h2 class="mb-4">Deal of the day</h2>
-					<p>Far far away, behind the word mountains, far from the
-						countries Vokalia and Consonantia</p>
-					<h3>
-						<a href="#">Spinach</a>
-					</h3>
-					<span class="price">$10 <a href="#">now $5 only</a></span>
-					<div id="timer" class="d-flex mt-5">
-						<div class="time" id="days"></div>
-						<div class="time pl-3" id="hours"></div>
-						<div class="time pl-3" id="minutes"></div>
-						<div class="time pl-3" id="seconds"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
 
 	<section class="ftco-section testimony-section">
 		<div class="container">
