@@ -1,6 +1,6 @@
+<%@page import="com.model.MemberDTO"%>
 <%@page import="com.model.ProductDTO"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="com.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -41,7 +41,7 @@ olorlib
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
     
-    <style type="text/css">
+     <style type="text/css">
 .container1 {
 	display: flex;
 	width: 250px;
@@ -62,27 +62,24 @@ olorlib
 .dan1 {
 	list-style: none;
 }
-.dan1 .serch1 .serch .btn_search {
-    position: absolute;
-    right: 10px;
-    top: 3px;
-    width: 30px;
-    height: 30px;
-}
 
+.dan1 .search1 .search .btn_search {
+	position: absolute;
+    left: 1460px;
+	width:30px;
+	height:30px;
+}
 
 #item5 {
 	
 }
 </style>
-    
-    
-    
   </head>
   <body class="goto-here">
-  	<%
+     <%ArrayList<ProductDTO> fruitlist = (ArrayList<ProductDTO>)session.getAttribute("flist");	 %>
+    <%
 		MemberDTO info = (MemberDTO) session.getAttribute("info");
-	ArrayList<ProductDTO> itemlist = (ArrayList<ProductDTO>) session.getAttribute("list");
+	
 	%>
 		<div class="py-1 bg-primary">
     	<div class="container">
@@ -105,82 +102,32 @@ olorlib
 		    </div>
 		  </div>
     </div>
-  <nav
-		class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
-		id="ftco-navbar">
+   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 		<div class="container">
 			<a class="navbar-brand" href="main1.jsp">2차프로젝트ㅋ</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse"
-				data-target="#ftco-nav" aria-controls="ftco-nav"
-				aria-expanded="false" aria-label="Toggle navigation">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
 			</button>
 
 			<div class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active"><a href="main1.jsp"
-						class="nav-link">Home</a></li>
-					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="shop.html" id="dropdown04"
-						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">전체상품</a>
+					<li class="nav-item active"><a href="main1.jsp" class="nav-link">Home</a></li>
+					<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="shop.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">전체상품</a>
 						<div class="dropdown-menu" aria-labelledby="dropdown04">
-							<a class="dropdown-item" href="./itemView_controller">전체 상품</a> <a
-								class="dropdown-item" href="./fruitView_controller?name=<%="VF"%>">과일·채소류</a> <a
-								class="dropdown-item" href="./fruitView_controller?name=<%="SF"%>">해·수산물류</a> <a
-								class="dropdown-item" href="./fruitView_controller?name=<%="MP"%>">정육·알·육가공품류</a> <a
-								class="dropdown-item" href="./fruitView_controller?name=<%="SC"%>">향신료·양념류</a> <a
-								class="dropdown-item" href="./fruitView_controller?name=<%="RS"%>">가공·간편식류</a> <a
-								class="dropdown-item" href="./fruitView_controller?name=<%="GD"%>">곡물·견과류</a> <a
-								class="dropdown-item" href="./fruitView_controller?name=<%="MI"%>">유제품류</a> <a
-								class="dropdown-item" href="./fruitView_controller?name=<%="SS"%>">면·가루·유지류</a> <a
-								class="dropdown-item" href="./fruitView_controller?name=<%="FO"%>">반찬류</a> <a
-								class="dropdown-item" href="./fruitView_controller?name=<%="DR"%>">음료·주류</a> <a
-								class="dropdown-item" href="./fruitView_controller?name=<%="NA"%>">자연산물</a>
+							<a class="dropdown-item" href="./itemView_controller">전체 상품</a> <a class="dropdown-item" href="./fruitView_controller?name=VF">과일·채소류</a> <a class="dropdown-item" href="./fruitView_controller?name=SF">해·수산물류</a> <a class="dropdown-item" href="./fruitView_controller?name=MP">정육·알·육가공품류</a> <a class="dropdown-item" href="./fruitView_controller?name=SC">향신료·양념류</a> <a class="dropdown-item" href="./fruitView_controller?name=RS">가공·간편식류</a> <a class="dropdown-item" href="./fruitView_controller?name=GD">곡물·견과류</a> <a class="dropdown-item" href="./fruitView_controller?name=MI">유제품류</a> <a class="dropdown-item" href="./fruitView_controller?name=SS">면·가루·유지류</a> <a class="dropdown-item" href="./fruitView_controller?name=FO">반찬류</a> <a class="dropdown-item" href="./fruitView_controller?name=DR">음료·주류</a> <a class="dropdown-item" href="./fruitView_controller?name=NA">자연산물</a>
 						</div></li>
 					<li class="nav-item"><a href="about.jsp" class="nav-link">레시피</a></li>
 					<li class="nav-item"><a href="blog.jsp" class="nav-link">베스트</a></li>
 					<li class="nav-item"><a href="contact.jsp" class="nav-link">알뜰쇼핑</a></li>
 
-					<li class="nav-item cta cta-colored"><a href="cart.jsp"
-						class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+					<li class="nav-item cta cta-colored"><a href="cart.jsp" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
 					<ul class="dan2">
 						<li>
 							<div class="col-md pr-4 d-flex topper align-items-center ">
 								<!-- <div class="col-md-5 pr-4 d-flex topper align-items-center"></div> -->
 
-								<%
-									if (info != null) {
-								%>
-								<div class="container1" text-align=center fot-size=15>
-									<%
-										if (info.getMember_id().equals("admin")) {
-									%>
-									<div class="text item1">
-										<a href="admin.jsp">관리자페이지</a>
-									</div>
-									<div class="text item3">
-										<a href="Logout">로그아웃</a>
-									</div>
-									<%
-										}
-									%>
-									<div class="text item2" style="color: black;">
-										<%=info.getName()%>님</a>
-									</div>
-									<div class="text item2">
-										<a href="mypage.jsp">마이페이지</a>
-									</div>
-									<div class="text item3">
-										<a href="Logout"> 로그아웃</a>
-									</div>
-									<div class="text item4">
-										<a href="member.html"> 고객센터</a>
-									</div>
-								</div>
-								<%
-									} else {
-								%>
-								<div class="container2" text-align=center fot-size=15>
+								
+								<div class="container2" text-align="center" fot-size="15">
 									<div class="text" id="item5">
 										<a href="join.jsp">회원가입</a>
 									</div>
@@ -191,30 +138,25 @@ olorlib
 										<a href="member.html">고객센터</a>
 									</div>
 								</div>
-								<%
-									}
-								%>
+								
 							
-						</li>
+						</div></li>
 						<ul class="dan1">
 							<li class="search1"><div class="search">
 									<form action="searchWord_controller">
-										<input name="sword" type="text" id="" value=""
-											required="required" label="검색어" class="inp_search">
-										<input type="image"
-											src="https://res.kurly.com/pc/service/common/1908/ico_search_x2.png"
-											class="btn_search" position= absolute>
+										<input name="sword" type="text" id="" value="" required="required" label="검색어" class="inp_search">
+										<input type="image" src="https://res.kurly.com/pc/service/common/1908/ico_search_x2.png" class="btn_search" position="absolute">
 									</form>
 								</div></li>
 						</ul>
 					</ul> 
-			</div>
-			</ul>
+			</ul></div>
+			
 
 		</div>
 
 
-		</div>
+		
 		<br>
 
 
@@ -226,239 +168,197 @@ olorlib
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>About us</span></p>
-            <h1 class="mb-0 bread">About us</h1>
+          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html"></a></span> <span></span></p>
+            <h1 class="mb-0 bread">RECIPE</h1>
           </div>
         </div>
       </div>
     </div>
 
-    <section class="ftco-section ftco-no-pb ftco-no-pt bg-light">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/about.jpg);">
-						<a href="https://vimeo.com/45830194" class="icon popup-vimeo d-flex justify-content-center align-items-center">
-							<span class="icon-play"></span>
-						</a>
-					</div>
-					<div class="col-md-7 py-5 wrap-about pb-md-5 ftco-animate">
-	          <div class="heading-section-bold mb-4 mt-md-5">
-	          	<div class="ml-md-0">
-		            <h2 class="mb-4">Welcome to Vegefoods an eCommerce website</h2>
-	            </div>
-	          </div>
-	          <div class="pb-md-5">
-	          	<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-							<p>But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
-							<p><a href="#" class="btn btn-primary">Shop now</a></p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light">
-      <div class="container py-4">
-        <div class="row d-flex justify-content-center py-5">
-          <div class="col-md-6">
-          	<h2 style="font-size: 22px;" class="mb-0">Subcribe to our Newsletter</h2>
-          	<span>Get e-mail updates about our latest shops and special offers</span>
-          </div>
-          <div class="col-md-6 d-flex align-items-center">
-            <form action="#" class="subscribe-form">
-              <div class="form-group d-flex">
-                <input type="text" class="form-control" placeholder="Enter email address">
-                <input type="submit" value="Subscribe" class="submit px-3">
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-		
-		<section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/bg_3.jpg);">
-    	<div class="container">
-    		<div class="row justify-content-center py-5">
-    			<div class="col-md-10">
-		    		<div class="row">
-		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
-		            <div class="block-18 text-center">
-		              <div class="text">
-		                <strong class="number" data-number="10000">0</strong>
-		                <span>Happy Customers</span>
-		              </div>
-		            </div>
-		          </div>
-		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
-		            <div class="block-18 text-center">
-		              <div class="text">
-		                <strong class="number" data-number="100">0</strong>
-		                <span>Branches</span>
-		              </div>
-		            </div>
-		          </div>
-		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
-		            <div class="block-18 text-center">
-		              <div class="text">
-		                <strong class="number" data-number="1000">0</strong>
-		                <span>Partner</span>
-		              </div>
-		            </div>
-		          </div>
-		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
-		            <div class="block-18 text-center">
-		              <div class="text">
-		                <strong class="number" data-number="100">0</strong>
-		                <span>Awards</span>
-		              </div>
-		            </div>
-		          </div>
-		        </div>
-	        </div>
-        </div>
-    	</div>
-    </section>
-		
-		<section class="ftco-section testimony-section">
+    <section class="ftco-section ftco-degree-bg">
       <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section ftco-animate text-center">
-          	<span class="subheading">Testimony</span>
-            <h2 class="mb-4">Our satisfied customer says</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
-          </div>
-        </div>
-        <div class="row ftco-animate">
-          <div class="col-md-12">
-            <div class="carousel-testimony owl-carousel">
-              <div class="item">
-                <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-5" style="background-image: url(images/person_1.jpg)">
-                    <span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                  </div>
-                  <div class="text text-center">
-                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Garreth Smith</p>
-                    <span class="position">Marketing Manager</span>
+        <div class="row">
+          <div class="col-lg-8 ftco-animate">
+						<div class="row">
+							<div class="col-md-12 d-flex ftco-animate">
+		            <div class="blog-entry align-self-stretch d-md-flex">
+		              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
+		              </a>
+		              <div class="text d-block pl-md-4">
+		              	<div class="meta mb-3">
+		                  <div><a href="#">July 20, 2019</a></div>
+		                  <div><a href="#">Admin</a></div>
+		                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+		                </div>
+		                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+		                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+		                <p><a href="blog-single.html" class="btn btn-primary py-2 px-3">Read more</a></p>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-12 d-flex ftco-animate">
+		            <div class="blog-entry align-self-stretch d-md-flex">
+		              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
+		              </a>
+		              <div class="text d-block pl-md-4">
+		              	<div class="meta mb-3">
+		                  <div><a href="#">July 20, 2019</a></div>
+		                  <div><a href="#">Admin</a></div>
+		                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+		                </div>
+		                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+		                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+		                <p><a href="blog-single.html" class="btn btn-primary py-2 px-3">Read more</a></p>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-12 d-flex ftco-animate">
+		            <div class="blog-entry align-self-stretch d-md-flex">
+		              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
+		              </a>
+		              <div class="text d-block pl-md-4">
+		              	<div class="meta mb-3">
+		                  <div><a href="#">July 20, 2019</a></div>
+		                  <div><a href="#">Admin</a></div>
+		                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+		                </div>
+		                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+		                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+		                <p><a href="blog-single.html" class="btn btn-primary py-2 px-3">Read more</a></p>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-12 d-flex ftco-animate">
+		            <div class="blog-entry align-self-stretch d-md-flex">
+		              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_4.jpg');">
+		              </a>
+		              <div class="text d-block pl-md-4">
+		              	<div class="meta mb-3">
+		                  <div><a href="#">July 20, 2019</a></div>
+		                  <div><a href="#">Admin</a></div>
+		                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+		                </div>
+		                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+		                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+		                <p><a href="blog-single.html" class="btn btn-primary py-2 px-3">Read more</a></p>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-12 d-flex ftco-animate">
+		            <div class="blog-entry align-self-stretch d-md-flex">
+		              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_5.jpg');">
+		              </a>
+		              <div class="text d-block pl-md-4">
+		              	<div class="meta mb-3">
+		                  <div><a href="#">July 20, 2019</a></div>
+		                  <div><a href="#">Admin</a></div>
+		                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+		                </div>
+		                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+		                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+		                <p><a href="blog-single.html" class="btn btn-primary py-2 px-3">Read more</a></p>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-12 d-flex ftco-animate">
+		            <div class="blog-entry align-self-stretch d-md-flex">
+		              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_6.jpg');">
+		              </a>
+		              <div class="text d-block pl-md-4">
+		              	<div class="meta mb-3">
+		                  <div><a href="#">July 20, 2019</a></div>
+		                  <div><a href="#">Admin</a></div>
+		                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+		                </div>
+		                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+		                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+		                <p><a href="blog-single.html" class="btn btn-primary py-2 px-3">Read more</a></p>
+		              </div>
+		            </div>
+		          </div>
+						</div>
+          </div> <!-- .col-md-8 -->
+          <div class="col-lg-4 sidebar ftco-animate">
+            <div class="sidebar-box">
+              <form action="#" class="search-form">
+                <div class="form-group">
+                  <span class="icon ion-ios-search"></span>
+                  <input type="text" class="form-control" placeholder="Search...">
+                </div>
+              </form>
+            </div>
+            <div class="sidebar-box ftco-animate">
+            	<h3 class="heading">Categories</h3>
+              <ul class="categories">
+                <li><a href="#">Vegetables <span>(12)</span></a></li>
+                <li><a href="#">Fruits <span>(22)</span></a></li>
+                <li><a href="#">Juice <span>(37)</span></a></li>
+                <li><a href="#">Dries <span>(42)</span></a></li>
+              </ul>
+            </div>
+
+            <div class="sidebar-box ftco-animate">
+              <h3 class="heading">Recent Blog</h3>
+              <div class="block-21 mb-4 d-flex">
+                <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
+                <div class="text">
+                  <h3 class="heading-1"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+                  <div class="meta">
+                    <div><a href="#"><span class="icon-calendar"></span> April 09, 2019</a></div>
+                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
                   </div>
                 </div>
               </div>
-              <div class="item">
-                <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-5" style="background-image: url(images/person_2.jpg)">
-                    <span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                  </div>
-                  <div class="text text-center">
-                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Garreth Smith</p>
-                    <span class="position">Interface Designer</span>
+              <div class="block-21 mb-4 d-flex">
+                <a class="blog-img mr-4" style="background-image: url(images/image_2.jpg);"></a>
+                <div class="text">
+                  <h3 class="heading-1"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+                  <div class="meta">
+                    <div><a href="#"><span class="icon-calendar"></span> April 09, 2019</a></div>
+                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
                   </div>
                 </div>
               </div>
-              <div class="item">
-                <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-5" style="background-image: url(images/person_3.jpg)">
-                    <span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                  </div>
-                  <div class="text text-center">
-                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Garreth Smith</p>
-                    <span class="position">UI Designer</span>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-5" style="background-image: url(images/person_1.jpg)">
-                    <span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                  </div>
-                  <div class="text text-center">
-                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Garreth Smith</p>
-                    <span class="position">Web Developer</span>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-5" style="background-image: url(images/person_1.jpg)">
-                    <span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                  </div>
-                  <div class="text text-center">
-                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Garreth Smith</p>
-                    <span class="position">System Analyst</span>
+              <div class="block-21 mb-4 d-flex">
+                <a class="blog-img mr-4" style="background-image: url(images/image_3.jpg);"></a>
+                <div class="text">
+                  <h3 class="heading-1"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+                  <div class="meta">
+                    <div><a href="#"><span class="icon-calendar"></span> April 09, 2019</a></div>
+                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
                   </div>
                 </div>
               </div>
             </div>
+
+            <div class="sidebar-box ftco-animate">
+              <h3 class="heading">Tag Cloud</h3>
+              <div class="tagcloud">
+                <a href="#" class="tag-cloud-link">fruits</a>
+                <a href="#" class="tag-cloud-link">tomatoe</a>
+                <a href="#" class="tag-cloud-link">mango</a>
+                <a href="#" class="tag-cloud-link">apple</a>
+                <a href="#" class="tag-cloud-link">carrots</a>
+                <a href="#" class="tag-cloud-link">orange</a>
+                <a href="#" class="tag-cloud-link">pepper</a>
+                <a href="#" class="tag-cloud-link">eggplant</a>
+              </div>
+            </div>
+
+            <div class="sidebar-box ftco-animate">
+              <h3 class="heading">Paragraph</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
+            </div>
           </div>
+
         </div>
       </div>
-    </section>
+    </section> <!-- .section -->
 
-    <section class="ftco-section bg-light">
-			<div class="container">
-				<div class="row no-gutters ftco-services">
-          <div class="col-lg-3 text-center d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services mb-md-0 mb-4">
-              <div class="icon bg-color-1 active d-flex justify-content-center align-items-center mb-2">
-            		<span class="flaticon-shipped"></span>
-              </div>
-              <div class="media-body">
-                <h3 class="heading">Free Shipping</h3>
-                <span>On order over $100</span>
-              </div>
-            </div>      
-          </div>
-          <div class="col-lg-3 text-center d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services mb-md-0 mb-4">
-              <div class="icon bg-color-2 d-flex justify-content-center align-items-center mb-2">
-            		<span class="flaticon-diet"></span>
-              </div>
-              <div class="media-body">
-                <h3 class="heading">Always Fresh</h3>
-                <span>Product well package</span>
-              </div>
-            </div>    
-          </div>
-          <div class="col-lg-3 text-center d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services mb-md-0 mb-4">
-              <div class="icon bg-color-3 d-flex justify-content-center align-items-center mb-2">
-            		<span class="flaticon-award"></span>
-              </div>
-              <div class="media-body">
-                <h3 class="heading">Superior Quality</h3>
-                <span>Quality Products</span>
-              </div>
-            </div>      
-          </div>
-          <div class="col-lg-3 text-center d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services mb-md-0 mb-4">
-              <div class="icon bg-color-4 d-flex justify-content-center align-items-center mb-2">
-            		<span class="flaticon-customer-service"></span>
-              </div>
-              <div class="media-body">
-                <h3 class="heading">Support</h3>
-                <span>24/7 Support</span>
-              </div>
-            </div>      
-          </div>
-        </div>
-			</div>
-		</section>
-
-    <footer class="ftco-footer ftco-section">
+    <footer class="ftco-footer ftco-section bg-light">
       <div class="container">
       	<div class="row">
       		<div class="mouse">
