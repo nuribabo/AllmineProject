@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class CartDAO {
 	Connection conn = null;
@@ -12,6 +13,7 @@ public class CartDAO {
 	int cnt;
 	ResultSet rs;
 	ProductDTO pdto = null;
+	ArrayList<CartDTO> list = new ArrayList<CartDTO>();
 	
 	public void conn() {
 		try {
@@ -65,7 +67,8 @@ public class CartDAO {
 			e.printStackTrace();
 		}return pdto;
 	}
-	public int insert_cart(CartDTO cdto) {
+	// 장바구에 저장;
+	public int insert_cart(CartDTO cdto) {    
 		
 		try {
 			conn();
@@ -81,6 +84,34 @@ public class CartDAO {
 		}return cnt;
 		
 	}
+	public ArrayList<CartDTO> cartView(String name){
+		try {
+			conn();
+			String sql = "select p.img_addr, p.product_name, p.product_id, p.price, p.discount_rate, cp.quantity from cart_product cp, product p, member m where ? = m.member_id and p.product_id = cp.product_id";
+			
+			psmt=conn.prepareStatement(sql);
+			psmt.setString(1, name);
+			rs = psmt.executeQuery();
+			while(rs.next()) {
+				String img_addr = rs.getString(1);
+				String product_name = rs.getString(2);
+				String product_id=rs.getString(3);
+				int price = rs.getInt(4);
+				int discount_rate = rs.getInt(5);
+				int quantity = rs.getInt(6);
+				CartDTO dto = new CartDTO(product_name, product_id, quantity ,img_addr, price, discount_rate);
+				list.add(dto);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}return list;
+	}
+	
+	
+	
+	
+	
 	
 	
 	public int remove(String product_id) {
