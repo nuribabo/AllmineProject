@@ -81,6 +81,7 @@
 	<%
 		MemberDTO info = (MemberDTO) session.getAttribute("info");
 	ArrayList<ProductDTO> itemlist = (ArrayList<ProductDTO>) session.getAttribute("list");
+	
 	%>
 
 

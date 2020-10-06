@@ -13,6 +13,13 @@ public class CartDTO {
 	}
 	
 	
+	public CartDTO(String member_id, String product_id) {
+		super();
+		this.member_id = member_id;
+		this.product_id = product_id;
+	}
+
+
 	public CartDTO(String product_name, String product_id, int quantity, String img_addr, int price,
 			int discount_rate) {
 		super();

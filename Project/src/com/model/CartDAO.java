@@ -177,12 +177,13 @@ public int delete_select (CartDTO info) {
 	
 	
 	
-	public int remove(String product_id) {
+	public int remove(CartDTO cdto) {
 		conn();
-		String sql = "delete from cart where product_id =?";
+		String sql = "delete from cart_product where product_id =? and member_id = ?";
 		try {
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1,product_id );
+			psmt.setString(1, cdto.getProduct_id());
+			psmt.setString(2, cdto.getMember_id());
 			cnt = psmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

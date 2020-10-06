@@ -10,3 +10,5 @@ update product set IMG_ADDR = 'https://search.pstatic.net/common/?src=http%3A%2F
 
 select * from product where product_name like '%¿À%';
 select * from product where product_name like '%»ç%';
+
+select * from cart_product;

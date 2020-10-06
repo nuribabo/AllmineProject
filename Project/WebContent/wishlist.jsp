@@ -60,7 +60,7 @@
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Vegefoods</a>
+	      <a class="navbar-brand" href="main.jsp">Vegefoods</a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
@@ -81,7 +81,7 @@
 	          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
 	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
 	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-	          <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+	          <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span class="icon-shopping_cart"></span>[<%=clist.size()%>]</a></li>
 
 	        </ul>
 	      </div>
@@ -120,7 +120,7 @@
 						    <%if(clist != null){ %>
 						    	<%for(int i = 0; i<clist.size(); i++){ %>
 						      <tr class="text-center">
-						        <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
+						        <td class="product-remove"><a href="cart_oneDelcontroller?item=<%=clist.get(i).getProduct_id()%>"><span class="ion-ios-close"></span></a></td>
 						        
 						        <td class="image-prod"><div class="img" style="background-image:url(<%=clist.get(i).getImg_addr()%>);"></div></td>
 						        
@@ -133,7 +133,7 @@
 						        
 						        <td class="quantity">
 						        	<div class="input-group mb-3">
-					             	<input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
+					             	<input type="text" name="quantity" class="quantity form-control input-number" value="<%=clist.get(i).getQuantity()%>" min="1" max="100">
 					          	</div>
 					          </td>
 						        

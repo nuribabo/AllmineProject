@@ -1,3 +1,4 @@
+<%@page import="com.model.CartDTO"%>
 <%@page import="com.model.ProductDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.model.MemberDTO"%>
@@ -37,6 +38,7 @@
 <body>
 	<%
 		MemberDTO info2 = (MemberDTO) session.getAttribute("info");
+	ArrayList<CartDTO> clist = (ArrayList<CartDTO>)session.getAttribute("clist");
 	%>
 	
 	<!-- ¼Ò°³ÅÇ -->
@@ -117,8 +119,12 @@
 					<li class="nav-item"><a href="blog.jsp" class="nav-link">º£½ºÆ®</a></li>
 					<li class="nav-item"><a href="contact.jsp" class="nav-link">¾Ë¶ã¼îÇÎ</a></li>
 
-					<li class="nav-item cta cta-colored"><a href="cart.jsp"
-						class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+					<li class="nav-item cta cta-colored"><a href="wishlist.jsp"
+						class="nav-link"><span class="icon-shopping_cart"></span>
+						<%if(clist!= null){ %>
+						[<%=clist.size()%>]
+						<%}else{ %>
+						[0]<%} %></a></li>
 					<ul class="dan2">
 						<li>
 							<div class="col-md pr-4 d-flex topper align-items-center ">
