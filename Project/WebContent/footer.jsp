@@ -137,7 +137,7 @@
 						class="img-fluid" alt="Colorlib Template"></a>
 				</div>
 				<div class="col-sm ftco-animate">
-					<a href="#" class="partner"><img src="images/partner-3.png"
+					<a href="#" class="partner"><img src="https://e7.pngegg.com/pngimages/766/40/png-clipart-logo-eclipse-java-integrated-development-environment-content-assist-eclipse-purple-text.png"
 						class="img-fluid" alt="Colorlib Template"></a>
 				</div>
 				<div class="col-sm ftco-animate">
