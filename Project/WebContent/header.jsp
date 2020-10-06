@@ -1,3 +1,6 @@
+<%@page import="com.model.ProductDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -30,8 +33,9 @@
     <link rel="stylesheet" href="css/style.css">
 <title>Header</title>
 </head>
+
 <body>
-	<div class="py-1 bg-primary">
+		<div class="py-1 bg-primary">
 		<div class="container">
 			<div
 				class="row no-gutters d-flex align-items-start align-items-center px-md-0">
