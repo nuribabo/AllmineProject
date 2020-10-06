@@ -24,8 +24,8 @@ public class cartView_controller extends HttpServlet {
 	
 		
 		request.setCharacterEncoding("EUC-KR");
-		HttpSession session = request.getSession();  //세션생성
-		MemberDTO info = (MemberDTO)session.getAttribute("info"); //세션에서 유저정보가져옴
+		HttpSession session = request.getSession();  
+		MemberDTO info = (MemberDTO)session.getAttribute("info"); 
 		
 		String member_id = info.getMember_id();
 		CartDAO dao = new CartDAO();
