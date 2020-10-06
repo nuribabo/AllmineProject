@@ -173,17 +173,17 @@ olorlib
     			<div class="col-md-10 mb-5 text-center">
     				<ul class="product-category">
     					<li><a href="./itemView_controller" class="active">전체보기</a></li>
-    					<li><a href="./fruitView_controller?name=<%="VF"%>">과일·채소류</a></li>
-    					<li><a href="./fruitView_controller?name=<%="SF"%>">해·수산물류</a></li>
-    					<li><a href="./fruitView_controller?name=<%="MP"%>">정육·알·육가공품류</a></li>
-    					<li><a href="./fruitView_controller?name=<%="SC"%>">향신료·양념류</a></li>
-    					<li><a href="./fruitView_controller?name=<%="RS"%>">가공·간편식류</a></li>
-    					<li><a href="./fruitView_controller?name=<%="GD"%>">곡물·견과류</a></li>
-    					<li><a href="./fruitView_controller?name=<%="MI"%>">유제품류</a></li>
-    					<li><a href="./fruitView_controller?name=<%="SS"%>">면·가루·유지류</a></li>
-    					<li><a href="./fruitView_controller?name=<%="FO"%>">반찬류</a></li>
-    					<li><a href="./fruitView_controller?name=<%="DR"%>">음료·주류</a></li>
-    					<li><a href="./fruitView_controller?name=<%="NA"%>">자연산물</a></li>
+    					<li><a href="./itemView_controller?name=<%="VF"%>">과일·채소류</a></li>
+    					<li><a href="./itemView_controller?name=<%="SF"%>">해·수산물류</a></li>
+    					<li><a href="./itemView_controller?name=<%="MP"%>">정육·알·육가공품류</a></li>
+    					<li><a href="./itemView_controller?name=<%="SC"%>">향신료·양념류</a></li>
+    					<li><a href="./itemView_controller?name=<%="RS"%>">가공·간편식류</a></li>
+    					<li><a href="./itemView_controller?name=<%="GD"%>">곡물·견과류</a></li>
+    					<li><a href="./itemView_controller?name=<%="MI"%>">유제품류</a></li>
+    					<li><a href="./itemView_controller?name=<%="SS"%>">면·가루·유지류</a></li>
+    					<li><a href="./itemView_controller?name=<%="FO"%>">반찬류</a></li>
+    					<li><a href="./itemView_controller?name=<%="DR"%>">음료·주류</a></li>
+    					<li><a href="./itemView_controller?name=<%="NA"%>">자연산물</a></li>
     				
     				
     				</ul>
@@ -202,7 +202,7 @@ olorlib
     						<h3><a href="product-single.jsp"><%=itemlist.get(i).getProduct_name() %></a></h3>
     						<div class="d-flex">
     							<div class="pricing">
-		    						<p class="price"><span class="mr-2 price-dc"><%=itemlist.get(i).getPrice() %></span><span class="price-sale"><%= itemlist.get(i).getPrice()*itemlist.get(i).getDiscount_rate()/100.0%></span></p>
+		    						<p class="price"><span class="mr-2 price-dc"><%=itemlist.get(i).getPrice() %></span><span class="price-sale"><%= itemlist.get(i).getPrice()-itemlist.get(i).getPrice()*itemlist.get(i).getDiscount_rate()/100.0%></span></p>
 		    					</div>
 	    					</div>
 	    					<div class="bottom-area d-flex px-3">
@@ -210,7 +210,7 @@ olorlib
 	    							<a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
 	    								<span><i class="ion-ios-menu"></i></span>
 	    							</a>
-	    							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
+	    							<a href="Cart_controller?name=<%=itemlist.get(i).getProduct_id()%>" class="buy-now d-flex justify-content-center align-items-center mx-1">
 	    								<span><i class="ion-ios-cart"></i></span>
 	    							</a>
 	    							<a href="#" class="heart d-flex justify-content-center align-items-center ">

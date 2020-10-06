@@ -27,11 +27,13 @@ public class fruitView_controller extends HttpServlet {
 		ArrayList<ProductDTO> flist ;
 		ProductDAO dao = new ProductDAO();
 		String cnt = request.getParameter("name");
+		if(cnt == null) {
+			flist = dao.select_by_All();
+		}else {
 		flist = dao.select_by_Fruit(cnt);
-		
+		}
 		
 		if(flist != null) {
-			System.out.println("°ªÀÖÀ½");
 			HttpSession session = request.getSession();
 			session.setAttribute("flist", flist );
 		}else {

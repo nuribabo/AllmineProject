@@ -23,11 +23,14 @@ public class itemView_controller extends HttpServlet {
 		
 		ArrayList<ProductDTO> list ;
 		ProductDAO dao = new ProductDAO();
-		list = dao.select_by_All();
-		
+		String cnt = request.getParameter("name");
+		if(cnt == null) {
+			list = dao.select_by_All();
+		}else {
+		list = dao.select_by_Fruit(cnt);
+		}
 		
 		if(list != null) {
-			System.out.println("°ªÀÖÀ½");
 			HttpSession session = request.getSession();
 			session.setAttribute("list", list );
 		}else {
