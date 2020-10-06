@@ -14,7 +14,7 @@ public class CartDAO {
 	ResultSet rs;
 	ProductDTO pdto = null;
 	ArrayList<CartDTO> list = new ArrayList<CartDTO>();
-	
+	CartDTO check = null;
 	public void conn() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -67,6 +67,44 @@ public class CartDAO {
 			e.printStackTrace();
 		}return pdto;
 	}
+	// 장바구니에 같은 물건 있는지 확인
+	public CartDTO cartcheck(CartDTO cdto) {
+		
+		try {
+			conn();
+			String sql = "select * from cart_product where member_id = ? and product_id = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, cdto.getMember_id());
+			psmt.setString(2, cdto.getProduct_id());
+			rs = psmt.executeQuery();
+			while(rs.next()) {
+				int quantity = rs.getInt(1);
+				String member_id = rs.getString(2);
+				String product_id = rs.getString(3);
+				check = new CartDTO( member_id, product_id, quantity);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}return check;
+		
+	}
+	public int update_cart(CartDTO cdto) {
+		
+		try {
+			conn();
+			String sql = "update cart_product set quantity = ? where member_id = ? and product_id = ? ";
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, cdto.getQuantity());
+			psmt.setString(2, cdto.getMember_id());
+			psmt.setNString(3, cdto.getProduct_id());
+			cnt = psmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}return cnt;
+	}
+	
 	// 장바구에 저장;
 	public int insert_cart(CartDTO cdto) {    
 		
@@ -107,8 +145,33 @@ public class CartDAO {
 			e.printStackTrace();
 		}return list;
 	}
-	
-	
+	public int delete_all(String id) {
+		
+		try {
+			conn();
+			String sql = "delete from CART_PRODUCT where MEMBER_ID = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, id);
+			cnt = psmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}return cnt;
+	}
+public int delete_select (CartDTO info) {
+		
+		try {
+			conn();
+			String sql = "delete * form cart_product where member_id = ? and product_id = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, info.getMember_id());
+			psmt.setNString(2, info.getProduct_id());
+			cnt = psmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}return cnt;
+	}
 	
 	
 	

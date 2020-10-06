@@ -143,7 +143,7 @@ olorlib
 					<li class="nav-item"><a href="blog.jsp" class="nav-link">º£½ºÆ®</a></li>
 					<li class="nav-item"><a href="contact.jsp" class="nav-link">¾Ë¶ã¼îÇÎ</a></li>
 
-					<li class="nav-item cta cta-colored"><a href="cart.jsp"
+					<li class="nav-item cta cta-colored"><a href="cartView_controller"
 						class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
 					<ul class="dan2">
 						<li>

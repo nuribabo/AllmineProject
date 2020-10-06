@@ -34,7 +34,7 @@ public class cartView_controller extends HttpServlet {
 		
 		
 		if(list != null) {
-			session.setAttribute("list", list);
+			session.setAttribute("clist", list);
 			System.out.println("장바구니 보여줄게요");
 		}else {
 			System.out.println("장바구니가 비었어요");

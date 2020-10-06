@@ -29,19 +29,19 @@ public class cartcontroller extends HttpServlet {
 	quantity.replace(" ", "");
 	 num = Integer.parseInt(quantity);
 	}
-	 CartDAO dao = new CartDAO();  //카트 dao 메소드 사용위해 dao생성
-	 ProductDTO dto = dao.select(itemid);    //메서드 사용  값 productDTO형식에 담음
+	 CartDAO dao = new CartDAO();  
+	 ProductDTO dto = dao.select(itemid);    
 	 
-	 HttpSession session = request.getSession();  //세션생성
-	 MemberDTO info = (MemberDTO)session.getAttribute("info"); //세션에서 유저정보가져옴
-	 String member_id = info.getMember_id();   // 유저정보에서 멤버id 빼옴
-	 String product_id = dto.getProduct_id();  // 받아놓은 productDTO형식 dto에서 물품id빼옴
+	 HttpSession session = request.getSession();  
+	 MemberDTO info = (MemberDTO)session.getAttribute("info"); 
+	 String member_id = info.getMember_id();   
+	 String product_id = dto.getProduct_id();  
 	 
-	 CartDTO cdto = new CartDTO(member_id, product_id, num); //빼내온값들 cartDTO형식에담음
+	 CartDTO cdto = new CartDTO(member_id, product_id, num); 
 	int cnt = 0;
-	  cnt = dao.insert_cart(cdto); //값으로 인설트 시킴  변동사항 int cnt에 담아줌
+	  cnt = dao.insert_cart(cdto); 
 	  
-	  //확인하기
+	  
 	  if(cnt != 0) {
 		  System.out.println("장바구니 저장 성공");
 	  }else {

@@ -1,3 +1,5 @@
+<%@page import="com.model.CartDTO"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="com.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -34,6 +36,7 @@
   <body class="goto-here">
   
   <%MemberDTO info = (MemberDTO) session.getAttribute("info"); %>
+  <%ArrayList<CartDTO> clist = (ArrayList<CartDTO>)session.getAttribute("clist"); %>
 		<div class="py-1 bg-primary">
     	<div class="container">
     		<div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
@@ -114,17 +117,19 @@
 						      </tr>
 						    </thead>
 						    <tbody>
+						    <%if(clist != null){ %>
+						    	<%for(int i = 0; i<clist.size(); i++){ %>
 						      <tr class="text-center">
 						        <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
 						        
-						        <td class="image-prod"><div class="img" style="background-image:url(images/product-1.jpg);"></div></td>
+						        <td class="image-prod"><div class="img" style="background-image:url(<%=clist.get(i).getImg_addr()%>);"></div></td>
 						        
 						        <td class="product-name">
-						        	<h3>Bell Pepper</h3>
-						        	<p>Far far away, behind the word mountains, far from the countries</p>
+						        	<h3><%=clist.get(i).getProduct_name()%></h3>
+						        	<p>상품 설명란</p>
 						        </td>
 						        
-						        <td class="price">$4.90</td>
+						        <td class="price"><%=clist.get(i).getPrice()-clist.get(i).getPrice()*clist.get(i).getDiscount_rate()/100.0%></td>
 						        
 						        <td class="quantity">
 						        	<div class="input-group mb-3">
@@ -132,10 +137,15 @@
 					          	</div>
 					          </td>
 						        
-						        <td class="total">$4.90</td>
+						        <td class="total"><%=(clist.get(i).getPrice()-clist.get(i).getPrice()*clist.get(i).getDiscount_rate()/100.0) * clist.get(i).getQuantity() %></td>
 						      </tr><!-- END TR-->
-
-						      <tr class="text-center">
+						      
+              
+ 								<%} %>
+ 								<%} %>
+ 								  <a href="cartDel_controller" class="btn btn-primary py-3 px-4">전체삭제</a>
+ 								
+						      <!-- <tr class="text-center">
 						        <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
 						        
 						        <td class="image-prod"><div class="img" style="background-image:url(images/product-2.jpg);"></div></td>
@@ -154,7 +164,7 @@
 					          </td>
 						        
 						        <td class="total">$15.70</td>
-						      </tr><!-- END TR-->
+						      </tr>END TR
 
 						      <tr class="text-center">
 						        <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
@@ -175,7 +185,7 @@
 					          </td>
 						        
 						        <td class="total">$15.70</td>
-						      </tr><!-- END TR-->
+						      </tr>END TR
 
 						      <tr class="text-center">
 						        <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
@@ -196,7 +206,7 @@
 					          </td>
 						        
 						        <td class="total">$15.70</td>
-						      </tr><!-- END TR-->
+						      </tr>END TR
 
 						      <tr class="text-center">
 						        <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
@@ -217,7 +227,7 @@
 					          </td>
 						        
 						        <td class="total">$15.70</td>
-						      </tr><!-- END TR-->
+						      </tr>END TR
 
 						      <tr class="text-center">
 						        <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
@@ -238,7 +248,7 @@
 					          </td>
 						        
 						        <td class="total">$15.70</td>
-						      </tr><!-- END TR-->
+						      </tr>END TR -->
 						    </tbody>
 						  </table>
 					  </div>

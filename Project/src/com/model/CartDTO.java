@@ -12,6 +12,7 @@ public class CartDTO {
 		return img_addr;
 	}
 	
+	
 	public CartDTO(String product_name, String product_id, int quantity, String img_addr, int price,
 			int discount_rate) {
 		super();
@@ -21,6 +22,14 @@ public class CartDTO {
 		this.img_addr = img_addr;
 		this.price = price;
 		this.discount_rate = discount_rate;
+	}
+
+	public String getProduct_name() {
+		return product_name;
+	}
+
+	public void setProduct_name(String product_name) {
+		this.product_name = product_name;
 	}
 
 	public void setImg_addr(String img_addr) {
