@@ -42,7 +42,7 @@
 								class="icon mr-2 d-flex justify-content-center align-items-center">
 								<span class="icon-phone2"></span>
 							</div>
-							<span class='text'>TEL : 062-655-3509</span>
+							<span class='text'> TEL : 062-655-3509</span>
 						</div>
 						<div class="col-md pr-4 d-flex topper align-items-center">
 							<div
