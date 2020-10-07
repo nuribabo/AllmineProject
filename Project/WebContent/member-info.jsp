@@ -1,8 +1,8 @@
 <%@page import="com.model.MemberDTO"%>
 <%@page import="com.model.ProductDTO"%>
 <%@page import="java.util.ArrayList"%>
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -73,136 +73,25 @@
     <%
 		MemberDTO info = (MemberDTO) session.getAttribute("info");
 	%>
-		<div class="py-1 bg-primary">
-    	<div class="container">
-    		<div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
-	    		<div class="col-lg-12 d-block">
-		    		<div class="row d-flex">
-		    			<div class="col-md pr-4 d-flex topper align-items-center">
-					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
-						    <span class="text">+ 1235 2355 98</span>
-					    </div>
-					    <div class="col-md pr-4 d-flex topper align-items-center">
-					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
-						    <span class="text">youremail@email.com</span>
-					    </div>
-					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
-						    <span class="text">3-5 Business days delivery &amp; Free Returns</span>
-					    </div>
-				    </div>
-			    </div>
-		    </div>
-		  </div>
-    </div>
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Vegefoods</a>
-	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
-
-	      <div class="col-md pr-4 d-flex topper align-items-center ">
-								<!-- <div class="col-md-5 pr-4 d-flex topper align-items-center"></div> -->
-<div class="collapse navbar-collapse" id="ftco-nav">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active"><a href="main1.jsp"
-						class="nav-link">Home</a></li>
-					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="shop.html" id="dropdown04"
-						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Л═└Л╡╢Л┐│М▓┬</a>
-						<div class="dropdown-menu" aria-labelledby="dropdown04">
-							<a class="dropdown-item" href="./itemView_controller">Л═└Л╡╢ Л┐│М▓┬</a> <a
-								class="dropdown-item" href="wishlist.html">Л═└Л╡╢Л┐│М▓┬</a> <a
-								class="dropdown-item" href="product-single.html">ЙЁ╪Л²╪</a> <a
-								class="dropdown-item" href="cart.html">Л╠└Л├▄</a> <a
-								class="dropdown-item" href="checkout.html">Л═∙Л°║</a>
-						</div></li>
-					<li class="nav-item"><a href="about.html" class="nav-link">Л▀═Л┐│М▓┬</a></li>
-					<li class="nav-item"><a href="blog.html" class="nav-link">К╡═Л┼╓М┼╦</a></li>
-					<li class="nav-item"><a href="contact.html" class="nav-link">Л∙▄К°╟Л┤╪М∙▒</a></li>
-
-					<li class="nav-item cta cta-colored"><a href="cart.jsp"
-						class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
-					<ul class="dan2">
-						<li>
-							<div class="col-md pr-4 d-flex topper align-items-center ">
-								<%
-									if (info != null) {
-								%>
-								<div class="container1" text-align=center fot-size=15>
-									<%
-										if (info.getMember_id().equals("admin")) {
-									%>
-									<div class="text item1">
-										<a href="admin.jsp">Й╢─К╕╛Л·░М▌≤Л²╢Л╖─</a>
-									</div>
-									<div class="text item3">
-										<a href="Logout">К║°Й╥╦Л∙└Л⌡┐</a>
-									</div>
-									<%
-										}
-									%>
-									<div class="text item2" style="color: black;">
-										<%=info.getName()%>К▀≤</a>
-									</div>
-									<div class="text item2">
-										<a href="mypage.jsp">К╖┬Л²╢М▌≤Л²╢Л╖─</a>
-									</div>
-									<div class="text item3">
-										<a href="Logout"> К║°Й╥╦Л∙└Л⌡┐</a>
-									</div>
-									<div class="text item4">
-										<a href="member.html"> ЙЁ═Й╟²Л└╪М└╟</a>
-									</div>
-								</div>
-								<%
-									} else {
-								%>
-								<div class="container2" text-align=center fot-size=15>
-									<div class="text" id="item5">
-										<a href="join.jsp">М ▄Л⌡░Й╟─Л·┘</a>
-									</div>
-									<div class="text item6">
-										<a href="login.jsp">К║°Й╥╦Л²╦</a>
-									</div>
-									<div class="text item7">
-										<a href="member.html">ЙЁ═Й╟²Л└╪М└╟</a>
-									</div>
-								</div>
-								<%
-									}
-								%>
-								</li>
-						<ul class="dan1">
-							<li><div>
-									<form action="searchWord_controller">
-										<input name="sword" type="text" id="" value=""
-											required="required" label="Й╡─Л┐┴Л√╢" class="inp_search">
-										<input type="image"
-											src="https://res.kurly.com/pc/service/common/1908/ico_search_x2.png"
-											class="btn_search">
-									</form>
-								</div></li>
-						</ul>
-					</ul>
-	    </div>
-	  </nav>
+	<%@ include file="header.jsp"%>
+	
+		
 	<div class="page_aticle aticle_type2">
 <div id="snb" class="snb_my">
 <h2 class="tit_snb">Myinfo</h2>
 <div class="inner_snb">
 <ul class="list_menu">
 <li class="on">
-<a href="member-info.jsp">Лё╪К╛╦ К┌╢Л≈╜</a>
+<a href="member-info.jsp">аж╧╝ Ё╩©╙</a>
 </li>
 <li>
-<a href="member-edit.jsp">Й╟°Л²╦ Л═∙КЁ╢ Л┬≤Л═∙</a>
+<a href="member-edit.jsp">╟Ёюн а╓╨╦ ╪Жа╓</a>
 </li>
 </ul>
 </div>
 </div>
-<div id="viewOrderList" class="page_section section_orderlist"><div class="head_aticle"><h2 class="tit">Лё╪К╛╦ К┌╢Л≈╜ <span class="tit_sub">Л╖─К┌° 3К┘└Й╟└Л²≤ Лё╪К╛╦ К┌╢Л≈╜ Л║╟М ▄Й╟─ Й╟─К┼╔М∙╘К▀┬К▀╓</span></h2></div> <div class="search_date"><h3 class="screen_out">Й╦╟Й╟└ Л└═М┐²</h3><ul class="layer_search" style="display: none;"><li><a href="#none" class="on">Л═└Л╡╢Й╦╟Й╟└</a></li> <li><a href="#none" data-year="2020">2020 К┘└</a></li> <li><a href="#none" data-year="2019">2019 К┘└</a></li> <li><a href="#none" data-year="2018">2018 К┘└</a></li></ul></div> <ul class="list_order"> <li class="no_data">
-Лё╪К╛╦К┌╢Л≈╜Л²╢ Л≈├Л┼╣К▀┬К▀╓.
+<div id="viewOrderList" class="page_section section_orderlist"><div class="head_aticle"><h2 class="tit">аж╧╝ Ё╩©╙ <span class="tit_sub">аЖЁ╜ 3ЁБ╟ёюг аж╧╝ Ё╩©╙ а╤х╦╟║ ╟║╢игу╢о╢ы</span></h2></div> <div class="search_date"><h3 class="screen_out">╠Б╟ё ╪╠ец</h3><ul class="layer_search" style="display: none;"><li><a href="#none" class="on">юЭц╪╠Б╟ё</a></li> <li><a href="#none" data-year="2020">2020 ЁБ</a></li> <li><a href="#none" data-year="2019">2019 ЁБ</a></li> <li><a href="#none" data-year="2018">2018 ЁБ</a></li></ul></div> <ul class="list_order"> <li class="no_data">
+аж╧╝Ё╩©╙юл ╬Ь╫ю╢о╢ы.
 </li></ul> <!----></div>
 </div>
 
