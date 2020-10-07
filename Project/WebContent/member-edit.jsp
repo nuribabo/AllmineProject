@@ -219,9 +219,9 @@
 							<tr class="select_gender">
 								<th>성별</th>
 								<td><label class=""> <input type="radio" name="gender"
-										value="m"> <span class="ico"></span>남자
+										value="남"> <span class="ico"></span>남자
 								</label> <label class=""> <input type="radio" name="gender"
-										value="w"> <span class="ico"></span>여자
+										value="여"> <span class="ico"></span>여자
 							</tr>
 							<tr class="birth field_birth">
 								<th>생년월일</th>
