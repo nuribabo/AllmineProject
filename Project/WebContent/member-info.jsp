@@ -6,25 +6,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-olorlib
-<meta charset="EUC-KR">
+<meta charset="utf-8">	
 <title>Insert title here</title>
-</head>
-<body>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Vegefoods - Free Bootstrap 4 Template by Colorlib</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
-
+	
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
-    
+    <link rel="styleSheet" href="css/normalize.css?ver=1.20.12">
+    <link rel="styleSheet" href="css/common.css?ver=1.20.12">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
@@ -40,7 +33,7 @@ olorlib
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-  </head>
+    
     <style type="text/css">
 .container1 {
 	display: flex;
@@ -74,79 +67,53 @@ olorlib
 	
 }
 </style>
+  </head>
   <body class="goto-here">
-   <%ArrayList<ProductDTO> fruitlist = (ArrayList<ProductDTO>)session.getAttribute("flist");	 %>
+    <%ArrayList<ProductDTO> itemlist = (ArrayList<ProductDTO>)session.getAttribute("list");	 %>
     <%
 		MemberDTO info = (MemberDTO) session.getAttribute("info");
-	
 	%>
-		<%@ include file="header.jsp"%>
+	<%@ include file="header.jsp"%>
+	
+		
+	<div class="page_aticle aticle_type2">
+<div id="snb" class="snb_my">
+<h2 class="tit_snb">Myinfo</h2>
+<div class="inner_snb">
+<ul class="list_menu">
+<li class="on">
+<a href="member-info.jsp">주문 내역</a>
+</li>
+<li>
+<a href="member-edit.jsp">개인 정보 수정</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="viewOrderList" class="page_section section_orderlist"><div class="head_aticle"><h2 class="tit">주문 내역 <span class="tit_sub">지난 3년간의 주문 내역 조회가 가능합니다</span></h2></div> <div class="search_date"><h3 class="screen_out">기간 선택</h3><ul class="layer_search" style="display: none;"><li><a href="#none" class="on">전체기간</a></li> <li><a href="#none" data-year="2020">2020 년</a></li> <li><a href="#none" data-year="2019">2019 년</a></li> <li><a href="#none" data-year="2018">2018 년</a></li></ul></div> <ul class="list_order"> <li class="no_data">
+주문내역이 없습니다.
+</li></ul> <!----></div>
+</div>
 
-    <div class="hero-wrap hero-bread" style="background-image: url('images/bg_1.jpg');">
-      <div class="container">
-        <div class="row no-gutters slider-text align-items-center justify-content-center">
-          <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Contact us</span></p>
-            <h1 class="mb-0 bread">Contact us</h1>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <section class="ftco-section contact-section bg-light">
-      <div class="container">
-      	<div class="row d-flex mb-5 contact-info">
-          <div class="w-100"></div>
-          <div class="col-md-3 d-flex">
-          	<div class="info bg-white p-4">
-	            <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
-	          </div>
+		<section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light" style = "clear:both">
+      <div class="container py-4">
+        <div class="row d-flex justify-content-center py-5">
+          <div class="col-md-6">
+          	<h2 style="font-size: 22px;" class="mb-0">Subcribe to our Newsletter</h2>
+          	<span>Get e-mail updates about our latest shops and special offers</span>
           </div>
-          <div class="col-md-3 d-flex">
-          	<div class="info bg-white p-4">
-	            <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
-	          </div>
-          </div>
-          <div class="col-md-3 d-flex">
-          	<div class="info bg-white p-4">
-	            <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
-	          </div>
-          </div>
-          <div class="col-md-3 d-flex">
-          	<div class="info bg-white p-4">
-	            <p><span>Website</span> <a href="#">yoursite.com</a></p>
-	          </div>
-          </div>
-        </div>
-        <div class="row block-9">
-          <div class="col-md-6 order-md-last d-flex">
-            <form action="#" class="bg-white p-5 contact-form">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Name">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Email">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Subject">
-              </div>
-              <div class="form-group">
-                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
-              </div>
-              <div class="form-group">
-                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+          <div class="col-md-6 d-flex align-items-center">
+            <form action="#" class="subscribe-form">
+              <div class="form-group d-flex">
+                <input type="text" class="form-control" placeholder="Enter email address">
+                <input type="submit" value="Subscribe" class="submit px-3">
               </div>
             </form>
-          
-          </div>
-
-          <div class="col-md-6 d-flex">
-          	<div id="map" class="bg-white"></div>
           </div>
         </div>
       </div>
     </section>
-
     <footer class="ftco-footer ftco-section">
       <div class="container">
       	<div class="row">
@@ -243,8 +210,8 @@ olorlib
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
+  
+  
     
   </body>
-</html>
-</body>
 </html>

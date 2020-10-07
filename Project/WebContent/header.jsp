@@ -40,7 +40,6 @@
 		MemberDTO info2 = (MemberDTO) session.getAttribute("info");
 	ArrayList<CartDTO> clist = (ArrayList<CartDTO>)session.getAttribute("clist");
 	%>
-	
 	<!-- 소개탭 -->
 		<div class="py-1 bg-primary">
 			<div class="container">
@@ -115,9 +114,14 @@
 								class="dropdown-item"
 								href="./itemView_controller?name=<%="NA"%>">자연산물</a>
 						</div></li>
+<<<<<<< HEAD
 					<li class="nav-item"><a href="about.jsp" class="nav-link">레시피</a></li>
 					<li class="nav-item"><a href="blog.jsp" class="nav-link">베스트</a></li>
 				
+=======
+					<li class="nav-item"><a href="recipe_blog.jsp" class="nav-link">레시피</a></li>
+					<li class="nav-item"><a href="#" class="nav-link">베스트</a></li>
+>>>>>>> branch 'master' of https://github.com/nuribabo/AllmineProject.git
 
 					<li class="nav-item cta cta-colored"><a href="wishlist.jsp"
 						class="nav-link"><span class="icon-shopping_cart"></span>
@@ -150,7 +154,7 @@
 										<%=info2.getName()%>님</a>
 									</div>
 									<div class="text item2">
-										<a href="mypage.jsp">마이페이지</a>
+										<a href="member-info.jsp">마이페이지</a>
 									</div>
 									<div class="text item3">
 										<a href="Logout"> 로그아웃</a>
