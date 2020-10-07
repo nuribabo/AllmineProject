@@ -102,16 +102,18 @@
     <div col-lg-13 ftco-animate align='center'>
     <table width=55%>
     <tr>
-    <td align=left><select>
+    <td align=left>
+    <select class='recipe_sort'>
+    <option selected=selected>기본 정렬</option>
     <option>이름순 정렬</option>
     <option>평점순 정렬</option>
     <option>선호도순 정렬</option>
-    </select></td>
+    </select>
     <td align=center>
-    	<form action="#" class="search-form">
-                <div class="form-group"><span class="icon ion-ios-search"></span>
-                <input type="text" class="form-control" placeholder="Search...">
-                </div></form>
+   	<form action="#" class="search-form">
+    <div class="form-group"><span class="icon ion-ios-search"></span>
+    <input type="text" class="form-control" placeholder="Search...">
+    </div></form>
     </td>
     </tr>
     </table>
