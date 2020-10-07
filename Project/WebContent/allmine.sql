@@ -1,5 +1,5 @@
-select * from product;
-
+select * from product ORDER BY discount_rate DESC;
+1. SELECT empno FROM emp ORDER BY empno DESC
 select * from member where id = 'nuri' and pw ='snfl'; 
 
 select * from product;

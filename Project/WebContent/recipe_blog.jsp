@@ -104,7 +104,7 @@
     <table width=55%>
     <tr>
     <td align=left>
-    
+  
     <td align=center>
 	<form action="SearchRecipeCon" class="search-form">
     <div class="form-group"><span class="icon ion-ios-search"></span>

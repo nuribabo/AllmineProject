@@ -26,7 +26,9 @@ public class itemView_controller extends HttpServlet {
 		String cnt = request.getParameter("name");
 		if(cnt == null) {
 			list = dao.select_by_All();
-		}else {
+			
+		}
+		else {
 		list = dao.select_by_Fruit(cnt);
 		}
 		
@@ -37,8 +39,6 @@ public class itemView_controller extends HttpServlet {
 			System.out.println("¾øÂÇ¿°");
 		}
 		response.sendRedirect("shop1.jsp");
-		
-		
 		
 		
 	}
