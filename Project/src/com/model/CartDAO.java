@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class CartDAO {
 	Connection conn = null;
@@ -12,7 +13,8 @@ public class CartDAO {
 	int cnt;
 	ResultSet rs;
 	ProductDTO pdto = null;
-	
+	ArrayList<CartDTO> list = new ArrayList<CartDTO>();
+	CartDTO check = null;
 	public void conn() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -65,7 +67,46 @@ public class CartDAO {
 		}
 		return pdto;
 	}
-	public int insert_cart(CartDTO cdto) {
+	// 장바구니에 같은 물건 있는지 확인
+	public CartDTO cartcheck(CartDTO cdto) {
+		
+		try {
+			conn();
+			String sql = "select * from cart_product where member_id = ? and product_id = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, cdto.getMember_id());
+			psmt.setString(2, cdto.getProduct_id());
+			rs = psmt.executeQuery();
+			while(rs.next()) {
+				int quantity = rs.getInt(1);
+				String member_id = rs.getString(2);
+				String product_id = rs.getString(3);
+				check = new CartDTO( member_id, product_id, quantity);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}return check;
+		
+	}
+	public int update_cart(CartDTO cdto) {
+		
+		try {
+			conn();
+			String sql = "update cart_product set quantity = ? where member_id = ? and product_id = ? ";
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, cdto.getQuantity());
+			psmt.setString(2, cdto.getMember_id());
+			psmt.setNString(3, cdto.getProduct_id());
+			cnt = psmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}return cnt;
+	}
+	
+	// 장바구에 저장;
+	public int insert_cart(CartDTO cdto) {    
 		
 		try {
 			conn();
@@ -81,14 +122,68 @@ public class CartDAO {
 		}return cnt;
 		
 	}
+	public ArrayList<CartDTO> cartView(String name){
+		try {
+			conn();
+			String sql = "select p.img_addr, p.product_name, p.product_id, p.price, p.discount_rate, cp.quantity from cart_product cp, product p, member m where ? = m.member_id and p.product_id = cp.product_id";
+			
+			psmt=conn.prepareStatement(sql);
+			psmt.setString(1, name);
+			rs = psmt.executeQuery();
+			while(rs.next()) {
+				String img_addr = rs.getString(1);
+				String product_name = rs.getString(2);
+				String product_id=rs.getString(3);
+				int price = rs.getInt(4);
+				int discount_rate = rs.getInt(5);
+				int quantity = rs.getInt(6);
+				CartDTO dto = new CartDTO(product_name, product_id, quantity ,img_addr, price, discount_rate);
+				list.add(dto);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}return list;
+	}
+	public int delete_all(String id) {
+		
+		try {
+			conn();
+			String sql = "delete from CART_PRODUCT where MEMBER_ID = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, id);
+			cnt = psmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}return cnt;
+	}
+public int delete_select (CartDTO info) {
+		
+		try {
+			conn();
+			String sql = "delete * form cart_product where member_id = ? and product_id = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, info.getMember_id());
+			psmt.setNString(2, info.getProduct_id());
+			cnt = psmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}return cnt;
+	}
 	
 	
-	public int remove(String product_id) {
+	
+	
+	
+	public int remove(CartDTO cdto) {
 		conn();
-		String sql = "delete from cart where product_id =?";
+		String sql = "delete from cart_product where product_id =? and member_id = ?";
 		try {
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1,product_id );
+			psmt.setString(1, cdto.getProduct_id());
+			psmt.setString(2, cdto.getMember_id());
 			cnt = psmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

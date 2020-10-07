@@ -1,3 +1,4 @@
+<%@page import="com.model.CartDTO"%>
 <%@page import="com.model.ProductDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.model.MemberDTO"%>
@@ -37,6 +38,7 @@
 <body>
 	<%
 		MemberDTO info2 = (MemberDTO) session.getAttribute("info");
+	ArrayList<CartDTO> clist = (ArrayList<CartDTO>)session.getAttribute("clist");
 	%>
 	<!-- 소개탭 -->
 		<div class="py-1 bg-primary">
@@ -115,8 +117,12 @@
 					<li class="nav-item"><a href="recipe_blog.jsp" class="nav-link">레시피</a></li>
 					<li class="nav-item"><a href="#" class="nav-link">베스트</a></li>
 
-					<li class="nav-item cta cta-colored"><a href="cart.jsp"
-						class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+					<li class="nav-item cta cta-colored"><a href="wishlist.jsp"
+						class="nav-link"><span class="icon-shopping_cart"></span>
+						<%if(clist!= null){ %>
+						[<%=clist.size()%>]
+						<%}else{ %>
+						[0]<%} %></a></li>
 					<ul class="dan2">
 						<li>
 							<div class="col-md pr-4 d-flex topper align-items-center ">
@@ -142,7 +148,7 @@
 										<%=info2.getName()%>님</a>
 									</div>
 									<div class="text item2">
-										<a href="mypage.jsp">마이페이지</a>
+										<a href="member-info.jsp">마이페이지</a>
 									</div>
 									<div class="text item3">
 										<a href="Logout"> 로그아웃</a>
