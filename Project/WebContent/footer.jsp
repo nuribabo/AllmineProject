@@ -86,7 +86,7 @@
 						<h2 class="ftco-heading-2">Menu</h2>
 						<ul class="list-unstyled">
 							<li><a href="fruitshop.jsp" class="py-2 d-block">Shopping</a></li>
-							<li><a href="blog.jsp" class="py-2 d-block">blog</a></li>
+							<li><a href="recipe_blog.jsp" class="py-2 d-block">Recipes</a></li>
 							<li><a href="#" class="py-2 d-block">Event</a></li>
 							<li><a href="#" class="py-2 d-block"></a></li>
 						</ul>
@@ -137,7 +137,7 @@
 						class="img-fluid" alt="Colorlib Template"></a>
 				</div>
 				<div class="col-sm ftco-animate">
-					<a href="#" class="partner"><img src="https://e7.pngegg.com/pngimages/766/40/png-clipart-logo-eclipse-java-integrated-development-environment-content-assist-eclipse-purple-text.png"
+					<a href="#" class="partner"><img src="https://lh3.googleusercontent.com/proxy/QTu3PFo38GIRJ7Ub1sYqbNEmYOOq0fLmuTINz4Cq3ViIwf5pqYkP0ql202Aocjetp-g5yPT82onSX3TwIahAd_Yrn87mj2I-2Z3EIRr1tYGNXae54WP0_ket"
 						class="img-fluid" alt="Colorlib Template"></a>
 				</div>
 				<div class="col-sm ftco-animate">
