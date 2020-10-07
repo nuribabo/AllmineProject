@@ -132,8 +132,14 @@
 						        <td class="price"><%=clist.get(i).getPrice()-clist.get(i).getPrice()*clist.get(i).getDiscount_rate()/100.0%></td>
 						        
 						        <td class="quantity">
+						       <!-- 플러스버튼 --> <div class="sp-plus fff"> <a class="ddd" href="item_quantity?plus='p'">+</a></div>
 						        	<div class="input-group mb-3">
+						        	
 					             	<input type="text" name="quantity" class="quantity form-control input-number" value="<%=clist.get(i).getQuantity()%>" min="1" max="100">
+					             	</div>
+       								<!-- 마이너스버튼 -->
+       								<div class="sp-minus fff"> <a class="ddd" href="item_quantity?minus='minus'">-</a></div>
+					          		 	
 					          	</div>
 					          </td>
 						        

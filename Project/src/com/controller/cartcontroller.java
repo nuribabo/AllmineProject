@@ -26,21 +26,16 @@ public class cartcontroller extends HttpServlet {
 		int num = 1;
 		int cnt = 0;
 		int check_quantity = 0;
-		/*
-		 * String quantity = request.getParameter("quantity");
-		 * 
-		 * if(quantity!= null) { num = Integer.parseInt(quantity); }
-		 */
+		
 
-		CartDAO dao = new CartDAO();
-		ProductDTO dto = dao.select(itemid); //프로덕트 id 가져오기위해서 
+	
 
 		HttpSession session = request.getSession();
 		MemberDTO info = (MemberDTO) session.getAttribute("info");
 		String member_id = info.getMember_id();
-		String product_id = dto.getProduct_id();
-
-		CartDTO cdto = new CartDTO(member_id, product_id, num);
+		
+		CartDAO dao = new CartDAO();
+		CartDTO cdto = new CartDTO(member_id, itemid, num);
 		CartDTO check = dao.cartcheck(cdto); // 카트에 있는지없는지 체크
 		
 		
@@ -53,7 +48,7 @@ public class cartcontroller extends HttpServlet {
 			cnt = dao.insert_cart(cdto);
 		}else {
 			num++;
-			CartDTO cdto2 = new CartDTO(member_id, product_id, num);
+			CartDTO cdto2 = new CartDTO(member_id, itemid, num);
 			cnt = dao.update_cart(cdto2);
 		}
 		
