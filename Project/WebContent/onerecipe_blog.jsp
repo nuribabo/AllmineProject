@@ -82,7 +82,7 @@
 	MemberDTO info = (MemberDTO) session.getAttribute("info");
 	RecipeDAO rdao = new RecipeDAO();
 	ArrayList<RecipeDTO> ard = rdao.recipe_import();
-    ArrayList<RecipeDTO> itemlist = (ArrayList<RecipeDTO>)session.getAttribute("list");
+    ArrayList<RecipeDTO> selectlist = (ArrayList<RecipeDTO>)session.getAttribute("selectlist");
 	/* 	Date date = new Date(); */
 	%>
 	
@@ -124,18 +124,18 @@
           <div class="col-lg-13 ftco-animate">
 					<div class="row">
  						<!-- 10개의 레시피 리스트 불러오기 -->
-						<% for (int i=0; i<10; i++){ %>
+						<% for (int i=0; i<selectlist.size(); i++){ %>
 							<div class="col-md-12 d-flex ftco-animate">
 								<div class="blog-entry align-self-stretch d-md-flex">
-									<a href="blog-single.html" class="block-20" style="background: url(<%=ard.get(i).getRecipe_img()%>) center center no-repeat; background-size:250px 250px;"></a>
+									<a href="blog-single.html" class="block-20" style="background: url(<%=selectlist.get(i).getRecipe_img()%>) center center no-repeat; background-size:250px 250px;"></a>
 									<div class="text d-block pl-md-4">
-										<h3 class="heading"><a href="#"><%=ard.get(i).getRecipe_name()%></a></h3>
+										<h3 class="heading"><a href="#"><%=selectlist.get(i).getRecipe_name()%></a></h3>
 										<div class="meta mb-3">
-											<div><a href="#">평점 <%=ard.get(i).getRecipe_rate()%></a></div>
-											<div><a href="#">♥ <%=ard.get(i).getRecipe_preference()%></a></div>
+											<div><a href="#">평점 <%=selectlist.get(i).getRecipe_rate()%></a></div>
+											<div><a href="#">♥ <%=selectlist.get(i).getRecipe_preference()%></a></div>
 											<div><a href="#" class="meta-chat"><span class="icon-chat"></span>recipe_comments</a></div>
 										</div>
-										<p style="width:795px;"><%=ard.get(i).getRecipe_ingredient()%></p>
+										<p style="width:795px;"><%=selectlist.get(i).getRecipe_ingredient()%></p>
 										<p><a href="blog-single.html" class="btn btn-primary py-2 px-3">레시피 알아보기</a></p>
 									</div>
 								</div>
