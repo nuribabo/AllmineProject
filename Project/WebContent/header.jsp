@@ -113,9 +113,8 @@
 								class="dropdown-item"
 								href="./itemView_controller?name=<%="NA"%>">자연산물</a>
 						</div></li>
-					<li class="nav-item"><a href="about.jsp" class="nav-link">레시피</a></li>
-					<li class="nav-item"><a href="blog.jsp" class="nav-link">베스트</a></li>
-					<li class="nav-item"><a href="contact.jsp" class="nav-link">알뜰쇼핑</a></li>
+					<li class="nav-item"><a href="recipe_blog.jsp" class="nav-link">레시피</a></li>
+					<li class="nav-item"><a href="#" class="nav-link">베스트</a></li>
 
 					<li class="nav-item cta cta-colored"><a href="cart.jsp"
 						class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
