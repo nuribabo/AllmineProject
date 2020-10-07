@@ -150,7 +150,7 @@
 										<%=info2.getName()%>님</a>
 									</div>
 									<div class="text item2">
-										<a href="mypage.jsp">마이페이지</a>
+										<a href="member-info.jsp">마이페이지</a>
 									</div>
 									<div class="text item3">
 										<a href="Logout"> 로그아웃</a>
