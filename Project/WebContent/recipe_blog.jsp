@@ -97,8 +97,10 @@
         </div>
       </div>
     </div>
-
+	
     <section class="ftco-section ftco-degree-bg">
+    <div class=filter&search, width=80%, height= 20%></div>
+    
       <div class="container">
         <div class="row">
           <div class="col-lg-8 ftco-animate">

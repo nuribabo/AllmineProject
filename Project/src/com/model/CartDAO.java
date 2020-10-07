@@ -41,9 +41,6 @@ public class CartDAO {
 		}
 	}
 	
-	
-	
-	
 	public ProductDTO select (String id) { //장바구니에 넣을 아이템 찾아오기
 		conn();
 		try {
@@ -63,7 +60,10 @@ public class CartDAO {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}return pdto;
+		} finally {
+			close();
+		}
+		return pdto;
 	}
 	public int insert_cart(CartDTO cdto) {
 		
