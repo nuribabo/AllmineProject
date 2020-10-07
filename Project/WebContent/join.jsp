@@ -352,14 +352,14 @@ olorlib
 					</script>
 				
 				<div class="form-group">
-					<label for="inputGender">성별</label><br> 남 <input type="radio"
-						class="form-control" id="inputgen" name="gender" >여 <input type="radio"
-						class="form-control" id="inputgen" name="gender">
+					<label for="inputGender">성별</label><br>  <input type="radio"
+						class="form-control" id="inputgen" name="gender" value="남">남 <input type="radio"
+						class="form-control" id="inputgen" name="gender" value="여">여
 						
 				</div>
 				<div class="form-group">
 					<label for="inputbirth">birth</label> <input type="date"
-						class="form-control" id="inputbirth" >
+						class="form-control" id="inputbirth" name="birth">
 				</div>
 
 				<div class="form-group">
@@ -376,7 +376,7 @@ olorlib
 					<button type="submit" id="join-submit" class="btn btn-primary">
 						회원가입<i class="fa fa-check spaceLeft"></i>
 					</button>
-					<input type="button" onclick="location.href='main.jsp'" class="btn btn-warning" value= "가입취소">
+					<input type="button" onclick="location.href='main1.jsp'" class="btn btn-warning" value= "가입취소">
 						
 					</button>
 				</div>

@@ -11,5 +11,9 @@ update product set IMG_ADDR = 'https://search.pstatic.net/common/?src=http%3A%2F
 select * from product where product_name like '%¿À%';
 select * from product where product_name like '%»ç%';
 
+<<<<<<< HEAD
 
 select * from member;
+=======
+select * from cart_product;
+>>>>>>> branch 'master' of https://github.com/nuribabo/AllmineProject.git
