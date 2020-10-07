@@ -20,9 +20,10 @@ public class SearchRecipeCon extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		request.setCharacterEncoding("EUC-KR");
 		String search =request.getParameter("sword");
 		search.replace(" ", ""); //띄어쓰기 없애주는거임;;
-		 		System.out.println(search);
+		System.out.println(search);
 		 		
 		ArrayList<RecipeDTO> list = new ArrayList<RecipeDTO>();
 		

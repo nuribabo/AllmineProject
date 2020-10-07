@@ -71,7 +71,6 @@ public class RecipeDAO {
 	
 	//제품 이름으로 검색하기
 		public ArrayList<RecipeDTO> select_by_name(String name) {
-			
 			conn();
 			try {
 				String sql = "select * from recipe where recipe_name like ?";
@@ -91,8 +90,9 @@ public class RecipeDAO {
 
 			} catch (SQLException e) {
 				e.printStackTrace();
+			} finally {
+				close();
 			}
-
 			return list;
 		}
 	

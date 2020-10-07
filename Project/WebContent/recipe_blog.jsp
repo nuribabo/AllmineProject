@@ -103,8 +103,12 @@
     <div col-lg-13 ftco-animate align='center'>
     <table width=55%>
     <tr>
-    <td align=left>
-  
+    <td align=left><select>
+    <option>이름순 정렬</option>
+    <option>평점순 정렬</option>
+    <option>선호도순 정렬</option>
+    </select></td>
+  	</td>
     <td align=center>
 	<form action="SearchRecipeCon" class="search-form">
     <div class="form-group"><span class="icon ion-ios-search"></span>
