@@ -14,6 +14,7 @@ public class RecipeDAO {
 	int cnt;
 	ResultSet rs;
 	RecipeDTO rdto = null;
+	ArrayList<RecipeDTO> list = new ArrayList<RecipeDTO>() ;
 	
 	public void conn() {
 		try {
@@ -67,5 +68,32 @@ public class RecipeDAO {
 	return rdt;
 }
 	
+	
+	//제품 이름으로 검색하기
+		public ArrayList<RecipeDTO> select_by_name(String name) {
+			
+			conn();
+			try {
+				String sql = "select * from recipe where recipe_name like ?";
+				psmt = conn.prepareStatement(sql);
+				psmt.setString(1,'%'+name+'%');
+				ResultSet rs = psmt.executeQuery();
+				while (rs.next()) {
+					String recipe_name = rs.getString(1);
+					System.out.println(recipe_name);
+					String recipe_rate = rs.getString(2);
+					String recipe_preference = rs.getString(3);
+					String recipe_img = rs.getString(4);
+					String recipe_ingredient = rs.getString(5);
+					RecipeDTO item = new RecipeDTO(recipe_name, recipe_rate, recipe_preference, recipe_img, recipe_ingredient);
+					list.add(item);
+				}
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+			return list;
+		}
 	
 }
