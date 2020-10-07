@@ -78,15 +78,16 @@
 
 </head>
 <body class="goto-here">
+	
+
+
+	<%@ include file="header.jsp"%>
+	
 	<%
 		MemberDTO info = (MemberDTO) session.getAttribute("info");
 	ArrayList<ProductDTO> itemlist = (ArrayList<ProductDTO>) session.getAttribute("list");
 	
 	%>
-
-
-	<%@ include file="header.jsp"%>
-	
 	<section class="ftco-section">
 
 		<div class="container">

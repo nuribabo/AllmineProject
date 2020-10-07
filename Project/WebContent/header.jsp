@@ -33,12 +33,45 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
 <title>Header</title>
+<style type="text/css">
+.container1 {
+	display: flex;
+	width: 250px;
+	justify-content: align-items;
+}
+
+.container2 {
+	display: flex;
+	width: 200px;
+	justify-content: align-items;
+}
+
+.dan2 {
+	list-style: none;
+	padding-left: 0px;
+}
+
+.dan1 {
+	list-style: none;
+}
+
+.dan1 .search1 .search .btn_search {
+	position: absolute;
+	left: 1460px;
+	width: 30px;
+	height: 30px;
+}
+
+#item5 {
+	
+}
+</style>
 </head>
 
 <body>
 	<%
 		MemberDTO info2 = (MemberDTO) session.getAttribute("info");
-	ArrayList<CartDTO> clist = (ArrayList<CartDTO>)session.getAttribute("clist");
+	ArrayList<CartDTO> clist = (ArrayList<CartDTO>) session.getAttribute("clist");
 	%>
 	
 	<!-- 소개탭 -->
@@ -88,7 +121,7 @@
 					<li class="nav-item active"><a href="main1.jsp"
 						class="nav-link">Home</a></li>
 					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="shop.html" id="dropdown04"
+						class="nav-link dropdown-toggle" href="./itemView_controller" id="dropdown04"
 						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">전체상품</a>
 						<div class="dropdown-menu" aria-labelledby="dropdown04">
 							<a class="dropdown-item" href="./itemView_controller">전체 상품</a> <a

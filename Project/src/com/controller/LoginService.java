@@ -36,13 +36,11 @@ public class LoginService extends HttpServlet {
 			System.out.println("로그인 성공!");
 			HttpSession session = request.getSession();
 			session.setAttribute("info", info);
-			
-			
 			String member_id = info.getMember_id();
 			CartDAO cdao = new CartDAO();
-			ArrayList<CartDTO> list = new ArrayList<CartDTO>();
-			list = cdao.cartView(member_id);
-			session.setAttribute("clist", list);
+			ArrayList<CartDTO> clist = new ArrayList<CartDTO>();
+			clist = cdao.cartView(member_id);
+			session.setAttribute("clist", clist);
 			
 			response.sendRedirect("main1.jsp");
 		}else {
