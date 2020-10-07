@@ -38,7 +38,6 @@
 	<%
 		MemberDTO info2 = (MemberDTO) session.getAttribute("info");
 	%>
-	
 	<!-- ¼Ò°³ÅÇ -->
 		<div class="py-1 bg-primary">
 			<div class="container">
