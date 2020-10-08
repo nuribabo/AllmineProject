@@ -48,6 +48,34 @@ public class ProductDAO {
 		}
 	}
 
+	public ProductDTO select_by_name2(String name) {
+	      // TODO Auto-generated method stub
+	      ProductDTO item = null;
+	      conn();
+	      try {
+	         String sql = "select * from product where product_name = ?";
+	         psmt = conn.prepareStatement(sql);
+	         psmt.setString(1,name);
+	         ResultSet rs = psmt.executeQuery();
+	         if (rs.next()) {
+	            String product_id = rs.getString(1);
+	            String product_name = rs.getString(2);
+	            int price = rs.getInt(3);
+	            int discount_rate = rs.getInt(4);
+	            int weight = rs.getInt(5);
+	            String origin = rs.getString(6);
+	            String IMG_ADDR = rs.getString(7);
+	            item = new ProductDTO(product_id, product_name, price, discount_rate, weight, origin,IMG_ADDR);
+	         }
+
+	      } catch (SQLException e) {
+	         // TODO Auto-generated catch block
+	         e.printStackTrace();
+	      }
+
+	      return item;
+	   }
+
 	//제품 이름으로 검색하기
 	   public ArrayList<ProductDTO> select_by_name(String name) {
 	      // TODO Auto-generated method stub

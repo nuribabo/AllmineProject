@@ -21,6 +21,7 @@ public class itemView_controller extends HttpServlet {
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		
 		ArrayList<ProductDTO> list ;
 		ProductDAO dao = new ProductDAO();
 		String cnt = request.getParameter("name");

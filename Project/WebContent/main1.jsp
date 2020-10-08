@@ -108,8 +108,8 @@
 			recom_lst.add(dao.select_by_name2("´Þ°¿"));
 		}
 	
-				
 	%>
+
 
 	<%@ include file="header.jsp"%>
 	

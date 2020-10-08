@@ -1,6 +1,8 @@
 package com.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,6 +41,8 @@ public class cartcontroller extends HttpServlet {
 		CartDTO check = dao.cartcheck(cdto); // 카트에 있는지없는지 체크
 		
 		
+		
+		
 		if(check!= null) {
 		check_quantity = check.getQuantity();
 		}
@@ -53,14 +57,18 @@ public class cartcontroller extends HttpServlet {
 		}
 		
 
-		
+		ArrayList<CartDTO> list = new ArrayList<CartDTO>();
+		list = dao.cartView(member_id);
 
 		if (cnt != 0) {
+			
 			System.out.println("장바구니 저장 성공");
+			session.setAttribute("clist", list);
+			
 		} else {
 			System.out.println("장바구니 파손");
 		}
-		response.sendRedirect("shop1.jsp");
+		response.sendRedirect("shop1.jsp?check=ok");
 
 	}
 
