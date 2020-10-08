@@ -29,7 +29,6 @@ public class ProductDAO {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		
 		}
 	
 	public void close() {
@@ -47,8 +46,6 @@ public class ProductDAO {
 			e.printStackTrace();
 		}
 	}
-
-
 	//제품 이름으로 검색하기
 	   public ArrayList<ProductDTO> select_by_name(String name) {
 	      // TODO Auto-generated method stub
@@ -102,7 +99,6 @@ public class ProductDAO {
 				String IMG_ADDR = rs.getString(7);
 				item = new ProductDTO(product_id, product_name, price, discount_rate, weight, origin,IMG_ADDR);
 			}
-
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -116,11 +112,9 @@ public class ProductDAO {
 	public ArrayList<ProductDTO> select_by_All() {
 		conn();
 		try {
-			
 			String sql = "select * from product";
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
-			
 			while (rs.next()) {
 				String product_id = rs.getString(1);
 				String product_name = rs.getString(2);
@@ -130,26 +124,20 @@ public class ProductDAO {
 				String origin = rs.getString(6);
 				String IMG_ADDR = rs.getString(7);
 				ProductDTO item = new ProductDTO(product_id, product_name, price, discount_rate, weight, origin,IMG_ADDR);
-				list.add(item);
-				
-				
+				list.add(item);	
 			}
-			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			close();
 		}
-		
-		
 		return list;
 	}
 	
 
 	//제품올리기
 	public void put_product(ProductDTO dto) {
-		
 		conn();
 		try {
 			String sql = "insert into product values (?,?,?,?,?,?)";
@@ -161,20 +149,16 @@ public class ProductDAO {
 			psmt.setInt(5,dto.getWeight());
 			psmt.setString(6,dto.getOrigin());
 			psmt.executeUpdate();
-			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			close();
 		}
-		
-		
 	}
 	
 
 	//제품 삭제하기
 	public void delete_game(String name) {
-		
 		conn();
 		try {
 			String sql = "delete product where name=?";
@@ -193,17 +177,12 @@ public class ProductDAO {
 	
 	public ArrayList<ProductDTO> select_by_Fruit(String cnt) {
 		conn();
-		
 		try {
-			
 			String sql = "select * from Product where product_id like ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, cnt+"%");
 			rs = psmt.executeQuery();
-			
-			
 			while (rs.next()) {
-				
 				String product_id = rs.getString(1);
 				String product_name = rs.getString(2);
 				int price = rs.getInt(3);
@@ -213,19 +192,16 @@ public class ProductDAO {
 				String IMG_ADDR = rs.getString(7);
 				ProductDTO item = new ProductDTO(product_id, product_name, price, discount_rate, weight, origin,IMG_ADDR);
 				list.add(item);
-				
-			}
-			
+				}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			close();
 		}
-	
-		
 		return list;
 	}
+
 	
 	//할인율 높은 순서대로
 	   

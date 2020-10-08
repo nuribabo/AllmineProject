@@ -204,10 +204,10 @@
                 <% if (info!=null) { %>
                 <form action="comment_func" class="p-5 bg-light">
                   <div class="form-group">
-                    <label for="name" name="c_name"><%= info.getName() %></label>
+                    <label for="c_name"><%= info.getName() %></label>
                   </div>
                   <div class="form-group">
-                    <label for="date" name="c_date"><%= now_day %></label>
+                    <label for="c_date"><%= now_day %></label>
                   </div>
                   <div class="form-group">
                     <label for="message">Message</label>
