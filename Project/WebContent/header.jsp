@@ -113,10 +113,7 @@
 								href="./itemView_controller?name=<%="DR"%>">음료·주류</a> <a
 								class="dropdown-item"
 								href="./itemView_controller?name=<%="NA"%>">자연산물</a>
-						</div></li>
-					<li class="nav-item"><a href="about.jsp" class="nav-link">레시피</a></li>
-					<li class="nav-item"><a href="blog.jsp" class="nav-link">베스트</a></li>
-				
+						</div></li>			
 					<li class="nav-item"><a href="recipe_blog.jsp" class="nav-link">레시피</a></li>
 					<li class="nav-item"><a href="#" class="nav-link">베스트</a></li>
 

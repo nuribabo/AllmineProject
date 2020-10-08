@@ -80,8 +80,15 @@
     <%
     ArrayList<ProductDTO> fruitlist = (ArrayList<ProductDTO>)session.getAttribute("flist");
 	MemberDTO info = (MemberDTO) session.getAttribute("info");
+	ArrayList<RecipeDTO> ardao;
 	RecipeDAO rdao = new RecipeDAO();
-	ArrayList<RecipeDTO> ard = rdao.recipe_import();
+	String check = null;
+	if (request.getParameter("check")!=null) {
+		check = request.getParameter("check");	
+	} else {
+		check = "de";
+	}
+	ardao = rdao.recipe_import(check);
     ArrayList<RecipeDTO> selectlist = (ArrayList<RecipeDTO>)session.getAttribute("selectlist");
 	/* 	Date date = new Date(); */
 	%>
@@ -103,11 +110,16 @@
     <div col-lg-13 ftco-animate align='center'>
     <table width=55%>
     <tr>
-    <td align=left><select>
-    <option>이름순 정렬</option>
-    <option>평점순 정렬</option>
-    <option>선호도순 정렬</option>
-    </select></td>
+    <td align=left><div class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="recipe_blog"
+                  id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">기본 정렬</a>
+               <div class="dropdown-menu" aria-labelledby="dropdown04">
+                  <a class="dropdown-item" href="./recipe_blog?check=de" class="active">기본 정렬</a> 
+                  <a class="dropdown-item" href="./recipe_blog?check=<%="ra"%>">평점순 정렬</a>
+                  <a class="dropdown-item" href="./recipe_blog?check=<%="pr"%>">선호도순 정렬</a>
+               </div>
+            </div></td>
     <td align=center>
     	<form action="SearchRecipeCon" class="search-form">
                 <div class="form-group"><span class="icon ion-ios-search"></span>

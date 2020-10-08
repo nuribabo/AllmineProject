@@ -80,10 +80,16 @@
     <%
     ArrayList<ProductDTO> fruitlist = (ArrayList<ProductDTO>)session.getAttribute("flist");
 	MemberDTO info = (MemberDTO) session.getAttribute("info");
+	ArrayList<RecipeDTO> ardao;
 	RecipeDAO rdao = new RecipeDAO();
-	ArrayList<RecipeDTO> ard = rdao.recipe_import();
+	String check = null;
+	if (request.getParameter("check")!=null) {
+		check = request.getParameter("check");	
+	} else {
+		check = "de";
+	}
+	ardao = rdao.recipe_import(check);
     ArrayList<RecipeDTO> itemlist = (ArrayList<RecipeDTO>)session.getAttribute("list");
-	/* 	Date date = new Date(); */
 	%>
 	
 	<%@ include file="header.jsp"%>
@@ -103,12 +109,17 @@
     <div col-lg-13 ftco-animate align='center'>
     <table width=55%>
     <tr>
-    <td align=left><select>
-    <option>이름순 정렬</option>
-    <option>평점순 정렬</option>
-    <option>선호도순 정렬</option>
-    </select></td>
-  	</td>
+    <td align=left> 
+    	<div class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="recipe_blog"
+                  id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">기본 정렬</a>
+               <div class="dropdown-menu" aria-labelledby="dropdown04">
+                  <a class="dropdown-item" href="./recipe_blog?check=de" class="active">기본 정렬</a> 
+                  <a class="dropdown-item" href="./recipe_blog?check=re">평점순 정렬</a>
+                  <a class="dropdown-item" href="./recipe_blog?check=pr">선호도순 정렬</a>
+               </div>
+            </div></td>
     <td align=center>
 	<form action="SearchRecipeCon" class="search-form">
     <div class="form-group"><span class="icon ion-ios-search"></span>
@@ -128,15 +139,15 @@
 						<% for (int i=0; i<10; i++){ %>
 							<div class="col-md-12 d-flex ftco-animate">
 								<div class="blog-entry align-self-stretch d-md-flex">
-									<a href="blog-single.html" class="block-20" style="background: url(<%=ard.get(i).getRecipe_img()%>) center center no-repeat; background-size:250px 250px;"></a>
+									<a href="blog-single.html" class="block-20" style="background: url(<%=ardao.get(i).getRecipe_img()%>) center center no-repeat; background-size:250px 250px;"></a>
 									<div class="text d-block pl-md-4">
-										<h3 class="heading"><a href="#"><%=ard.get(i).getRecipe_name()%></a></h3>
+										<h3 class="heading"><a href="#"><%=ardao.get(i).getRecipe_name()%></a></h3>
 										<div class="meta mb-3">
-											<div><a href="#">평점 <%=ard.get(i).getRecipe_rate()%></a></div>
-											<div><a href="#">♥ <%=ard.get(i).getRecipe_preference()%></a></div>
+											<div><a href="#">평점 <%=ardao.get(i).getRecipe_rate()%></a></div>
+											<div><a href="#">♥ <%=ardao.get(i).getRecipe_preference()%></a></div>
 											<div><a href="#" class="meta-chat"><span class="icon-chat"></span>recipe_comments</a></div>
 										</div>
-										<p style="width:795px;"><%=ard.get(i).getRecipe_ingredient()%></p>
+										<p style="width:795px;"><%=ardao.get(i).getRecipe_ingredient()%></p>
 										<p><a href="blog-single.html" class="btn btn-primary py-2 px-3">레시피 알아보기</a></p>
 									</div>
 								</div>

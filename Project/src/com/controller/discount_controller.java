@@ -32,7 +32,7 @@ public class discount_controller extends HttpServlet {
 		}else if(check.equals("dl")) {
 			dlist = dao.select_by_discount_rate_Asc();
 		}else if (check.equals("ph")) {
-			dlist=dao.select_by_Price_Desc();
+			dlist = dao.select_by_Price_Desc();
 		}else{
 			dlist = dao.select_by_Price_Asc();
 		}
