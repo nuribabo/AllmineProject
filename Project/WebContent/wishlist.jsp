@@ -150,7 +150,7 @@
  								<%} %>
  								<%} %>
  								  <a href="cartDel_controller" class="btn btn-primary py-3 px-4">전체삭제</a>
- 								
+ 									<a href="cart.jsp" class="btn btn-primary py-3 px-4">주문</a>
 						      <!-- <tr class="text-center">
 						        <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
 						        

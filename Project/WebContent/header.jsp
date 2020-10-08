@@ -90,29 +90,29 @@
 						class="nav-link dropdown-toggle" href="shop.html" id="dropdown04"
 						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">전체상품</a>
 						<div class="dropdown-menu" aria-labelledby="dropdown04">
-							<a class="dropdown-item" href="./itemView_controller">전체 상품</a> <a
+							<a class="dropdown-item" href="./itemView_controller?name=all&page_num=<%=1%>">전체 상품</a> <a
 								class="dropdown-item"
-								href="./itemView_controller?name=<%="VF"%>">과일·채소류</a> <a
+								href="./itemView_controller?name=<%="VF"%>&page_num=<%=1%>">과일·채소류</a> <a
 								class="dropdown-item"
-								href="./itemView_controller?name=<%="SF"%>">해·수산물류</a> <a
+								href="./itemView_controller?name=<%="SF"%>&page_num=<%= 1%>">해·수산물류</a> <a
 								class="dropdown-item"
-								href="./itemView_controller?name=<%="MP"%>">정육·알·육가공품류</a> <a
+								href="./itemView_controller?name=<%="MP"%>&page_num=<%= 1%>">정육·알·육가공품류</a> <a
 								class="dropdown-item"
-								href="./itemView_controller?name=<%="SC"%>">향신료·양념류</a> <a
+								href="./itemView_controller?name=<%="SC"%>&page_num=<%= 1%>">향신료·양념류</a> <a
 								class="dropdown-item"
-								href="./itemView_controller?name=<%="RS"%>">가공·간편식류</a> <a
+								href="./itemView_controller?name=<%="RS"%>&page_num=<%= 1%>">가공·간편식류</a> <a
 								class="dropdown-item"
-								href="./itemView_controller?name=<%="GD"%>">곡물·견과류</a> <a
+								href="./itemView_controller?name=<%="GD"%>&page_num=<%= 1%>">곡물·견과류</a> <a
 								class="dropdown-item"
-								href="./itemView_controller?name=<%="MI"%>">유제품류</a> <a
+								href="./itemView_controller?name=<%="MI"%>&page_num=<%= 1%>">유제품류</a> <a
 								class="dropdown-item"
-								href="./itemView_controller?name=<%="SS"%>">면·가루·유지류</a> <a
+								href="./itemView_controller?name=<%="SS"%>&page_num=<%= 1%>">면·가루·유지류</a> <a
 								class="dropdown-item"
-								href="./itemView_controller?name=<%="FO"%>">반찬류</a> <a
+								href="./itemView_controller?name=<%="FO"%>&page_num=<%= 1%>">반찬류</a> <a
 								class="dropdown-item"
-								href="./itemView_controller?name=<%="DR"%>">음료·주류</a> <a
+								href="./itemView_controller?name=<%="DR"%>&page_num=<%= 1%>">음료·주류</a> <a
 								class="dropdown-item"
-								href="./itemView_controller?name=<%="NA"%>">자연산물</a>
+								href="./itemView_controller?name=<%="NA"%>&page_num=<%= 1%>">자연산물</a>
 						</div></li>
 					<li class="nav-item"><a href="about.jsp" class="nav-link">레시피</a></li>
 					<li class="nav-item"><a href="blog.jsp" class="nav-link">베스트</a></li>

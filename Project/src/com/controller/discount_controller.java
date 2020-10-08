@@ -22,17 +22,14 @@ public class discount_controller extends HttpServlet {
 		
 		ArrayList<ProductDTO> dlist ;
 		ProductDAO dao = new ProductDAO();
-		String check = request.getParameter("check");
-		
-		
-			
+		String check = request.getParameter("check");			
 		
 		if(check.equals("dh")) {
 			dlist = dao.select_by_discount_rate_Desc();
 		}else if(check.equals("dl")) {
 			dlist = dao.select_by_discount_rate_Asc();
 		}else if (check.equals("ph")) {
-			dlist=dao.select_by_Price_Desc();
+			dlist = dao.select_by_Price_Desc();
 		}else{
 			dlist = dao.select_by_Price_Asc();
 		}
@@ -45,7 +42,7 @@ public class discount_controller extends HttpServlet {
 		}else {
 			System.out.println("¾øÂÇ¿°");
 		}
-		response.sendRedirect("shop1.jsp");
+		response.sendRedirect("shop1.jsp?page_num=1");
 	}
 	
 }

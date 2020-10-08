@@ -1,3 +1,4 @@
+<%@page import="com.model.ProductDAO"%>
 <%@page import="com.model.MemberDTO"%>
 <%@page import="com.model.ProductDTO"%>
 <%@page import="java.util.ArrayList"%>
@@ -23,7 +24,9 @@
 <link rel="stylesheet" href="css/icomoon.css">
 <link rel="stylesheet" href="css/style.css">
 
+
 <style type="text/css">
+
 .container1 {
    display: flex;
    width: 250px;
@@ -77,11 +80,21 @@
 </head>
 <body class="goto-here">
 	<%
-		ArrayList<ProductDTO> itemlist = (ArrayList<ProductDTO>) session.getAttribute("list");
-	%>
+    	ArrayList<ProductDTO> itemlist = (ArrayList<ProductDTO>) session.getAttribute("list");
+		
+		int page_num = Integer.parseInt(request.getParameter("page_num"));
+		
+		String name = (String)session.getAttribute("name");
+        
+
+	 %>
+ 
 	<%
-		MemberDTO info = (MemberDTO) session.getAttribute("info");
+    	MemberDTO info = (MemberDTO) session.getAttribute("info");
+		ProductDAO dao = new ProductDAO();
+		ArrayList<ProductDTO> list = dao.select_by_All();
 	%>
+	
 	<%@ include file="header.jsp"%>
 
    <div class="hero-wrap hero-bread"
@@ -105,8 +118,15 @@
          <div class="row justify-content-center">
             <div class="col-md-10 mb-5 text-center">
                <ul class="product-category">
-                  <li><a href="./itemView_controller" class="active">전체보기</a></li>
-                  <li><a href="./itemView_controller?name=<%="VF"%>"></a></li>
+               
+               <%
+               String[] arr = {"all","VF", "SF", "MP", "SC", "RS", "GD", "MI", "SS", "FO", "DR", "NA"};
+               String[] arr2 = {"전체보기","과일·채소류","해·수산물류","정육·알·육가공품류","향신료·양념류","가공·간편식류",
+                       "곡물·견과류", "유제품류", "면·가루·유지류", "반찬류", "음료·주류", "자연산물"};
+               
+               %>
+               	<li><a href="./itemView_controller?name=<%="all"%>">전체보기</a></li>
+                  <li><a href="./itemView_controller?name=<%="VF"%>">과일·채소류</a></li>
                   <li><a href="./itemView_controller?name=<%="SF"%>">해·수산물류</a></li>
                   <li><a href="./itemView_controller?name=<%="MP"%>">정육·알·육가공품류</a></li>
                   <li><a href="./itemView_controller?name=<%="SC"%>">향신료·양념류</a></li>
@@ -117,6 +137,16 @@
                   <li><a href="./itemView_controller?name=<%="FO"%>">반찬류</a></li>
                   <li><a href="./itemView_controller?name=<%="DR"%>">음료·주류</a></li>
                   <li><a href="./itemView_controller?name=<%="NA"%>">자연산물</a></li>
+               
+               <%-- <% for (int i=0; i<arr.length; i++){ %>
+                      <% if (arr[i] != name) {%>
+                        	<li><a href="./itemView_controller?name=<%=arr[i]%>"><%= arr2[i]%></a></li>
+                        <%}else { %>
+                        	<li><a href="./itemView_controller?name=<%=arr[i]%>" style="background-color:green"><%= arr2[i]%></a></li>
+                        <%}%>
+                <%}%> --%>
+                
+                
                </ul>
             </div>
             <div class="nav-item dropdown">
@@ -136,10 +166,12 @@
          </div>
          <div class="row">
             <%
-               if (itemlist != null) {
+            	
+            	if (itemlist != null){
             %>
+            
             <%
-               for (int i = 0; i < itemlist.size(); i++) {
+               for (int i = 10*(page_num-1); i < 10*(page_num) ; i++) {
             %>
             <div class="col-md-6 col-lg-3 ftco-animate">
                <div class="product">
@@ -165,7 +197,7 @@
                               class="add-to-cart d-flex justify-content-center align-items-center text-center">
                               <span><i class="ion-ios-menu"></i></span>
                            </a> <a
-                              href="cartcontroller?name=<%=itemlist.get(i).getProduct_id()%>"
+                              href="cartcontroller?name=<%=list.get(i).getProduct_id()%>"
                               class="buy-now d-flex justify-content-center align-items-center mx-1">
                               <span><i class="ion-ios-cart"></i></span>
                            </a> <a href="#"
@@ -181,20 +213,73 @@
                }
             %>
             <%
-               }
+               }else
             %>
+            
+            <%
+            {
+            %>
+            
+            
+			<%
+               for (int i = 10*(page_num-1); i < 10*(page_num); i++) {
+            %>
+            <div class="col-md-6 col-lg-3 ftco-animate">
+               <div class="product">
+                  <a href="product-single.jsp" class="img-prod"><img
+                     class="img-fluid" src=<%=list.get(i).getIMG_ADDR()%>
+                     alt="Colorlib Template"> <span class="status"><%=list.get(i).getDiscount_rate()%>%</span>
+                     <div class="overlay"></div> </a>
+                  <div class="text py-3 pb-4 px-3 text-center">
+                     <h3>
+                        <a href="product-single.jsp"><%=list.get(i).getProduct_name()%></a>
+                     </h3>
+                     <div class="d-flex">
+                        <div class="pricing">
+                           <p class="price">
+                              <span class="mr-2 price-dc"><%=list.get(i).getPrice()%></span><span
+                                 class="price-sale"><%=list.get(i).getPrice() - list.get(i).getPrice() * list.get(i).getDiscount_rate() / 100.0%></span>
+                           </p>
+                        </div>
+                     </div>
+                     <div class="bottom-area d-flex px-3">
+                        <div class="m-auto d-flex">
+                           <a href="#"
+                              class="add-to-cart d-flex justify-content-center align-items-center text-center">
+                              <span><i class="ion-ios-menu"></i></span>
+                           </a> <a
+                              href="cartcontroller?name=<%=list.get(i).getProduct_id()%>"
+                              class="buy-now d-flex justify-content-center align-items-center mx-1">
+                              <span><i class="ion-ios-cart"></i></span>
+                           </a> <a href="#"
+                              class="heart d-flex justify-content-center align-items-center ">
+                              <span><i class="ion-ios-heart"></i></span>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+	            <%
+	               }
+	            %>
 
+			<%
+	               }
+	            %>
             <div class="row mt-5">
                <div class="col text-center">
                   <div class="block-27">
                      <ul>
                         <li><a href="#">&lt;</a></li>
-                        <li class="active"><span>1</span></li>
-                        <li><a href="./pagenumber?num=2">2</a></li>
-                        <li><a href="./pagenumber?num=3">3</a></li>
-                        <li><a href="./pagenumber?num=4">4</a></li>
-                        <li><a href="./pagenumber?num=5">5</a></li>
-                        <li><a href="./pagenumber?num=6">6</a></li>
+                        <% for (int i=1; i<=5; i++){ %>
+                        	<% if (i != page_num) {%>
+                        	<li><a href="shop1.jsp?page_num=<%= Integer.toString(i)%>"><%= Integer.toString(i)%></a></li>
+                        	
+                        	<%}else { %>
+                        	<li><a href="shop1.jsp?page_num=<%= Integer.toString(i)%>" style="background-color:green"><%= Integer.toString(i)%></a></li>
+                        	<%}%>
+                        <%}%>
                      </ul>
                   </div>
                </div>

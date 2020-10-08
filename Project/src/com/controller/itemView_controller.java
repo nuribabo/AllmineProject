@@ -21,24 +21,25 @@ public class itemView_controller extends HttpServlet {
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		ArrayList<ProductDTO> list ;
+		ArrayList<ProductDTO> list = null;
 		ProductDAO dao = new ProductDAO();
 		String cnt = request.getParameter("name");
-		if(cnt == null) {
+		
+		if(cnt == "all") {
 			list = dao.select_by_All();
 			
 		}
 		else {
-		list = dao.select_by_Fruit(cnt);
+			list = dao.select_by_Fruit(cnt);
 		}
 		
 		if(list != null) {
 			HttpSession session = request.getSession();
-			session.setAttribute("list", list );
+			session.setAttribute("list", list);
 		}else {
 			System.out.println("¾øÂÇ¿°");
 		}
-		response.sendRedirect("shop1.jsp");
+		response.sendRedirect("shop1.jsp?page_num=1&name="+cnt);
 		
 		
 	}

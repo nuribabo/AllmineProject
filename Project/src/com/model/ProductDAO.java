@@ -74,7 +74,9 @@ public class ProductDAO {
 	      } catch (SQLException e) {
 	         // TODO Auto-generated catch block
 	         e.printStackTrace();
-	      }
+	      }finally {
+				close();
+			}
 
 	      return list;
 	   }
@@ -104,8 +106,9 @@ public class ProductDAO {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally {
+			close();
 		}
-
 		return item;
 	}
 	// 전체 상품 검색
@@ -168,23 +171,6 @@ public class ProductDAO {
 		
 	}
 	
-	//제품 삭제하기
-	public void delete_game(String name) {
-		
-		conn();
-		try {
-			String sql = "delete product where name=?";
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, name);
-			psmt.executeUpdate();
-		
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	
-	
 	public ArrayList<ProductDTO> select_by_Fruit(String cnt) {
 		conn();
 		
@@ -221,7 +207,146 @@ public class ProductDAO {
 		return list;
 	}
 	
-	
+	//할인율 높은 순서대로
+	   
+	public ArrayList<ProductDTO> select_by_discount_rate_Desc() {
+	      conn();
+	      try {
+	         
+	         String sql = "select * from product ORDER BY discount_rate DESC";
+	         psmt = conn.prepareStatement(sql);
+	         rs = psmt.executeQuery();
+	         
+	         while (rs.next()) {
+	            String product_id = rs.getString(1);
+	            String product_name = rs.getString(2);
+	            int price = rs.getInt(3);
+	            int discount_rate = rs.getInt(4);
+	            int weight = rs.getInt(5);
+	            String origin = rs.getString(6);
+	            String IMG_ADDR = rs.getString(7);
+	            ProductDTO item = new ProductDTO(product_id, product_name, price, discount_rate, weight, origin,IMG_ADDR);
+	            list.add(item);
+	            
+	            
+	         }
+	         
+	      } catch (SQLException e) {
+	         // TODO Auto-generated catch block
+	         e.printStackTrace();
+	      }finally {
+	         close();
+	      }
+	      
+	      
+	      return list;
+	   }
+	   
+	   // 할인율 낮은 순서대로
+	   
+	   public ArrayList<ProductDTO> select_by_discount_rate_Asc() {
+	      // TODO Auto-generated method stub
+	      conn();
+	      try {
+	         
+	         String sql = "select * from product ORDER BY discount_rate ASC";
+	         psmt = conn.prepareStatement(sql);
+	         rs = psmt.executeQuery();
+	         
+	         while (rs.next()) {
+	            String product_id = rs.getString(1);
+	            String product_name = rs.getString(2);
+	            int price = rs.getInt(3);
+	            int discount_rate = rs.getInt(4);
+	            int weight = rs.getInt(5);
+	            String origin = rs.getString(6);
+	            String IMG_ADDR = rs.getString(7);
+	            ProductDTO item = new ProductDTO(product_id, product_name, price, discount_rate, weight, origin,IMG_ADDR);
+	            list.add(item);
+	            
+	            
+	         }
+	         
+	      } catch (SQLException e) {
+	         // TODO Auto-generated catch block
+	         e.printStackTrace();
+	      }finally {
+	         close();
+	      }
+	      
+	      
+	      return list;
+	   }
+	   //가격 높은 순서대로
+	   public ArrayList<ProductDTO> select_by_Price_Desc() {
+	      conn();
+	      try {
+	         
+	         String sql = "select * from product ORDER BY price-price*discount_rate/100.0 DESC";
+	         psmt = conn.prepareStatement(sql);
+	         rs = psmt.executeQuery();
+	         
+	         while (rs.next()) {
+	            String product_id = rs.getString(1);
+	            String product_name = rs.getString(2);
+	            int price = rs.getInt(3);
+	            int discount_rate = rs.getInt(4);
+	            int weight = rs.getInt(5);
+	            String origin = rs.getString(6);
+	            String IMG_ADDR = rs.getString(7);
+	            ProductDTO item = new ProductDTO(product_id, product_name, price, discount_rate, weight, origin,IMG_ADDR);
+	            list.add(item);
+	            
+	            
+	         }
+	         
+	      } catch (SQLException e) {
+	         // TODO Auto-generated catch block
+	         e.printStackTrace();
+	      }finally {
+	         close();
+	      }
+	      
+	      
+	      return list;
+	   }
+	   
+	   
+	   //가격 낮은 순서대로
+	   
+	   public ArrayList<ProductDTO> select_by_Price_Asc() {
+	      conn();
+	      try {
+	         
+	         String sql = "select * from product ORDER BY price-price*discount_rate/100.0 ASC";
+	         psmt = conn.prepareStatement(sql);
+	         rs = psmt.executeQuery();
+	         
+	         while (rs.next()) {
+	            String product_id = rs.getString(1);
+	            String product_name = rs.getString(2);
+	            int price = rs.getInt(3);
+	            int discount_rate = rs.getInt(4);
+	            int weight = rs.getInt(5);
+	            String origin = rs.getString(6);
+	            String IMG_ADDR = rs.getString(7);
+	            ProductDTO item = new ProductDTO(product_id, product_name, price, discount_rate, weight, origin,IMG_ADDR);
+	            list.add(item);
+	            
+	            
+	         }
+	         
+	      } catch (SQLException e) {
+	         // TODO Auto-generated catch block
+	         e.printStackTrace();
+	      }finally {
+	         close();
+	      }
+	      
+	      
+	      return list;
+	   }
+
 	
 	
 	

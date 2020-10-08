@@ -3,38 +3,71 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Vegefoods - Free Bootstrap 4 Template by Colorlib</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
+    <style type="text/css">
+.container1 {
+	display: flex;
+	width: 250px;
+	justify-content: align-items;
+}
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
+.container2 {
+	display: flex;
+	width: 200px;
+	justify-content: align-items;
+}
+
+.dan2 {
+	list-style: none;
+	padding-left: 0px;
+}
+
+.dan1 {
+	list-style: none;
+}
+
+.dan1 .search1 .search .btn_search {
+	position: absolute;
+	left: 1460px;
+	width: 30px;
+	height: 30px;
+}
+
+#item5 {
+	
+}
+</style>
     
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-
-    <link rel="stylesheet" href="css/aos.css">
-
-    <link rel="stylesheet" href="css/ionicons.min.css">
-
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/jquery.timepicker.css">
-
-    
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
   </head>
+  <%@ include file="header.jsp" %>
   
   <body class="goto-here">
-		<%@ include file="header.jsp" %>
-  
-    <!-- END nav -->
+  		
+  		<%MemberDTO info = (MemberDTO) session.getAttribute("info"); %>
+  		
+  		<%ArrayList<CartDTO> list = (ArrayList<CartDTO>)session.getAttribute("clist");%>
+  	
+  		<%
+	    	float num = 0;
+	        float num2 = 0;
+	    	int num3 = 0;
+	        for (CartDTO e: list){
+	    		num += e.getPrice();
+	    		num2 += e.getPrice() * (e.getDiscount_rate())/100;
+	    	}
+	    	
+	        if (num-num2 < 50000){
+	        	num3 = 3000;
+	        }
+	        else{
+	        	num3 = 0;
+	        }
+	        
+	    %>
+	    
+		
+		
+    
 
     <div class="hero-wrap hero-bread" style="background-image: url('images/bg_1.jpg');">
       <div class="container">
@@ -55,7 +88,7 @@
 	    				<table class="table">
 						    <thead class="thead-primary">
 						      <tr class="text-center">
-						        <th>&nbsp;</th>
+						        
 						        <th>&nbsp;</th>
 						        <th>상품 이름</th>
 						        <th>가격</th>
@@ -64,49 +97,36 @@
 						      </tr>
 						    </thead>
 						    <tbody>
-						      <tr class="text-center">
-						        <td class="product-remove"><a href=#>
-						        <% %>
-						        <span class="ion-ios-close"></span></a></td>
+						      
+						      
+						      <%
+								for (int i = 0; i < list.size(); i++) {
+									String img_addr = list.get(i).getImg_addr();
+							  	%>
+						        <tr class="text-center">
 						        
-						        <td class="image-prod"><div class="img" style="background-image:url(images/product-3.jpg);"></div></td>
 						        
+						        
+						        
+						        <!-- <td class="image-prod"><div class="img" style="background-image:url(images/product-3.jpg);"></div></td> -->
+						   		<td class="image-prod"><div class="img" style="background-image: url(<%= img_addr %>);"></div></td>
 						        <td class="product-name">
-						        	<h3>양배추</h3>
+						        	<h3><%=list.get(i).getProduct_name()%></h3>
 						        	<p>생식, 찜, 볶음, 절임, 삶기 등 다양한 조리법과 특유의 달큰한 맛이 있으며 다이어트 음식으로도 각광받고 있다.</p>
 						        </td>
 						        
-						        <td class="price">4,900원</td>
+						        <td class="price"><%=list.get(i).getPrice()%></td>
 						        
 						        <td class="quantity">
-						        	<div class="input-group mb-3">
-					             	<input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
-					          	</div>
+						        	<%=list.get(i).getQuantity()%>
 					          </td>
-						        
-						        <td class="total">4,900원</td>
-						      </tr><!-- END TR-->
+					          <td class="total"><%=list.get(i).getPrice()*list.get(i).getQuantity()%></td>
+					          </tr><!-- END TR-->
+								<%
+									}
+								%>
 
-						      <tr class="text-center">
-						        <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
 						        
-						        <td class="image-prod"><div class="img" style="background-image:url(images/product-4.jpg);"></div></td>
-						        
-						        <td class="product-name">
-						        	<h3>적배추</h3>
-						        	<p>생식, 찜, 볶음, 절임, 삶기 등 다양한 조리법과 특유의 달큰한 맛이 있으며 다이어트 음식으로도 각광받고 있다.</p>
-						        </td>
-						        
-						        <td class="price">15,000원</td>
-						        
-						        <td class="quantity">
-						        	<div class="input-group mb-3">
-					             	<input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
-					          	</div>
-					          </td>
-						        
-						        <td class="total">15,000원</td>
-						      </tr><!-- END TR-->
 						    </tbody>
 						  </table>
 					  </div>
@@ -126,49 +146,41 @@
     				</div>
     				<p><a href="checkout.html" class="btn btn-primary py-3 px-4">쿠폰 적용</a></p>
     			</div>
-    			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
-    				<div class="cart-total mb-3">
-    					<h3>배송 및 세금 견적</h3>
-    					<p>배송지를 입력해주세요.</p>
-  						<form action="#" class="info">
-	              <div class="form-group">
-	              	<label for="">나라</label>
-	                <input type="text" class="form-control text-left px-3" placeholder="">
-	              </div>
-	              <div class="form-group">
-	              	<label for="country">시/도</label>
-	                <input type="text" class="form-control text-left px-3" placeholder="">
-	              </div>
-	              <div class="form-group">
-	              	<label for="country">우편 번호</label>
-	                <input type="text" class="form-control text-left px-3" placeholder="">
-	              </div>
-	            </form>
-    				</div>
-    				<p><a href="checkout.html" class="btn btn-primary py-3 px-4">견적</a></p>
-    			</div>
+    			
     			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
     				<div class="cart-total mb-3">
     					<h3>장바구니 총합</h3>
     					<p class="d-flex">
     						<span>상품 가격</span>
-    						<span>$20.60</span>
+    						<span>
+    						
+    						<%= num %>
+    						
+    						</span>
     					</p>
     					<p class="d-flex">
     						<span>배송</span>
-    						<span>$0.00</span>
+    						<span>
+    						<%= num3 %>
+    						
+    						</span>
     					</p>
     					<p class="d-flex">
     						<span>할인</span>
-    						<span>$3.00</span>
+    						<span>
+
+							<%= num2 %>
+							</span>
     					</p>
     					<hr>
     					<p class="d-flex total-price">
     						<span>총합</span>
-    						<span>$17.60</span>
+    						<span>
+							<%= num - num2 + num3%>
+							</span>
     					</p>
     				</div>
-    				<p><a href="checkout.html" class="btn btn-primary py-3 px-4">결제창으로 이동</a></p>
+    				<p><a href="checkout.jsp" class="btn btn-primary py-3 px-4">결제창으로 이동</a></p>
     			</div>
     		</div>
 			</div>
