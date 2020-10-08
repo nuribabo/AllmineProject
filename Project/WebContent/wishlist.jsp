@@ -35,8 +35,30 @@
   </head>
   <body class="goto-here">
   
+
   
-		<%@ include file="header.jsp"%>
+		
+
+  <%MemberDTO info = (MemberDTO) session.getAttribute("info"); %>
+  
+  
+  <%@ include file="header.jsp"%>
+  
+		<%clist = (ArrayList<CartDTO>)session.getAttribute("clist"); %>
+		<%String qcheck =request.getParameter("result"); %>
+		<%
+		if(qcheck != null){
+			System.out.print(qcheck);
+		if(qcheck.equals("uno")){%>
+		<script type="text/javascript">
+		alert("최대 수량입니다.")
+		</script>
+		<%} %>
+		<%if(qcheck.equals("dno")){ %>
+		<script type="text/javascript">
+		alert("최소 수량입니다.")
+		</script>
+		<%}} %>
     <div class="hero-wrap hero-bread" style="background-image: url('images/bg_1.jpg');">
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -80,13 +102,17 @@
 						        <td class="price"><%=clist.get(i).getPrice()-clist.get(i).getPrice()*clist.get(i).getDiscount_rate()/100.0%></td>
 						        
 						        <td class="quantity">
-						       <!-- 플러스버튼 --> <div class="sp-plus fff"> <a class="plus" href="item_quantity?plus='p'">+</a></div>
+						       <!-- 플러스버튼 --> <div class="sp-plus fff"> 
+						       
+						       <a class="plus" href="cartquantity_controller?to=<%="plus " + clist.get(i).getProduct_id()%>">+</a>
+						       
+						       </div>
 						        	<div class="input-group mb-3">
 						        	
 					             	<input type="text" name="quantity" class="quantity form-control input-number" value="<%=clist.get(i).getQuantity()%>" min="1" max="100">
 					             	</div>
        								<!-- 마이너스버튼 -->
-       								<div class="sp-minus fff"> <a class="minus" href="item_quantity?minus='minus'">-</a></div>
+       								<div class="sp-minus fff"> <a class="minus" href="cartquantity_controller?to=<%="minus " + clist.get(i).getProduct_id()%>">-</a></div>
 					          		 	
 					          	</div>
 					          </td>

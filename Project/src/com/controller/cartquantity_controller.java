@@ -17,21 +17,46 @@ import com.model.MemberDTO;
 @WebServlet("/cartquantity_controller")
 public class cartquantity_controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	int cnt = 0;
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		request.setCharacterEncoding("EUC-KR");
 		HttpSession session = request.getSession();
-		MemberDTO info = (MemberDTO)session.getAttribute("info");
+		MemberDTO info = (MemberDTO) session.getAttribute("info");
 		String member_id = info.getMember_id();
-		
-		CartDAO dao = new CartDAO();
-		ArrayList<CartDTO> list = new ArrayList<CartDTO>();
-		list = dao.cartView(member_id);
-		
-		if ()
-	
-	
-	}
 
+		CartDAO dao = new CartDAO();
+
+		String to = request.getParameter("to");
+		String[] to_list = to.split(" ");
+
+		String test = request.getParameter("num");
+		ArrayList<CartDTO> list = new ArrayList<CartDTO>();
+		CartDTO cdto = new CartDTO(member_id, to_list[1]);
+		CartDTO c_check = dao.cartcheck(cdto);
+		int ccnt = c_check.getQuantity();
+
+		if (to_list[0].equals("plus")) {
+			if (ccnt < 21) {
+				cnt = dao.quan_plus(member_id, to_list[1]);
+				list = dao.cartView(member_id);
+				session.setAttribute("clist", list);
+				response.sendRedirect("wishlist.jsp");
+			} else {
+				response.sendRedirect("wishlist.jsp?result=uno");
+			}
+		} else {
+			if (ccnt >= 2) {
+				cnt = dao.quan_minus(member_id, to_list[1]);
+				list = dao.cartView(member_id);
+				session.setAttribute("clist", list);
+				response.sendRedirect("wishlist.jsp");
+			} else {
+				response.sendRedirect("wishlist.jsp?result=dno");
+			}
+		}
+		
+	}
 }

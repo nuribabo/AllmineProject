@@ -68,7 +68,7 @@ public class cartcontroller extends HttpServlet {
 		} else {
 			System.out.println("장바구니 파손");
 		}
-		response.sendRedirect("shop1.jsp");
+		response.sendRedirect("shop1.jsp?check=ok");
 
 	}
 

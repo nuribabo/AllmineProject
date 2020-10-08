@@ -40,6 +40,21 @@ public class MemberDTO {
 		this.birth = birth;
 	}
 	
+	public MemberDTO(String id, String pw3, String name2, String email2, String phone2, String member_addr12,
+			String member_addr22, String member_addr32, String gender2, String birth2) {
+		super();
+		this.member_id = id;
+		this.pw = pw3;
+		this.name = name2;
+		this.email = email2;
+		this.phone = phone2;
+		this.member_addr1 = member_addr12;
+		this.member_addr2 = member_addr22;
+		this.member_addr3 = member_addr32;
+		this.gender = gender2;
+		this.birth = birth2;
+	}
+
 	public String getPw2() {
 		return pw2;
 	}

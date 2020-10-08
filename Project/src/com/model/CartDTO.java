@@ -8,17 +8,18 @@ public class CartDTO {
 	private String img_addr;
 	private int price;
 	private int discount_rate ;
-	public String getImg_addr() {
-		return img_addr;
-	}
 	
 	
 	public CartDTO(String member_id, String product_id) {
-		super();
 		this.member_id = member_id;
 		this.product_id = product_id;
 	}
-
+	
+	public CartDTO(String member_id, String product_id, int quantity) {
+		this.member_id = member_id;
+		this.product_id = product_id;
+		this.quantity = quantity;
+	}
 
 	public CartDTO(String product_name, String product_id, int quantity, String img_addr, int price,
 			int discount_rate) {
@@ -42,6 +43,11 @@ public class CartDTO {
 	public void setImg_addr(String img_addr) {
 		this.img_addr = img_addr;
 	}
+	
+	public String getImg_addr() {
+		return this.img_addr;
+	}
+	
 	public int getPrice() {
 		return price;
 	}
@@ -72,12 +78,7 @@ public class CartDTO {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	public CartDTO(String member_id, String product_id, int quantity) {
-		super();
-		this.member_id = member_id;
-		this.product_id = product_id;
-		this.quantity = quantity;
-	}
+	
 	
 	public CartDTO() {
 	}

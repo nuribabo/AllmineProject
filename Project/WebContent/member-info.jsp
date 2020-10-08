@@ -6,18 +6,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-olorlib
-<meta charset="utf-8">
+<meta charset="utf-8">	
 <title>Insert title here</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
-
+	
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
-    
+    <link rel="styleSheet" href="css/normalize.css?ver=1.20.12">
+    <link rel="styleSheet" href="css/common.css?ver=1.20.12">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
@@ -69,113 +69,34 @@ olorlib
 </style>
   </head>
   <body class="goto-here">
-    <%@ include file="header.jsp"%>
-   
     <%ArrayList<ProductDTO> itemlist = (ArrayList<ProductDTO>)session.getAttribute("list");	 %>
     <%
 		MemberDTO info = (MemberDTO) session.getAttribute("info");
-    
-       clist = (ArrayList<CartDTO>) session.getAttribute("clist");
-       String check = request.getParameter("check");
-       if(check != null){
-    	   if(check.equals("ok")){
-       
 	%>
+	<%@ include file="header.jsp"%>
 	
-		<script type="text/javascript">
-		alert("장바구니에 담겼습니다.")
-		</script>
 		
-		<%}} %>
-		
-		
-    <div class="hero-wrap hero-bread" style="background-image: url('images/bg_1.jpg');">
-      <div class="container">
-        <div class="row no-gutters slider-text align-items-center justify-content-center">
-          <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Products</span></p>
-            <h1 class="mb-0 bread">Products</h1>
-          </div>
-        </div>
-      </div>
-    </div>
+	<div class="page_aticle aticle_type2">
+<div id="snb" class="snb_my">
+<h2 class="tit_snb">Myinfo</h2>
+<div class="inner_snb">
+<ul class="list_menu">
+<li class="on">
+<a href="member-info.jsp">주문 내역</a>
+</li>
+<li>
+<a href="member-edit.jsp">개인 정보 수정</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="viewOrderList" class="page_section section_orderlist"><div class="head_aticle"><h2 class="tit">주문 내역 <span class="tit_sub">지난 3년간의 주문 내역 조회가 가능합니다</span></h2></div> <div class="search_date"><h3 class="screen_out">기간 선택</h3><ul class="layer_search" style="display: none;"><li><a href="#none" class="on">전체기간</a></li> <li><a href="#none" data-year="2020">2020 년</a></li> <li><a href="#none" data-year="2019">2019 년</a></li> <li><a href="#none" data-year="2018">2018 년</a></li></ul></div> <ul class="list_order"> <li class="no_data">
+주문내역이 없습니다.
+</li></ul> <!----></div>
+</div>
 
-    <section class="ftco-section">
-    	<div class="container">
-    		<div class="row justify-content-center">
-    			<div class="col-md-10 mb-5 text-center">
-    				<ul class="product-category">
-    					<li><a href="./itemView_controller" class="active">전체보기</a></li>
-    					<li><a href="./itemView_controller?name=<%="VF"%>">과일·채소류</a></li>
-    					<li><a href="./itemView_controller?name=<%="SF"%>">해·수산물류</a></li>
-    					<li><a href="./itemView_controller?name=<%="MP"%>">정육·알·육가공품류</a></li>
-    					<li><a href="./itemView_controller?name=<%="SC"%>">향신료·양념류</a></li>
-    					<li><a href="./itemView_controller?name=<%="RS"%>">가공·간편식류</a></li>
-    					<li><a href="./itemView_controller?name=<%="GD"%>">곡물·견과류</a></li>
-    					<li><a href="./itemView_controller?name=<%="MI"%>">유제품류</a></li>
-    					<li><a href="./itemView_controller?name=<%="SS"%>">면·가루·유지류</a></li>
-    					<li><a href="./itemView_controller?name=<%="FO"%>">반찬류</a></li>
-    					<li><a href="./itemView_controller?name=<%="DR"%>">음료·주류</a></li>
-    					<li><a href="./itemView_controller?name=<%="NA"%>">자연산물</a></li>
-    				
-    				
-    				</ul>
-    			</div>
-    		</div>
-    		<div class="row">
-    		<%if(itemlist != null){ %>
-    		<%for(int i=0; i<itemlist.size(); i++){ %>
-    			<div class="col-md-6 col-lg-3 ftco-animate">
-    				<div class="product">
-    					<a href="product-single.jsp" class="img-prod"><img class="img-fluid" src=<%=itemlist.get(i).getIMG_ADDR() %>alt="Colorlib Template">
-    						<span class="status"><%=itemlist.get(i).getDiscount_rate() %>%</span>
-    						<div class="overlay"></div>
-    					</a>
-    					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="product-single.jsp"><%=itemlist.get(i).getProduct_name() %></a></h3>
-    						<div class="d-flex">
-    							<div class="pricing">
-		    						<p class="price"><span class="mr-2 price-dc"><%=itemlist.get(i).getPrice() %></span><span class="price-sale"><%= itemlist.get(i).getPrice()-itemlist.get(i).getPrice()*itemlist.get(i).getDiscount_rate()/100.0%></span></p>
-		    					</div>
-	    					</div>
-	    					<div class="bottom-area d-flex px-3">
-	    						<div class="m-auto d-flex">
-	    							<a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-	    								<span><i class="ion-ios-menu"></i></span>
-	    							</a>
-	    							<a href="cartcontroller?name=<%=itemlist.get(i).getProduct_id()%>" class="buy-now d-flex justify-content-center align-items-center mx-1">
-	    								<span><i class="ion-ios-cart"></i></span>
-	    							</a>
-	    							<a href="#" class="heart d-flex justify-content-center align-items-center ">
-	    								<span><i class="ion-ios-heart"></i></span>
-	    							</a>
-    							</div>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<%} %>
-    			<%} %>
-    			
-    		<div class="row mt-5">
-          <div class="col text-center">
-            <div class="block-27">
-              <ul>
-                <li><a href="#">&lt;</a></li>
-                <li class="active"><span>1</span></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">&gt;</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-    	</div>
-    </section>
 
-		<section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light">
+		<section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light" style = "clear:both">
       <div class="container py-4">
         <div class="row d-flex justify-content-center py-5">
           <div class="col-md-6">
