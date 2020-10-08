@@ -76,6 +76,7 @@
 	background: black;
 	text-align: right;
 }
+
 </style>
 </head>
 <body class="goto-here">
@@ -84,7 +85,8 @@
 		
 		int page_num = Integer.parseInt(request.getParameter("page_num"));
 		
-		String name = (String)session.getAttribute("name");
+		String name = request.getParameter("name");
+		System.out.println(name);
         
 
 	 %>
@@ -93,12 +95,20 @@
     	MemberDTO info = (MemberDTO) session.getAttribute("info");
 		ProductDAO dao = new ProductDAO();
 		ArrayList<ProductDTO> list = dao.select_by_All();
+		if (name.equals("all")){
+			itemlist = null;
+		}
 	%>
 	
 	<%@ include file="header.jsp"%>
 
-   <div class="hero-wrap hero-bread"
-      style="background-image: url('images/bg_1.jpg');">
+</style>
+  </head>
+  <body class="goto-here">
+   	
+	
+    <div class="hero-wrap hero-bread" style="background-image: url('images/bg_1.jpg');">
+    
       <div class="container">
          <div
             class="row no-gutters slider-text align-items-center justify-content-center">
@@ -125,7 +135,7 @@
                        "곡물·견과류", "유제품류", "면·가루·유지류", "반찬류", "음료·주류", "자연산물"};
                
                %>
-               	<li><a href="./itemView_controller?name=<%="all"%>">전체보기</a></li>
+               	<%-- <li><a href="./itemView_controller?name=<%="all"%>">전체보기</a></li>
                   <li><a href="./itemView_controller?name=<%="VF"%>">과일·채소류</a></li>
                   <li><a href="./itemView_controller?name=<%="SF"%>">해·수산물류</a></li>
                   <li><a href="./itemView_controller?name=<%="MP"%>">정육·알·육가공품류</a></li>
@@ -136,15 +146,22 @@
                   <li><a href="./itemView_controller?name=<%="SS"%>">면·가루·유지류</a></li>
                   <li><a href="./itemView_controller?name=<%="FO"%>">반찬류</a></li>
                   <li><a href="./itemView_controller?name=<%="DR"%>">음료·주류</a></li>
-                  <li><a href="./itemView_controller?name=<%="NA"%>">자연산물</a></li>
+                  <li><a href="./itemView_controller?name=<%="NA"%>">자연산물</a></li> --%>
                
-               <%-- <% for (int i=0; i<arr.length; i++){ %>
-                      <% if (arr[i] != name) {%>
-                        	<li><a href="./itemView_controller?name=<%=arr[i]%>"><%= arr2[i]%></a></li>
+               <% for (int i=0; i<arr.length; i++){ %>
+                      <% if (arr[i].equals(name)) {%>
+                      		<% System.out.println("11111111111111"); %>
+             				<% System.out.println(arr[i]); %>
+             				<% System.out.println(name); %>
+                        	<li><a href="./itemView_controller?name=<%=arr[i]%>" style="background-color:greenyellow"><%= arr2[i]%></a></li>
+                        	
                         <%}else { %>
-                        	<li><a href="./itemView_controller?name=<%=arr[i]%>" style="background-color:green"><%= arr2[i]%></a></li>
+<%--                         <% System.out.println("22222222222222"); %>
+                        	<% System.out.println(arr[i]); %>
+                        	<% System.out.println(name); %>
+ --%>                        	<li><a href="./itemView_controller?name=<%=arr[i]%>"><%= arr2[i]%></a></li>
                         <%}%>
-                <%}%> --%>
+                <%}%>
                 
                 
                </ul>
@@ -193,17 +210,23 @@
                      </div>
                      <div class="bottom-area d-flex px-3">
                         <div class="m-auto d-flex">
-                           <a href="#"
+                           
+<!--                            <a href="#"
                               class="add-to-cart d-flex justify-content-center align-items-center text-center">
                               <span><i class="ion-ios-menu"></i></span>
-                           </a> <a
+                           </a> --> 
+                           
+                           <a
                               href="cartcontroller?name=<%=list.get(i).getProduct_id()%>"
                               class="buy-now d-flex justify-content-center align-items-center mx-1">
                               <span><i class="ion-ios-cart"></i></span>
-                           </a> <a href="#"
+                           </a> 
+                           
+<!--                            <a href="#"
                               class="heart d-flex justify-content-center align-items-center ">
                               <span><i class="ion-ios-heart"></i></span>
-                           </a>
+                           </a> -->
+                           
                         </div>
                      </div>
                   </div>
@@ -222,7 +245,7 @@
             
             
 			<%
-               for (int i = 10*(page_num-1); i < 10*(page_num); i++) {
+               for (int i = 10*(page_num-1); i < 10*(page_num+1); i++) {
             %>
             <div class="col-md-6 col-lg-3 ftco-animate">
                <div class="product">
@@ -244,17 +267,23 @@
                      </div>
                      <div class="bottom-area d-flex px-3">
                         <div class="m-auto d-flex">
-                           <a href="#"
+                           
+                           <!-- <a href="#"
                               class="add-to-cart d-flex justify-content-center align-items-center text-center">
                               <span><i class="ion-ios-menu"></i></span>
-                           </a> <a
+                           </a> --> 
+                           
+                           <a
                               href="cartcontroller?name=<%=list.get(i).getProduct_id()%>"
                               class="buy-now d-flex justify-content-center align-items-center mx-1">
                               <span><i class="ion-ios-cart"></i></span>
-                           </a> <a href="#"
+                           </a> 
+                           
+<!--                            <a href="#"
                               class="heart d-flex justify-content-center align-items-center ">
                               <span><i class="ion-ios-heart"></i></span>
-                           </a>
+                           </a> -->
+                           
                         </div>
                      </div>
                   </div>
@@ -274,10 +303,10 @@
                         <li><a href="#">&lt;</a></li>
                         <% for (int i=1; i<=5; i++){ %>
                         	<% if (i != page_num) {%>
-                        	<li><a href="shop1.jsp?page_num=<%= Integer.toString(i)%>"><%= Integer.toString(i)%></a></li>
+                        	<li><a href="shop1.jsp?page_num=<%= Integer.toString(i)%>&name=<%= name%>"><%= Integer.toString(i)%></a></li>
                         	
                         	<%}else { %>
-                        	<li><a href="shop1.jsp?page_num=<%= Integer.toString(i)%>" style="background-color:green"><%= Integer.toString(i)%></a></li>
+                        	<li><a href="shop1.jsp?page_num=<%= Integer.toString(i)%>&name=<%= name%>" style="background-color:greenyellow"><%= Integer.toString(i)%></a></li>
                         	<%}%>
                         <%}%>
                      </ul>

@@ -48,6 +48,7 @@ public class ProductDAO {
 		}
 	}
 
+
 	//제품 이름으로 검색하기
 	   public ArrayList<ProductDTO> select_by_name(String name) {
 	      // TODO Auto-generated method stub
@@ -77,7 +78,6 @@ public class ProductDAO {
 	      }finally {
 				close();
 			}
-
 	      return list;
 	   }
 	
@@ -106,7 +106,7 @@ public class ProductDAO {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}finally {
+		} finally {
 			close();
 		}
 		return item;
@@ -138,7 +138,7 @@ public class ProductDAO {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}finally {
+		} finally {
 			close();
 		}
 		
@@ -164,12 +164,32 @@ public class ProductDAO {
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			close();
 		}
 		
 		
 	}
+	
+
+	//제품 삭제하기
+	public void delete_game(String name) {
+		
+		conn();
+		try {
+			String sql = "delete product where name=?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, name);
+			psmt.executeUpdate();
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+	}
+
+	
 	
 	public ArrayList<ProductDTO> select_by_Fruit(String cnt) {
 		conn();
@@ -199,7 +219,7 @@ public class ProductDAO {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}finally {
+		} finally {
 			close();
 		}
 	

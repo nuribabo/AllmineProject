@@ -65,7 +65,11 @@ public class CartDAO {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}return pdto;
+		} finally {
+			close();
+		}
+		
+		return pdto;
 	}
 	// 장바구니에 같은 물건 있는지 확인
 	public CartDTO cartcheck(CartDTO cdto) {
@@ -77,7 +81,7 @@ public class CartDAO {
 			psmt.setString(1, cdto.getMember_id());
 			psmt.setString(2, cdto.getProduct_id());
 			rs = psmt.executeQuery();
-			while(rs.next()) {
+			if(rs.next()) {
 				int quantity = rs.getInt(1);
 				String member_id = rs.getString(2);
 				String product_id = rs.getString(3);
@@ -86,7 +90,11 @@ public class CartDAO {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}return check;
+		} finally {
+			close();
+		}
+		
+		return check;
 		
 	}
 	public int update_cart(CartDTO cdto) {
@@ -102,7 +110,10 @@ public class CartDAO {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}return cnt;
+		} finally {
+			close();
+		}
+		return cnt;
 	}
 	
 	// 장바구에 저장;
@@ -119,7 +130,10 @@ public class CartDAO {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}return cnt;
+		}finally {
+			close();
+		}
+		return cnt;
 		
 	}
 	public ArrayList<CartDTO> cartView(String name){
@@ -143,7 +157,10 @@ public class CartDAO {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}return list;
+		} finally {
+			close();
+		}
+		return list;
 	}
 	public int delete_all(String id) {
 		
@@ -156,13 +173,16 @@ public class CartDAO {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}return cnt;
+		} finally {
+			close();
+		} return cnt;
 	}
-public int delete_select (CartDTO info) {
+	
+	public int delete_select (CartDTO info) {
 		
 		try {
 			conn();
-			String sql = "delete * form cart_product where member_id = ? and product_id = ?";
+			String sql = "delete * from cart_product where member_id = ? and product_id = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, info.getMember_id());
 			psmt.setNString(2, info.getProduct_id());
@@ -170,7 +190,9 @@ public int delete_select (CartDTO info) {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}return cnt;
+		} finally {
+			close();
+		} return cnt;
 	}
 	
 	
@@ -192,4 +214,81 @@ public int delete_select (CartDTO info) {
 		}
 		return cnt;
 	}
+	
+	//plus 버튼 
+	
+	public int quan_plus(String m, String p) {
+		conn();
+		try {
+			String sql = "update cart_product set quantity = quantity + 1 where member_id = ? and product_id = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, m);
+			psmt.setString(2, p);
+			cnt = psmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			close();
+		} return cnt;
+		
+	}
+	
+	public int quan_minus(String m, String p) {
+		conn();
+		try {
+			String sql = "update cart_product set quantity = quantity - 1 where member_id = ? and product_id = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, m);
+			psmt.setString(2, p);
+			cnt = psmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			close();
+		} return cnt;
+		
+	}
+	
+//	public int quan_update(CartDTO cdto) {
+//		conn();
+//		try {
+//			String sql = "update cart_product set quantity = ? where member_id = ? and product_id = ?";
+//			psmt = conn.prepareStatement(sql);
+//			psmt.setInt(1, cdto.getQuantity());
+//			psmt.setString(2, cdto.getMember_id());
+//			psmt.setNString(3, cdto.getProduct_id());
+//			cnt = psmt.executeUpdate();
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}return cnt;
+//		
+//	}
+	
+	public int cart_product_quan(String id) {
+		conn();
+		int ans = -1;
+		try {
+			String sql = "select quantity from cart_product where member_id = ?";
+			psmt = conn.prepareStatement(sql);
+			
+			psmt.setString(1, id);
+			
+			rs = psmt.executeQuery();
+			if (rs != null) {
+				ans = rs.getInt(3);
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			close();
+		} return ans;
+		
+	}
+	
+	
 }

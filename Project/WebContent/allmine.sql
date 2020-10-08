@@ -11,9 +11,7 @@ update product set IMG_ADDR = 'https://search.pstatic.net/common/?src=http%3A%2F
 select * from product where product_name like '%¿À%';
 select * from product where product_name like '%»ç%';
 
-<<<<<<< HEAD
+select * from recipe;
 
-select * from member;
-=======
-select * from cart_product;
->>>>>>> branch 'master' of https://github.com/nuribabo/AllmineProject.git
+select RECIPE_NAME, RECIPE_RATE, TO_NUMBER(replace(RECIPE_PREFERENCE, '¸í', '')) AS PRE, RECIPE_IMG, RECIPE_INGREDIENT FROM RECIPE
+ORDER BY PRE DESC;

@@ -33,12 +33,45 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
 <title>Header</title>
+<style type="text/css">
+.container1 {
+	display: flex;
+	width: 250px;
+	justify-content: align-items;
+}
+
+.container2 {
+	display: flex;
+	width: 200px;
+	justify-content: align-items;
+}
+
+.dan2 {
+	list-style: none;
+	padding-left: 0px;
+}
+
+.dan1 {
+	list-style: none;
+}
+
+.dan1 .search1 .search .btn_search {
+	position: absolute;
+	left: 1460px;
+	width: 30px;
+	height: 30px;
+}
+
+#item5 {
+	
+}
+</style>
 </head>
 
 <body>
 	<%
 		MemberDTO info2 = (MemberDTO) session.getAttribute("info");
-	ArrayList<CartDTO> clist = (ArrayList<CartDTO>)session.getAttribute("clist");
+	ArrayList<CartDTO> clist = (ArrayList<CartDTO>) session.getAttribute("clist");
 	%>
 	<!-- 소개탭 -->
 		<div class="py-1 bg-primary">
@@ -87,10 +120,11 @@
 					<li class="nav-item active"><a href="main1.jsp"
 						class="nav-link">Home</a></li>
 					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="shop.html" id="dropdown04"
-						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">전체상품</a>
+						class="nav-link dropdown-toggle" href="./itemView_controller" id="dropdown04"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">상품 정보</a>
 						<div class="dropdown-menu" aria-labelledby="dropdown04">
-							<a class="dropdown-item" href="./itemView_controller?name=all&page_num=<%=1%>">전체 상품</a> <a
+							<a class="dropdown-item" href="./itemView_controller?name=all&page_num=<%=1%>">전체 상품</a> 
+							<a
 								class="dropdown-item"
 								href="./itemView_controller?name=<%="VF"%>&page_num=<%=1%>">과일·채소류</a> <a
 								class="dropdown-item"
@@ -116,9 +150,7 @@
 						</div></li>
 					<li class="nav-item"><a href="about.jsp" class="nav-link">레시피</a></li>
 					<li class="nav-item"><a href="blog.jsp" class="nav-link">베스트</a></li>
-				
-					<li class="nav-item"><a href="recipe_blog.jsp" class="nav-link">레시피</a></li>
-					<li class="nav-item"><a href="#" class="nav-link">베스트</a></li>
+		
 
 					<li class="nav-item cta cta-colored"><a href="wishlist.jsp"
 						class="nav-link"><span class="icon-shopping_cart"></span>
