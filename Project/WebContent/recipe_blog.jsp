@@ -70,10 +70,6 @@
 	width:30px;
 	height:30px;
 }
-
-#item5 {
-	
-}
 </style>
   </head>
   <body class="goto-here">
@@ -89,6 +85,7 @@
 		check = "de";
 	}
 	ardao = rdao.recipe_import(check);
+	String[] recipes = new String[10];
     ArrayList<RecipeDTO> itemlist = (ArrayList<RecipeDTO>)session.getAttribute("list");
 	%>
 	
@@ -99,7 +96,7 @@
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
           	<p class="breadcrumbs"><span class="mr-2"><a href="index.html"></a></span> <span></span></p>
-            <h1 class="mb-0 bread">BEST</h1>
+            <h1 class="mb-0 bread">Recipe</h1>
           </div>
         </div>
       </div>
@@ -148,7 +145,8 @@
 											<div><a href="#" class="meta-chat"><span class="icon-chat"></span>recipe_comments</a></div>
 										</div>
 										<p style="width:795px;"><%=ardao.get(i).getRecipe_ingredient()%></p>
-										<p><a href="blog-single.html" class="btn btn-primary py-2 px-3">레시피 알아보기</a></p>
+										<% session.setAttribute("Recipe_list", ardao.get(i)); %>
+										<p><a href="recipe_detail_blog.jsp?name=<%=ardao.get(i).getRecipe_name()%>" class="btn btn-primary py-2 px-3">레시피 알아보기</a></p>
 									</div>
 								</div>
 							</div>

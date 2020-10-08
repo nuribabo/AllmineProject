@@ -147,5 +147,30 @@ public class RecipeDAO {
 			}
 			return list;
 		}
-	
+		
+// 제품이름을 받아서, 제품데이터 불러오기	
+		public RecipeDTO recipe_one(String check) {
+			conn();
+			try {
+				String sql = "select * from recipe where recipe_name = ?";
+				psmt = conn.prepareStatement(sql);
+				psmt.setString(1, check);
+				rs = psmt.executeQuery();
+				if(rs.next()) {
+					String r_name = rs.getString(1);
+					String r_rate = rs.getString(2);
+					String r_pref = rs.getString(3);
+					String r_img = rs.getString(4);
+					String r_ing = rs.getString(5);
+					rdto = new RecipeDTO(r_name, r_rate, r_pref, r_img, r_ing);}
+				}
+				catch (SQLException e){
+					e.printStackTrace();
+				} finally {
+					close();
+				}
+			return rdto;
+		}
+
+
 }
