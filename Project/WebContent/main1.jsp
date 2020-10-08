@@ -72,10 +72,6 @@
 	width: 30px;
 	height: 30px;
 }
-
-#item5 {
-	
-}
 </style>
 
 </head>
@@ -87,7 +83,6 @@
 		
 		if (request.getQueryString() != null){
 			String pyinfo = request.getQueryString().split("=")[1];
-		
 			pyinfo = URLDecoder.decode(pyinfo, "UTF-8");
 				
 			String[] pyinfo_lst = pyinfo.split(" ");
@@ -107,14 +102,9 @@
 			recom_lst.add(dao.select_by_name2("ÈÄÃß"));
 			recom_lst.add(dao.select_by_name2("´Þ°¿"));
 		}
-	
 	%>
-
-
 	<%@ include file="header.jsp"%>
-	
 	<section class="ftco-section">
-
 		<div class="container">
 			<div class="row no-gutters ftco-services">
 				<div
@@ -320,6 +310,8 @@
 						</div>
 					</div>
 				</div>
+			</div>
+			</div>
 				<%
 					}
 				%>

@@ -72,7 +72,7 @@
  	String something_recipe = request.getParameter("name");
  	RecipeDAO rdao = new RecipeDAO();
  	RecipeDTO sore = rdao.recipe_one(something_recipe);
- 	String pattern = "yyyy.mm.dd";
+ 	String pattern = "yyyy.MM.dd";
  	SimpleDateFormat time = new SimpleDateFormat(pattern);
  	String now_day = time.format(new Date());
  	%>
@@ -202,16 +202,16 @@
               <div class="comment-form-wrap pt-5">
                 <h3 class="mb-5">평가를 남겨주세요</h3>
                 <% if (info!=null) { %>
-                <form action="#" class="p-5 bg-light">
+                <form action="comment_func" class="p-5 bg-light">
                   <div class="form-group">
-                    <label for="name"><%= info.getName() %></label>
+                    <label for="name" name="c_name"><%= info.getName() %></label>
                   </div>
                   <div class="form-group">
-                    <label for="date"><%= now_day %></label>
+                    <label for="date" name="c_date"><%= now_day %></label>
                   </div>
                   <div class="form-group">
                     <label for="message">Message</label>
-                    <textarea id="message" cols="30" rows="10" class="form-control"></textarea>
+                    <textarea name="c_message" cols="30" rows="10" class="form-control"></textarea>
                   </div>
                   <div class="form-group">
                     <input align="center" type="submit" value="Post Comment" class="btn py-3 px-4 btn-primary">

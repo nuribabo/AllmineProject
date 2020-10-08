@@ -171,6 +171,8 @@ public class RecipeDAO {
 				}
 			return rdto;
 		}
+		
+// Message 값 parameter 받아서 세션대로 메시지 올려주기
 
 
 }

@@ -102,7 +102,9 @@ public class ProductDAO {
 	      } catch (SQLException e) {
 	         // TODO Auto-generated catch block
 	         e.printStackTrace();
-	      }
+	      } finally {
+				close();
+		  }
 
 	      return list;
 	   }
@@ -132,6 +134,8 @@ public class ProductDAO {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} finally {
+			close();
 		}
 
 		return item;
@@ -163,7 +167,7 @@ public class ProductDAO {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}finally {
+		} finally {
 			close();
 		}
 		
@@ -189,7 +193,7 @@ public class ProductDAO {
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			close();
 		}
 		
@@ -208,6 +212,8 @@ public class ProductDAO {
 		
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			close();
 		}
 	}
 
@@ -241,7 +247,7 @@ public class ProductDAO {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}finally {
+		} finally {
 			close();
 		}
 	
