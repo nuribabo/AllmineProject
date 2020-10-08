@@ -48,30 +48,57 @@ public class ProductDAO {
 		}
 	}
 
+	//제품 이름으로 검색하기
+	   public ArrayList<ProductDTO> select_by_name(String name) {
+	      // TODO Auto-generated method stub
+	      
+	      conn();
+	      try {
+	         String sql = "select * from product where product_name like ?";
+	         psmt = conn.prepareStatement(sql);
+	         psmt.setString(1,'%'+name+'%');
+	         ResultSet rs = psmt.executeQuery();
+	         while (rs.next()) {
+	            String product_id = rs.getString(1);
+	            System.out.println(product_id);
+	            String product_name = rs.getString(2);
+	            int price = rs.getInt(3);
+	            int discount_rate = rs.getInt(4);
+	            int weight = rs.getInt(5);
+	            String origin = rs.getString(6);
+	            String IMG_ADDR = rs.getString(7);
+	            ProductDTO item = new ProductDTO(product_id, product_name, price, discount_rate, weight, origin,IMG_ADDR);
+	            list.add(item);
+	         }
+
+	      } catch (SQLException e) {
+	         // TODO Auto-generated catch block
+	         e.printStackTrace();
+	      }
+
+	      return list;
+	   }
+	
 	
 	//제품 이름으로 검색하기
-	public ArrayList<ProductDTO> select_by_name(String name) {
+	public ProductDTO select_by_name2(String name) {
 		// TODO Auto-generated method stub
-		
+		ProductDTO item = null;
 		conn();
 		try {
-			String sql = "select * from product where product_name like ?";
+			String sql = "select * from product where product_name = ?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1,'%'+name+'%');
+			psmt.setString(1,name);
 			ResultSet rs = psmt.executeQuery();
-			while (rs.next()) {
+			if (rs.next()) {
 				String product_id = rs.getString(1);
-				System.out.println(product_id);
 				String product_name = rs.getString(2);
-				
-				
 				int price = rs.getInt(3);
 				int discount_rate = rs.getInt(4);
 				int weight = rs.getInt(5);
 				String origin = rs.getString(6);
 				String IMG_ADDR = rs.getString(7);
-				ProductDTO item = new ProductDTO(product_id, product_name, price, discount_rate, weight, origin,IMG_ADDR);
-				list.add(item);
+				item = new ProductDTO(product_id, product_name, price, discount_rate, weight, origin,IMG_ADDR);
 			}
 
 		} catch (SQLException e) {
@@ -79,7 +106,7 @@ public class ProductDAO {
 			e.printStackTrace();
 		}
 
-		return list;
+		return item;
 	}
 	// 전체 상품 검색
 	
@@ -157,7 +184,7 @@ public class ProductDAO {
 	}
 
 	
-	//카테고리별분류
+	
 	public ArrayList<ProductDTO> select_by_Fruit(String cnt) {
 		conn();
 		
@@ -194,182 +221,10 @@ public class ProductDAO {
 		return list;
 	}
 	
-	//할인율 높은 순서대로
-	
-	public ArrayList<ProductDTO> select_by_discount_rate_Desc() {
-		conn();
-		try {
-			
-			String sql = "select * from product ORDER BY discount_rate DESC";
-			psmt = conn.prepareStatement(sql);
-			rs = psmt.executeQuery();
-			
-			while (rs.next()) {
-				String product_id = rs.getString(1);
-				String product_name = rs.getString(2);
-				int price = rs.getInt(3);
-				int discount_rate = rs.getInt(4);
-				int weight = rs.getInt(5);
-				String origin = rs.getString(6);
-				String IMG_ADDR = rs.getString(7);
-				ProductDTO item = new ProductDTO(product_id, product_name, price, discount_rate, weight, origin,IMG_ADDR);
-				list.add(item);
-				
-				
-			}
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}finally {
-			close();
-		}
-		
-		
-		return list;
-	}
-	
-	// 할인율 낮은 순서대로
-	
-	public ArrayList<ProductDTO> select_by_discount_rate_Asc() {
-		// TODO Auto-generated method stub
-		conn();
-		try {
-			
-			String sql = "select * from product ORDER BY discount_rate ASC";
-			psmt = conn.prepareStatement(sql);
-			rs = psmt.executeQuery();
-			
-			while (rs.next()) {
-				String product_id = rs.getString(1);
-				String product_name = rs.getString(2);
-				int price = rs.getInt(3);
-				int discount_rate = rs.getInt(4);
-				int weight = rs.getInt(5);
-				String origin = rs.getString(6);
-				String IMG_ADDR = rs.getString(7);
-				ProductDTO item = new ProductDTO(product_id, product_name, price, discount_rate, weight, origin,IMG_ADDR);
-				list.add(item);
-				
-				
-			}
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}finally {
-			close();
-		}
-		
-		
-		return list;
-	}
-	//가격 높은 순서대로
-	public ArrayList<ProductDTO> select_by_Price_Desc() {
-		conn();
-		try {
-			
-			String sql = "select * from product ORDER BY price-price*discount_rate/100.0 DESC";
-			psmt = conn.prepareStatement(sql);
-			rs = psmt.executeQuery();
-			
-			while (rs.next()) {
-				String product_id = rs.getString(1);
-				String product_name = rs.getString(2);
-				int price = rs.getInt(3);
-				int discount_rate = rs.getInt(4);
-				int weight = rs.getInt(5);
-				String origin = rs.getString(6);
-				String IMG_ADDR = rs.getString(7);
-				ProductDTO item = new ProductDTO(product_id, product_name, price, discount_rate, weight, origin,IMG_ADDR);
-				list.add(item);
-				
-				
-			}
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}finally {
-			close();
-		}
-		
-		
-		return list;
-	}
 	
 	
-	//가격 낮은 순서대로
 	
-	public ArrayList<ProductDTO> select_by_Price_Asc() {
-		conn();
-		try {
-			
-			String sql = "select * from product ORDER BY price-price*discount_rate/100.0 ASC";
-			psmt = conn.prepareStatement(sql);
-			rs = psmt.executeQuery();
-			
-			while (rs.next()) {
-				String product_id = rs.getString(1);
-				String product_name = rs.getString(2);
-				int price = rs.getInt(3);
-				int discount_rate = rs.getInt(4);
-				int weight = rs.getInt(5);
-				String origin = rs.getString(6);
-				String IMG_ADDR = rs.getString(7);
-				ProductDTO item = new ProductDTO(product_id, product_name, price, discount_rate, weight, origin,IMG_ADDR);
-				list.add(item);
-				
-				
-			}
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}finally {
-			close();
-		}
-		
-		
-		return list;
-	}
 	
-
-	//페이지넘기기
-	public ArrayList<ProductDTO> pagenumber(String cnt) {
-		conn();
-		try {
-			
-			String sql = "select * from (select rownum as rnum, product.* from (select * from product where origin='국산') product where rownum <= ?) where rnum >?";
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, cnt+"%");
-			psmt.setString(2, cnt+"%");
-			rs = psmt.executeQuery();
-			
-			while (rs.next()) {
-				String product_id = rs.getString(1);
-				String product_name = rs.getString(2);
-				int price = rs.getInt(3);
-				int discount_rate = rs.getInt(4);
-				int weight = rs.getInt(5);
-				String origin = rs.getString(6);
-				String IMG_ADDR = rs.getString(7);
-				ProductDTO item = new ProductDTO(product_id, product_name, price, discount_rate, weight, origin,IMG_ADDR);
-				list.add(item);
-				
-				
-			}
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}finally {
-			close();
-		}
-		
-		
-		return list;
-	}
 
 	
 }
