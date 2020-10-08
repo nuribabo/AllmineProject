@@ -36,9 +36,8 @@
     horizontalScrolling: false,
     hideDistantElements: false,
     scrollProperty: 'scroll'
-  });
-
-
+  });	
+	
 	var fullHeight = function() {
 
 		$('.js-fullheight').css('height', $(window).height());
@@ -58,7 +57,7 @@
 		}, 1);
 	};
 	loader();
-
+	
 	// Scrollax
    $.Scrollax();
 

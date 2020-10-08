@@ -13,35 +13,28 @@ import javax.servlet.http.HttpSession;
 import com.model.ProductDAO;
 import com.model.ProductDTO;
 
+@WebServlet("/pagenumber")
+public class pagenumber extends HttpServlet {
 
-@WebServlet("/itemView_controller")
-public class itemView_controller extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
-	
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
-		ArrayList<ProductDTO> list ;
+		ArrayList<ProductDTO> plist ;
 		ProductDAO dao = new ProductDAO();
-		String cnt = request.getParameter("name");
+		String cnt = request.getParameter("num");
 		if(cnt == null) {
-			list = dao.select_by_All();
-			
-		}
-		else {
-		list = dao.select_by_Fruit(cnt);
+			plist = dao.select_by_All();
+		}else {
+		plist = dao.pagenumber(cnt);
 		}
 		
-		if(list != null) {
+		if(plist != null) {
 			HttpSession session = request.getSession();
-			session.setAttribute("list", list );
+			session.setAttribute("flist", plist );
 		}else {
 			System.out.println("¾øÂÇ¿°");
 		}
-		response.sendRedirect("shop1.jsp");
-		
-		
+		response.sendRedirect("fruitshop.jsp");
 	}
 
 }

@@ -73,7 +73,6 @@
 		MemberDTO info2 = (MemberDTO) session.getAttribute("info");
 	ArrayList<CartDTO> clist = (ArrayList<CartDTO>) session.getAttribute("clist");
 	%>
-	
 	<!-- 소개탭 -->
 		<div class="py-1 bg-primary">
 			<div class="container">
@@ -150,7 +149,9 @@
 						</div></li>
 					<li class="nav-item"><a href="about.jsp" class="nav-link">레시피</a></li>
 					<li class="nav-item"><a href="blog.jsp" class="nav-link">베스트</a></li>
-					<li class="nav-item"><a href="contact.jsp" class="nav-link">알뜰쇼핑</a></li>
+				
+					<li class="nav-item"><a href="recipe_blog.jsp" class="nav-link">레시피</a></li>
+					<li class="nav-item"><a href="#" class="nav-link">베스트</a></li>
 
 					<li class="nav-item cta cta-colored"><a href="wishlist.jsp"
 						class="nav-link"><span class="icon-shopping_cart"></span>

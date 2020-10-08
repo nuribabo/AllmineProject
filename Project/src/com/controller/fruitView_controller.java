@@ -13,17 +13,14 @@ import javax.servlet.http.HttpSession;
 import com.model.ProductDAO;
 import com.model.ProductDTO;
 
-/**
- * Servlet implementation class fruitView_controller
- */
+
 @WebServlet("/fruitView_controller")
 public class fruitView_controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		ArrayList<ProductDTO> flist ;
 		ProductDAO dao = new ProductDAO();
 		String cnt = request.getParameter("name");

@@ -50,6 +50,7 @@ public class EditMemberCon extends HttpServlet {
 		
 		if(cnt >0) {
 			System.out.println("업데이트 성공");
+			session.setAttribute("info", dto);
 		}else {
 			System.out.println("업데이트 실패");
 		}
