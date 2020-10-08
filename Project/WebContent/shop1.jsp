@@ -74,45 +74,28 @@
 	text-align: right;
 }
 </style>
-<<<<<<< HEAD
   </head>
   <body class="goto-here">
-    <%@ include file="header.jsp"%>
+   <%@ include file="header.jsp"%>
    
-    <%ArrayList<ProductDTO> itemlist = (ArrayList<ProductDTO>)session.getAttribute("list");	 %>
     <%
-=======
-</head>
-<body class="goto-here">
-	<%
-		ArrayList<ProductDTO> itemlist = (ArrayList<ProductDTO>) session.getAttribute("list");
-	%>
-	<%
->>>>>>> branch 'master' of https://github.com/nuribabo/AllmineProject.git
-		MemberDTO info = (MemberDTO) session.getAttribute("info");
-    
-       clist = (ArrayList<CartDTO>) session.getAttribute("clist");
-       String check = request.getParameter("check");
-       if(check != null){
-    	   if(check.equals("ok")){
-       
-	%>
-<<<<<<< HEAD
-	
-		<script type="text/javascript">
-		alert("장바구니에 담겼습니다.")
-		</script>
-		
-		<%}} %>
-		
-		
-    <div class="hero-wrap hero-bread" style="background-image: url('images/bg_1.jpg');">
-=======
-	<%@ include file="header.jsp"%>
+      ArrayList<ProductDTO> itemlist = (ArrayList<ProductDTO>) session.getAttribute("list");
+      MemberDTO info = (MemberDTO) session.getAttribute("info");
+      clist = (ArrayList<CartDTO>) session.getAttribute("clist");
+      String check = request.getParameter("check");
+      if(check != null){
+	  if(check.equals("ok")){
+   %>
 
-   <div class="hero-wrap hero-bread"
-      style="background-image: url('images/bg_1.jpg');">
->>>>>>> branch 'master' of https://github.com/nuribabo/AllmineProject.git
+      <script type="text/javascript">
+      alert("장바구니에 담겼습니다.")
+      </script>
+   <%}} %>
+	
+	
+	
+    <div class="hero-wrap hero-bread" style="background-image: url('images/bg_1.jpg');">
+    
       <div class="container">
          <div
             class="row no-gutters slider-text align-items-center justify-content-center">

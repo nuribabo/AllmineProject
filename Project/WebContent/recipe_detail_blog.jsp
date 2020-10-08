@@ -1,3 +1,5 @@
+<%@page import="java.util.Date"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="com.model.RecipeDAO"%>
 <%@page import="com.model.RecipeDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
@@ -70,6 +72,9 @@
  	String something_recipe = request.getParameter("name");
  	RecipeDAO rdao = new RecipeDAO();
  	RecipeDTO sore = rdao.recipe_one(something_recipe);
+ 	String pattern = "yyyy.mm.dd";
+ 	SimpleDateFormat time = new SimpleDateFormat(pattern);
+ 	String now_day = time.format(new Date());
  	%>
  	<%@ include file="header.jsp"%>
  	
@@ -87,26 +92,26 @@
     <section class="ftco-section ftco-degree-bg">
       <div class="container">
         <div class="row">
-          <div class="col-lg-8 ftco-animate">
-						<h2 class="mb-3" align="center"><%= sore.getRecipe_name()%></h2>
+          <div class="col-lg-13 ftco-animate">
+			<h2 class="mb-3" align="center"><%= sore.getRecipe_name() %></h2>
             <p align="center"><%= sore.getRecipe_ingredient() %></p>
-            <p><img src="<%= sore.getRecipe_img()%>" alt="" class="img-fluid"></p>
-            <p>레시피 설명 1 </p>
-            <h2 class="mb-3 mt-5">#2. 레시피 상세설명 제목</h2>
-            <p>레시피 상세설명 1</p>
-            <p><img src="images/image_2.jpg" alt="" class="img-fluid"></p>
-            <p>레시피 만드는 과정 1</p>
-            <p>레시피 만드는 과정 2</p>
-            <p>레시피 만드는 과정 3</p>
-            <p>레시피 만드는 과정 4</p>
+            <p align="center"><img width = 500px height = 500px src="<%= sore.getRecipe_img()%>" alt="" class="img-fluid"></p>
+            <p align="center">레시피 설명 1 </p>
+            <h2 align="center"class="mb-3 mt-5" >#2. 레시피 상세설명 제목</h2>
+            <p align="center">레시피 상세설명 1</p>
+            <p align="center"><img width = 500px height = 500px src="images/image_2.jpg" alt="" class="img-fluid"></p>
+            <p align="center">레시피 만드는 과정 1</p>
+            <p align="center">레시피 만드는 과정 2</p>
+            <p align="center">레시피 만드는 과정 3</p>
+            <p align="center">레시피 만드는 과정 4</p>
           
             <div class="about-author d-flex p-4 bg-light">
               <div class="bio align-self-md-center mr-4">
-                <img src="images/person_1.jpg" alt="Image placeholder" class="img-fluid mb-4">
+                <img width = 250px height = 250px src="images/person_1.jpg" alt="Image placeholder" class="img-fluid mb-4">
               </div>
               <div class="desc align-self-md-center">
                 <h3>ALL MINE</h3>
-                <p>여러분들의 냉장고 재료로도 충분히 만들 수 있는 음식들을 소개해드릴게요! 즐겁고 행복한 식사되세요~~~♡</p>
+                <p>여러분들의 냉장고 재료로도 충분히 만들 수 있는 음식들을 소개해드릴게요! 즐겁고 행복한 식사되세요.</p>
               </div>
             </div>
 
@@ -116,19 +121,19 @@
               <ul class="comment-list">
                 <li class="comment">
                   <div class="vcard bio">
-                    <img src="images/person_1.jpg" alt="Image placeholder">
+                    <img src="jms.jpg" alt="Image placeholder">
                   </div>
                   <div class="comment-body">
                     <h3>정민석</h3>
                     <div class="meta">2020.10.08</div>
-                    <p>이걸 왜 해 그냥 사먹고 말지 ㅋㅋㅋ 돈 아깝다. 시간도 아깝고 에휴 ㅋㅋㅋ 이딴 걸 왜 만드냐 붐따붐따</p>
+                    <p>이걸 왜 해 그냥 사먹고 말지 ㅋㅋㅋ 돈 아깝다. 시간도 아깝고 에휴 ㅋㅋㅋ 이딴 걸 왜 만드냐 붐따</p>
                     <p><a href="#" class="reply">Reply</a></p>
                   </div>
                 </li>
 
                 <li class="comment">
                   <div class="vcard bio">
-                    <img src="images/person_1.jpg" alt="Image placeholder">
+                    <img src="knl.jpg" alt="Image placeholder">
                   </div>
                   <div class="comment-body">
                     <h3>김누리</h3>
@@ -140,12 +145,12 @@
                   <ul class="children">
                     <li class="comment">
                       <div class="vcard bio">
-                        <img src="images/person_1.jpg" alt="Image placeholder">
+                        <img src="images/person_2.jpg" alt="Image placeholder">
                       </div>
                       <div class="comment-body">
                         <h3>한의석</h3>
                         <div class="meta">2020.10.08</div>
-                        <p>제가 왠만하면 댓글을 안 남기는 스타일이긴 한데, 이거 음식 색깔이 되게 의심스럽네요. 저는 안 만들것 같아요.</p>
+                        <p>제가 왠만하면 댓글을 안 남기는 스타일이긴 한데, 이거 음식 색깔이 되게 의심스럽네요. 저라면 안 만들것 같아요.</p>
                         <p><a href="#" class="reply">Reply</a></p>
                       </div>
 
@@ -153,24 +158,24 @@
                       <ul class="children">
                         <li class="comment">
                           <div class="vcard bio">
-                            <img src="images/person_1.jpg" alt="Image placeholder">
+                            <img src="lbm.jpg" alt="Image placeholder">
                           </div>
                           <div class="comment-body">
                             <h3>임보미</h3>
                             <div class="meta">2020.10.08</div>
-                            <p>핵노맛</p>
+                            <p>ㄴㄴ 핵노맛</p>
                             <p><a href="#" class="reply">Reply</a></p>
                           </div>
 
                             <ul class="children">
                               <li class="comment">
                                 <div class="vcard bio">
-                                  <img src="images/person_1.jpg" alt="Image placeholder">
+                                  <img src="images/person_3.jpg" alt="Image placeholder">
                                 </div>
                                 <div class="comment-body">
                                   <h3>김건희</h3>
                                   <div class="meta">2020.10.08</div>
-                                  <p>JMTGR~~~~~ 아샷츄랑 같이 먹으면 맛있을 것 같아요 ㅋㅋㅋㅋ</p>
+                                  <p>만들어보니까 JMTGR~~~~~ 아샷츄랑 같이 먹으면 맛있을 것 같아요 ㅋㅋㅋㅋ</p>
                                   <p><a href="#" class="reply">Reply</a></p>
                                 </div>
                               </li>
@@ -180,7 +185,18 @@
                     </li>
                   </ul>
                 </li>
-              </ul>
+               	<!-- 만약 comment 기능을 사용한다면 밑에 출력될 메시지들 -->
+                <!-- <li class="comment">
+                  <div class="vcard bio">
+                    <img src="basic.jpg" alt="Image placeholder">
+                  </div>
+                  <div class="comment-body">
+                    <h3>info.getId</h3>
+                    <div class="meta">now_day</div>
+                    <p>Message input</p>
+                    <p><a href="#" class="reply">Reply</a></p>
+                  </div>
+              </ul> -->
               <!-- END comment-list -->
               
               <div class="comment-form-wrap pt-5">
@@ -189,22 +205,20 @@
                 <form action="#" class="p-5 bg-light">
                   <div class="form-group">
                     <label for="name"><%= info.getName() %></label>
-                    <input type="text" class="form-control" id="name">
                   </div>
                   <div class="form-group">
-                    <label for="email"><%= info.getEmail() %></label>
-                    <input type="email" class="form-control" id="email">
+                    <label for="date"><%= now_day %></label>
                   </div>
                   <div class="form-group">
                     <label for="message">Message</label>
                     <textarea id="message" cols="30" rows="10" class="form-control"></textarea>
                   </div>
                   <div class="form-group">
-                    <input type="submit" value="Post Comment" class="btn py-3 px-4 btn-primary">
+                    <input align="center" type="submit" value="Post Comment" class="btn py-3 px-4 btn-primary">
                   </div>
                 </form>
                 </div>
-              <% } else { }%>
+              <% } %>
             </div>
           </div> <!-- .col-md-8 -->
         </div>
