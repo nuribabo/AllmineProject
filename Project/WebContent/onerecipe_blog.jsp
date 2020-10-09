@@ -90,7 +90,6 @@
 	}
 	ardao = rdao.recipe_import(check);
     ArrayList<RecipeDTO> selectlist = (ArrayList<RecipeDTO>)session.getAttribute("selectlist");
-	/* 	Date date = new Date(); */
 	%>
 	
 	<%@ include file="header.jsp"%>
@@ -145,10 +144,9 @@
 										<div class="meta mb-3">
 											<div><a href="#">평점 <%=selectlist.get(i).getRecipe_rate()%></a></div>
 											<div><a href="#">♥ <%=selectlist.get(i).getRecipe_preference()%></a></div>
-											<div><a href="#" class="meta-chat"><span class="icon-chat"></span>recipe_comments</a></div>
 										</div>
 										<p style="width:795px;"><%=selectlist.get(i).getRecipe_ingredient()%></p>
-										<p><a href="blog-single.html" class="btn btn-primary py-2 px-3">레시피 알아보기</a></p>
+										<p><a href="recipe_detail_blog.jsp?name=<%=selectlist.get(i).getRecipe_name()%>" class="btn btn-primary py-2 px-3">레시피 알아보기</a></p>
 									</div>
 								</div>
 							</div>

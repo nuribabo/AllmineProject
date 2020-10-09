@@ -351,7 +351,7 @@
 						<div class="item">
 							<div class="testimony-wrap p-4 pb-5">
 								<div class="user-img mb-5"
-									style="background-image: url(images/person_1.jpg)">
+									style="background-image: url(jms.jpg)">
 									<span
 										class="quote d-flex align-items-center justify-content-center">
 										<i class="icon-quote-left"></i>
@@ -368,7 +368,7 @@
 						<div class="item">
 							<div class="testimony-wrap p-4 pb-5">
 								<div class="user-img mb-5"
-									style="background-image: url(images/person_2.jpg)">
+									style="background-image: url(hdj.jpg)">
 									<span
 										class="quote d-flex align-items-center justify-content-center">
 										<i class="icon-quote-left"></i>
@@ -385,7 +385,7 @@
 						<div class="item">
 							<div class="testimony-wrap p-4 pb-5">
 								<div class="user-img mb-5"
-									style="background-image: url(images/person_3.jpg)">
+									style="background-image: url(knl.jpg)">
 									<span
 										class="quote d-flex align-items-center justify-content-center">
 										<i class="icon-quote-left"></i>
@@ -402,7 +402,7 @@
 						<div class="item">
 							<div class="testimony-wrap p-4 pb-5">
 								<div class="user-img mb-5"
-									style="background-image: url(images/person_1.jpg)">
+									style="background-image: url(lmb.jpg)">
 									<span
 										class="quote d-flex align-items-center justify-content-center">
 										<i class="icon-quote-left"></i>
@@ -419,7 +419,7 @@
 						<div class="item">
 							<div class="testimony-wrap p-4 pb-5">
 								<div class="user-img mb-5"
-									style="background-image: url(images/person_1.jpg)">
+									style="background-image: url(lbm.jpg)">
 									<span
 										class="quote d-flex align-items-center justify-content-center">
 										<i class="icon-quote-left"></i>
