@@ -22,8 +22,7 @@ public class cartcontroller extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String itemid = request.getParameter("name"); // wishlist.jsp에서 name 이란 이름의 값을 가져와 아이템 아이디에담음
-		System.out.println(itemid);
+		String itemid = request.getParameter("itemname"); // wishlist.jsp에서 name 이란 이름의 값을 가져와 아이템 아이디에담음
 		
 		int num = 1;
 		int cnt = 0;
@@ -34,7 +33,6 @@ public class cartcontroller extends HttpServlet {
 		MemberDTO info = (MemberDTO) session.getAttribute("info");
 
 		if (info != null) { 
-			System.out.print(info.getName());
 			member_id = info.getMember_id();
 			CartDAO dao = new CartDAO();
 			CartDTO cdto = new CartDTO(member_id, itemid, num);
@@ -65,7 +63,6 @@ public class cartcontroller extends HttpServlet {
 			} else {
 				System.out.println("장바구니 파손");
 			}
-			System.out.println("222222233333333");
 			response.sendRedirect("main1.jsp");
 			/* ?check=ok */
 		

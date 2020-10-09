@@ -69,7 +69,7 @@
 				<div class="col-md">
 					<div class="ftco-footer-widget mb-4">
 						<h2 class="ftco-heading-2">Allmine</h2>
-						<p>Every day, we hope you to have happiness on your table.</p>
+						<p>매일 당신의 식탁에 행복을 드립니다.</p>
 <!-- 						<ul
 							class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
 							<li class="ftco-animate"><a href="#"><span
@@ -83,38 +83,22 @@
 				</div>
 				<div class="col-md">
 					<div class="ftco-footer-widget mb-4 ml-md-5">
-						<h2 class="ftco-heading-2">Menu</h2>
+						<h2 class="ftco-heading-2">메뉴</h2>
 						<ul class="list-unstyled">
-							<li><a href="fruitshop.jsp" class="py-2 d-block">Shopping</a></li>
-							<li><a href="recipe_blog.jsp" class="py-2 d-block">Recipes</a></li>
-							<li><a href="#" class="py-2 d-block">Event</a></li>
-							<li><a href="#" class="py-2 d-block"></a></li>
+							<li><a href="shop1.jsp" class="py-2 d-block">제품</a></li>
+							<li><a href="recipe_blog.jsp" class="py-2 d-block">레시피</a></li>
+							
 						</ul>
 					</div>
 				</div>
-				<div class="col-md-4">
-					<div class="ftco-footer-widget mb-4">
-						<h2 class="ftco-heading-2">My Page</h2>
-						<div class="d-flex">
-							<ul class="list-unstyled mr-l-5 pr-l-3 mr-4">
-								<li><a href="#" class="py-2 d-block">Order List</a></li>
-								<li><a href="#" class="py-2 d-block">Account Modify &amp;
-										Resign</a></li>
-								<li><a href="#" class="py-2 d-block"></a></li>
-								<li><a href="#" class="py-2 d-block"></a></li>
-							</ul>
-							<ul class="list-unstyled">
-							</ul>
-						</div>
-					</div>
-				</div>
+				
 				<div class="col-md">
 					<div class="ftco-footer-widget mb-4">
-						<h2 class="ftco-heading-2">Have a Questions?</h2>
+						<h2 class="ftco-heading-2">연락처</h2>
 						<div class="block-23 mb-3">
 							<ul>
 								<li><span class="icon icon-map-marker"></span><span
-									class="text">373-3 Gwangju CGI Center in Songha-dong, Nam-gu, Gwangju</span></li>
+									class="text">광주 광역시 남구 송하동 광주CGI 센터 373-3</span></li>
 								<li><a href="#"><span class="icon icon-phone"></span><span
 										class="text">062-655-3509</span></a></li>
 								<li><a href="#"><span class="icon icon-envelope"></span><span

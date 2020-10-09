@@ -79,11 +79,13 @@
 						    <thead class="thead-primary">
 						      <tr class="text-center">
 						        <th>&nbsp;</th>
-						        <th>Product List</th>
+						        <th>제품 명</th>
 						        <th>&nbsp;</th>
-						        <th>Price</th>
-						        <th>Quantity</th>
-						        <th>Total</th>
+						        <th>원가</th>
+						        <th>할인율</th>
+						        <th>할인가</th>
+						        <th>수량</th>
+						        <th>총액</th>
 						      </tr>
 						    </thead>
 						    <tbody>
@@ -99,7 +101,10 @@
 						        	<p>상품 설명란</p>
 						        </td>
 						        
-						        <td class="price"><%=clist.get(i).getPrice()-clist.get(i).getPrice()*clist.get(i).getDiscount_rate()/100.0%></td>
+						        <td class="price"><%=clist.get(i).getPrice()+"원"%></td>
+						        <td class="price"><%=clist.get(i).getDiscount_rate()+"%"%></td>
+						        
+						        <td class="price"><%=((int)clist.get(i).getPrice()*(100-clist.get(i).getDiscount_rate())/100)/100 * 100+"원"%></td>
 						        
 						        <td class="quantity">
 						       <!-- 플러스버튼 --> <div class="sp-plus fff"> 
@@ -117,7 +122,7 @@
 					          	</div>
 					          </td>
 						        
-						        <td class="total"><%=(clist.get(i).getPrice()-clist.get(i).getPrice()*clist.get(i).getDiscount_rate()/100.0) * clist.get(i).getQuantity() %></td>
+						        <td class="total"><%=((int)clist.get(i).getPrice()*(100-clist.get(i).getDiscount_rate())/100)/100 * 100 * clist.get(i).getQuantity() +"원"%></td>
 						      </tr><!-- END TR-->
 						      
               

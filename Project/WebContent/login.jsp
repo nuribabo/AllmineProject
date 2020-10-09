@@ -4,15 +4,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<style>
-	
-	
-	/* div.container{
-		background-color : green;
-	} */
-	
-	
-</style>
+
 <title>Insert title here</title>
  <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/icomoon.css">
@@ -27,13 +19,83 @@
     <!-- Bootstrap CSS -->
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">  -->
     <title>로그인 폼</title>
+    
+<meta charset="utf-8">
+<title>Insert title here</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link
+	href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap"
+	rel="stylesheet">
+
+<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+<link rel="stylesheet" href="css/animate.css">
+
+<link rel="stylesheet" href="css/owl.carousel.min.css">
+<link rel="stylesheet" href="css/owl.theme.default.min.css">
+<link rel="stylesheet" href="css/magnific-popup.css">
+
+<link rel="stylesheet" href="css/aos.css">
+
+<link rel="stylesheet" href="css/ionicons.min.css">
+
+<link rel="stylesheet" href="css/bootstrap-datepicker.css">
+<link rel="stylesheet" href="css/jquery.timepicker.css">
+
+
+<link rel="stylesheet" href="css/flaticon.css">
+<link rel="stylesheet" href="css/icomoon.css">
+<link rel="stylesheet" href="css/style.css">
+
+<style type="text/css">
+.container1 {
+	display: flex;
+	width: 250px;
+	justify-content: align-items;
+}
+
+.container2 {
+	display: flex;
+	width: 200px;
+	justify-content: align-items;
+}
+
+.dan2 {
+	list-style: none;
+	padding-left: 0px;
+}
+
+.dan1 {
+	list-style: none;
+}
+
+.dan1 .search1 .search .btn_search {
+	position: absolute;
+	left: 1460px;
+	width: 30px;
+	height: 30px;
+}
+
+#item5 {
+	
+}
+</style> 
+   
+  
 
 </head>
 <body>
 
 		<%@ include file="header.jsp"%>
-		
-		
+	
+				
  <div class="card align-middle" style="width:20rem; border-radius:20px;  margin:auto; margin-top:280px;">
 		<div class="card-title" style="margin-top:30px;">
 			<h2 class="card-title text-center" style="color:#113366;">로그인</h2>

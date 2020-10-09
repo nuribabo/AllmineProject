@@ -53,9 +53,9 @@
 	    	int num3 = 0;
 	        for (CartDTO e: list){
 	    		num += e.getPrice();
-	    		num2 += e.getPrice() * (e.getDiscount_rate())/100;
+	    		num2 += (e.getPrice() * (e.getDiscount_rate())/100)/100 * 100;
 	    	}
-	    	
+	        
 	        if (num-num2 < 50000){
 	        	num3 = 3000;
 	        }
@@ -90,7 +90,7 @@
 						      <tr class="text-center">
 						        
 						        <th>&nbsp;</th>
-						        <th>상품 이름</th>
+						        <th>제품 명</th>
 						        <th>가격</th>
 						        <th>수량</th>
 						        <th>총합</th>
@@ -115,12 +115,12 @@
 						        	<p>생식, 찜, 볶음, 절임, 삶기 등 다양한 조리법과 특유의 달큰한 맛이 있으며 다이어트 음식으로도 각광받고 있다.</p>
 						        </td>
 						        
-						        <td class="price"><%=list.get(i).getPrice()%></td>
+						        <td class="price"><%=((int)list.get(i).getPrice()*(100-list.get(i).getDiscount_rate())/100)/100 * 100 + "원"%></td>
 						        
 						        <td class="quantity">
-						        	<%=list.get(i).getQuantity()%>
+						        	<%=list.get(i).getQuantity() + "개"%>
 					          </td>
-					          <td class="total"><%=list.get(i).getPrice()*list.get(i).getQuantity()%></td>
+					          <td class="total"><%=((int)list.get(i).getPrice()*(100-list.get(i).getDiscount_rate())/100)/100 * 100*list.get(i).getQuantity() + "원"%></td>
 					          </tr><!-- END TR-->
 								<%
 									}
@@ -151,32 +151,32 @@
     				<div class="cart-total mb-3">
     					<h3>장바구니 총합</h3>
     					<p class="d-flex">
-    						<span>상품 가격</span>
+    						<span>할인 전 가격</span>
     						<span>
     						
-    						<%= num %>
+    						<%= (int)num+"원" %>
     						
     						</span>
     					</p>
     					<p class="d-flex">
-    						<span>배송</span>
+    						<span>배송비</span>
     						<span>
-    						<%= num3 %>
+    						<%= num3+"원" %>
     						
     						</span>
     					</p>
     					<p class="d-flex">
-    						<span>할인</span>
+    						<span>할인가</span>
     						<span>
 
-							<%= num2 %>
+							<%= (int)num2+"원"%>
 							</span>
     					</p>
     					<hr>
     					<p class="d-flex total-price">
     						<span>총합</span>
     						<span>
-							<%= num - num2 + num3%>
+							<%= (int)(num - num2)+"원"%>
 							</span>
     					</p>
     				</div>

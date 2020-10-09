@@ -72,6 +72,11 @@
 	<%
 		MemberDTO info2 = (MemberDTO) session.getAttribute("info");
 	ArrayList<CartDTO> clist = (ArrayList<CartDTO>) session.getAttribute("clist");
+	
+	if (info2 != null){
+		System.out.println(clist.size());
+	}
+	
 	%>
 	<!-- 소개탭 -->
 		<div class="py-1 bg-primary">
@@ -84,7 +89,7 @@
 								class="icon mr-2 d-flex justify-content-center align-items-center">
 								<span class="icon-phone2"></span>
 							</div>
-							<span class='text'> TEL : 062-655-3509</span>
+							<span class='text'> 전화 번호 : 062-655-3509</span>
 						</div>
 						<div class="col-md pr-4 d-flex topper align-items-center">
 							<div
@@ -95,7 +100,7 @@
 						</div>
 						<div
 							class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
-							<span class="text"> Fresh foods for your dinner </span>
+							<span class="text"> 당신의 식탁을 위한 신선한 재료 </span>
 						</div>
 					</div>
 				</div>
@@ -117,10 +122,8 @@
 
 			<div class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active"><a href="main1.jsp"
-						class="nav-link">Home</a></li>
 					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="./itemView_controller" id="dropdown04"
+						class="nav-link dropdown-toggle" href="./itemView_controller?name=all&page_num=<%=1%>" id="dropdown04"
 						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">상품 정보</a>
 						<div class="dropdown-menu" aria-labelledby="dropdown04">
 							<a class="dropdown-item" href="./itemView_controller?name=all&page_num=<%=1%>">전체 상품</a> 
@@ -149,9 +152,8 @@
 								href="./itemView_controller?name=<%="NA"%>&page_num=<%= 1%>">자연산물</a>
 						</div></li>
 					<li class="nav-item"><a href="recipe_blog.jsp" class="nav-link">레시피</a></li>
-					<li class="nav-item"><a href="#" class="nav-link">베스트</a></li>
+					<li class="nav-item"><a href="best.jsp?name=all&page_num=<%= 1%>" class="nav-link">베스트</a></li>
 		
-
 					<li class="nav-item cta cta-colored"><a href="wishlist.jsp"
 						class="nav-link"><span class="icon-shopping_cart"></span>
 						<%if(clist!= null){ %>
@@ -188,9 +190,6 @@
 									<div class="text item3">
 										<a href="Logout"> 로그아웃</a>
 									</div>
-									<div class="text item4">
-										<a href="member.html"> 고객센터</a>
-									</div>
 								</div>
 								<%
 									} else {
@@ -201,9 +200,6 @@
 									</div>
 									<div class="text item6">
 										<a href="login.jsp">로그인</a>
-									</div>
-									<div class="text item7">
-										<a href="member.html">고객센터</a>
 									</div>
 								</div>
 								<%

@@ -91,7 +91,7 @@
 			pyinfo = URLDecoder.decode(pyinfo, "UTF-8");
 				
 			String[] pyinfo_lst = pyinfo.split(" ");
-				
+			
 			for (int i=0; i< pyinfo_lst.length; i++){
 				recom_lst.add(dao.select_by_name2(pyinfo_lst[i]));
 			}
@@ -107,11 +107,35 @@
 			recom_lst.add(dao.select_by_name2("후추"));
 			recom_lst.add(dao.select_by_name2("달걀"));
 		}
-	
 				
 	%>
 
 	<%@ include file="header.jsp"%>
+	
+	<!--//특가상품  -->
+		<section class="ftco-section img"
+			style="background-image: url(images/bg_3.jpg);">
+			<div class="container">
+				<div class="row justify-content-end">
+					<div
+						class="col-md-6 heading-section ftco-animate deal-of-the-day ftco-animate">
+						<span class="subheading">Best Price For You</span>
+						<h2 class="mb-4">당일 특가</h2>
+						<p>생채, 죽, 국, 무침, 전, 샐러드나 스프, 스플레, 무스 등으로 만들거나 다른 요리의 재료로도 다양하게 활용 해보세요!</p>
+						<h3>
+							<a href="#">시금치</a>
+						</h3>
+						<span class="price">2,500원 <a href="#">1,200원</a></span>
+						<div id="timer" class="d-flex mt-5">
+							<div class="time" id="days"></div>
+							<div class="time pl-3" id="hours"></div>
+							<div class="time pl-3" id="minutes"></div>
+							<div class="time pl-3" id="seconds"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 	
 	<section class="ftco-section">
 
@@ -126,7 +150,7 @@
 						</div>
 						<div class="media-body">
 							<h3 class="heading">Super Sale</h3>
-							<span>discount of 5 to 30 percent</span>
+							<span>최대 30%의 할인율</span>
 						</div>
 					</div>
 				</div>
@@ -139,7 +163,7 @@
 						</div>
 						<div class="media-body">
 							<h3 class="heading">Always Fresh</h3>
-							<span>Product well package</span>
+							<span>차별화 된 제품 포장</span>
 						</div>
 					</div>
 				</div>
@@ -152,7 +176,7 @@
 						</div>
 						<div class="media-body">
 							<h3 class="heading">Superior Quality</h3>
-							<span>Quality Products</span>
+							<span>최상의 제품 퀄리티</span>
 						</div>
 					</div>
 				</div>
@@ -165,7 +189,7 @@
 						</div>
 						<div class="media-body">
 							<h3 class="heading">Support</h3>
-							<span>24/7 Support</span>
+							<span>연중무휴</span>
 						</div>
 					</div>
 				</div>
@@ -183,10 +207,10 @@
 								class="category-wrap-2 ftco-animate img align-self-stretch d-flex"
 								style="background-image: url(images/category.jpg);">
 								<div class="text text-center">
-									<h2>Vegetables</h2>
-									<p>Protect the health of every home</p>
+									<h2>Why Allmine?</h2>
+									<p>온 가족의 건강을 위해</p>
 									<p>
-										<a href="#" class="btn btn-primary">Shop now</a>
+										<a href="shop1.jsp?page_num=1&name=all" class="btn btn-primary">지금 구매하러 가기</a>
 									</p>
 								</div>
 							</div>
@@ -197,7 +221,7 @@
 								style="background-image: url(images/category-1.jpg);">
 								<div class="text px-3 py-1">
 									<h2 class="mb-0">
-										<a href="#">Fruits</a>
+										<a href="#">채소</a>
 									</h2>
 								</div>
 							</div>
@@ -206,7 +230,7 @@
 								style="background-image: url(images/category-2.jpg);">
 								<div class="text px-3 py-1">
 									<h2 class="mb-0">
-										<a href="#">Vegetables</a>
+										<a href="#">과일</a>
 									</h2>
 								</div>
 							</div>
@@ -220,7 +244,7 @@
 						style="background-image: url(images/category-3.jpg);">
 						<div class="text px-3 py-1">
 							<h2 class="mb-0">
-								<a href="#">Juices</a>
+								<a href="#">육류</a>
 							</h2>
 						</div>
 					</div>
@@ -228,7 +252,7 @@
 						style="background-image: url(images/category-4.jpg);">
 						<div class="text px-3 py-1">
 							<h2 class="mb-0">
-								<a href="#">Dried</a>
+								<a href="#">건식</a>
 							</h2>
 						</div>
 					</div>
@@ -238,31 +262,7 @@
 	</section>
 	
 
-	<!--//특가상품  -->
-		<section class="ftco-section img"
-			style="background-image: url(images/bg_3.jpg);">
-			<div class="container">
-				<div class="row justify-content-end">
-					<div
-						class="col-md-6 heading-section ftco-animate deal-of-the-day ftco-animate">
-						<span class="subheading">Best Price For You</span>
-						<h2 class="mb-4">Deal of the day</h2>
-						<p>Far far away, behind the word mountains, far from the
-							countries Vokalia and Consonantia</p>
-						<h3>
-							<a href="#">Spinach</a>
-						</h3>
-						<span class="price">$10 <a href="#">now $5 only</a></span>
-						<div id="timer" class="d-flex mt-5">
-							<div class="time" id="days"></div>
-							<div class="time pl-3" id="hours"></div>
-							<div class="time pl-3" id="minutes"></div>
-							<div class="time pl-3" id="seconds"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+	
 
 		<!-- 상품리스트 컨테이너 시작-->
 		<section class="ftco-section">
@@ -271,8 +271,8 @@
 				<div class="col-md-12 heading-section text-center ftco-animate">
 					<span class="subheading">How about it?</span>
 					<!-- 여기다가 추천알고리즘 랜덤으로 뿌려놔도 될 것 같음 -->
-					<h2 class="mb-4">새로 나온 상품</h2>
-					<p>올마인이 엄선해서 골라 진열한 새로운 상품들을 소개합니다.</p>
+					<h2 class="mb-4">당신만을 위한 추천 상품</h2>
+					<p>올마인이 엄선해서 골라 고른 추천 상품들을 소개합니다.</p>
 				</div>
 			</div>
 		</div>
@@ -298,8 +298,8 @@
 							<div class="d-flex">
 								<div class="pricing">
 									<p class="price">
-										<span class="mr-2 price-dc"><%=recom_lst.get(i).getPrice()%></span>
-										<span class="price-sale">할인가격</span>
+										<span class="mr-2 price-dc"><%=recom_lst.get(i).getPrice() + "원"%></span>
+										<span class="price-sale"><%=((int)recom_lst.get(i).getPrice()*(100-recom_lst.get(i).getDiscount_rate())/100)/100 * 100+"원"%></span>
 									</p>
 								</div>
 							</div>
@@ -341,8 +341,8 @@
 			<div class="row justify-content-center mb-5 pb-3">
 				<div class="col-md-7 heading-section ftco-animate text-center">
 					<span class="subheading">Recipe Review</span>
-					<h2 class="mb-4">Our satisfied customer says</h2>
-					<p>Cook with delicious ingredients through the latest popular recipes on our web page.</p>
+					<h2 class="mb-4">베스트 공감 리뷰</h2>
+					<p>웹페이지의 최신 인기 레시피를 통해 맛있는 재료로 요리하세요!</p>
 				</div>
 			</div>
 			<div class="row ftco-animate">

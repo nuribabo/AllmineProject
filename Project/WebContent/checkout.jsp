@@ -59,9 +59,9 @@
 	    	int num3 = 0;
 	        for (CartDTO e: list){
 	    		num += e.getPrice();
-	    		num2 += e.getPrice() * (e.getDiscount_rate())/100;
+	    		num2 += (e.getPrice() * (e.getDiscount_rate())/100)/100 * 100;
 	    	}
-	    	
+	        
 	        if (num-num2 < 50000){
 	        	num3 = 3000;
 	        }
@@ -151,23 +151,36 @@
 	          	<div class="col-md-12 d-flex mb-5">
 	          		<div class="cart-detail cart-total p-3 p-md-4">
 	          			<h3 class="billing-heading mb-4">배송 총액</h3>
-	          			<p class="d-flex">
-		    						<span>상품 가격</span>
-		    						<span><%= num %></span>
-		    					</p>
-		    					<p class="d-flex">
-		    						<span>배송비</span>
-		    						<span><%= num3 %></span>
-		    					</p>
-		    					<p class="d-flex">
-		    						<span>할인</span>
-		    						<span><%= num2 %></span>
-		    					</p>
-		    					<hr>
-		    					<p class="d-flex total-price">
-		    						<span>총합</span>
-		    						<span><%= num - num2 %></span>
-		    					</p>
+	          			
+		    			<p class="d-flex">
+    						<span>할인 전 가격</span>
+    						<span>
+    						
+    						<%= (int)num+"원" %>
+    						
+    						</span>
+    					</p>
+    					<p class="d-flex">
+    						<span>배송비</span>
+    						<span>
+    						<%= num3+"원" %>
+    						
+    						</span>
+    					</p>
+    					<p class="d-flex">
+    						<span>할인가</span>
+    						<span>
+
+							<%= (int)num2+"원"%>
+							</span>
+    					</p>
+    					<hr>
+    					<p class="d-flex total-price">
+    						<span>총합</span>
+    						<span>
+							<%= (int)(num - num2)+"원"%>
+							</span>
+    					</p>
 								</div>
 	          	</div>
 	          	<div class="col-md-12">
@@ -197,7 +210,7 @@
 									<div class="form-group">
 										<div class="col-md-12">
 											<div class="checkbox">
-											   <label><input type="checkbox" value="" class="mr-2"> 상기 내용을 확인하였으며 약관에 동의합니다.</label>
+											   <label><input type="checkbox" value="" class="mr-2"> 상기 내용을 확인하였으며 결제에 동의합니다.</label>
 											</div>
 										</div>
 									</div>
