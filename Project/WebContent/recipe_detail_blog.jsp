@@ -62,6 +62,74 @@
 	width:30px;
 	height:30px;
 }
+.review_score {
+    float: none;
+    border: 1px solid #d6d6d6;
+    padding: 21px 0 14px 17px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+<style>
+.blind {
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  border: none;
+  clip: rect(0, 0, 0, 0);
+}
+
+.startRadio {
+  display: inline-block;
+  overflow: hidden;
+  height: 40px;
+}
+.startRadio:after {
+  content: "";
+  display: block;
+  position: relative;
+  z-index: 10;
+  height: 40px;
+  background: url("images/star_w2.png") repeat-x 0 0;
+  background-size: contain;
+  pointer-events: none;
+}
+.startRadio__box {
+  position: relative;
+  z-index: 1;
+  float: left;
+  width: 20px;
+  height: 40px;
+  cursor: pointer;
+}
+.startRadio__box input {
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  position: absolute !important;
+}
+.startRadio__box input:checked + .startRadio__img {
+  background-color: #82ae46;
+}
+.startRadio__img {
+  display: block;
+  position: absolute;
+  right: 0;
+  width: 500px;
+  height: 40px;
+  pointer-events: none;
+}
+.startRadio__box {
+    position: relative;
+    z-index: 1;
+    float: left;
+    width: 20px;
+    height: 40px;
+    cursor: pointer;
+}
+
 </style>
 <title></title>
 </head>
@@ -104,6 +172,63 @@
             <p align="center">레시피 만드는 과정 2</p>
             <p align="center">레시피 만드는 과정 3</p>
             <p align="center">레시피 만드는 과정 4</p>
+            
+            
+            <div class="review_score">
+						
+  <div class="startRadio">
+    <label class="startRadio__box">
+        <input type="radio" name="star" id="">
+        <span class="startRadio__img"><span class="blind">별 1개</span></span>
+    </label>
+    <label class="startRadio__box">
+        <input type="radio" name="star" id="">
+        <span class="startRadio__img"><span class="blind">별 1.5개</span></span>
+    </label>
+    <label class="startRadio__box">
+        <input type="radio" name="star" id="">
+        <span class="startRadio__img"><span class="blind">별 2개</span></span>
+    </label>
+    <label class="startRadio__box">
+        <input type="radio" name="star" id="">
+        <span class="startRadio__img"><span class="blind">별 2.5개</span></span>
+    </label>
+    <label class="startRadio__box">
+        <input type="radio" name="star" id="">
+        <span class="startRadio__img"><span class="blind">별 3개</span></span>
+    </label>
+    <label class="startRadio__box">
+        <input type="radio" name="star" id="">
+        <span class="startRadio__img"><span class="blind">별 3.5개</span></span>
+    </label>
+    <label class="startRadio__box">
+        <input type="radio" name="star" id="">
+        <span class="startRadio__img"><span class="blind">별 4개</span></span>
+    </label>
+    <label class="startRadio__box">
+        <input type="radio" name="star" id="">
+        <span class="startRadio__img"><span class="blind">별 4.5개</span></span>
+    </label>
+    <label class="startRadio__box">
+        <input type="radio" name="star" id="">
+        <span class="startRadio__img"><span class="blind">별 5개</span></span>
+    </label>
+    <label class="startRadio__box">
+        <input type="radio" name="star" id="">
+        <span class="startRadio__img"><span class="blind">별 5.5개</span></span>
+    </label>
+</div>
+  
+  
+  
+  
+  
+
+
+
+
+ 
+					</div>
           
             <div class="about-author d-flex p-4 bg-light">
               <div class="bio align-self-md-center mr-4">
