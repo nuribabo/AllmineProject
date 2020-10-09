@@ -58,7 +58,7 @@ public class RecipeDAO {
 		// 기본정렬
 		if (check.equals("de")) {
 			try {
-				String sql = "select * from recipe order by Recipe_name asc";
+				String sql = "select * from recipe order by Recipe_IMG desc";
 				psmt = conn.prepareStatement(sql);
 				rs = psmt.executeQuery();
 				while(rs.next()) {
