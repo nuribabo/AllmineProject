@@ -70,6 +70,7 @@
 	width:30px;
 	height:30px;
 }
+
 </style>
   </head>
   <body class="goto-here">
@@ -142,7 +143,6 @@
 										<div class="meta mb-3">
 											<div><a href="#">∆Ú¡° <%=ardao.get(i).getRecipe_rate()%></a></div>
 											<div><a href="#">¢æ <%=ardao.get(i).getRecipe_preference()%></a></div>
-											<div><a href="#" class="meta-chat"><span class="icon-chat"></span>recipe_comments</a></div>
 										</div>
 										<p style="width:795px;"><%=ardao.get(i).getRecipe_ingredient()%></p>
 										<% session.setAttribute("Recipe_list", ardao.get(i)); %>

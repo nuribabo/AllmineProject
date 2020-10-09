@@ -57,8 +57,10 @@
 	    	float num = 0;
 	        float num2 = 0;
 	    	int num3 = 0;
+	    	float total = 0;
+	    	
 	        for (CartDTO e: list){
-	    		num += e.getPrice();
+	    		num += e.getPrice() * e.getQuantity();
 	    		num2 += (e.getPrice() * (e.getDiscount_rate())/100)/100 * 100;
 	    	}
 	        
@@ -69,6 +71,11 @@
 	        	num3 = 0;
 	        }
 	        
+	        total = (int)(num - num2);
+	        
+	        if (num3 != 0){
+		        total += 3000;
+	        }	    
 	    %>
     
     
@@ -178,7 +185,7 @@
     					<p class="d-flex total-price">
     						<span>ÃÑÇÕ</span>
     						<span>
-							<%= (int)(num - num2)+"¿ø"%>
+							<%=(int)total +"¿ø"%>
 							</span>
     					</p>
 								</div>

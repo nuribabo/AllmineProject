@@ -146,17 +146,10 @@
  --%>                        	<li><a href="./itemView_controller?name=<%=arr[i]%>"><%= arr2[i]%></a></li>
                         <%}%>
                 <%}%>
-                
-                
                </ul>
             </div>
-            
-            
-			<div class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="shop.html"
-                  id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-controls = "dropdown-menu"
-                  aria-expanded="false">전체상품</a>
-               <div class="dropdown-menu" aria-labelledby="dropdown04">
+
+			<div class="dropdown-menu" aria-labelledby="dropdown04">
                   <a class="dropdown-item" href="./itemView_controller" class="active">전체 상품</a> 
                   <a class="dropdown-item" href="./discount_controller?check=dh">높은할인율순</a>
                   <a class="dropdown-item" href="./discount_controller?check=dl">낮은할인율순</a>
@@ -164,8 +157,8 @@
             
                   <a class="dropdown-item" href="./discount_controller?check=ph">높은가격순</a>
                </div>
-
-            </div>
+                              
+                  
                         
          </div>
          <div class="row">
@@ -175,7 +168,7 @@
             %>
             
             <%
-               for (int i = 10*(page_num-1); i < 10*(page_num) ; i++) {
+               for (int i = 12*(page_num-1); i < 12*(page_num) ; i++) {
             %>
             <div class="col-md-6 col-lg-3 ftco-animate">
                <div class="product">
@@ -225,16 +218,11 @@
                }
             %>
             <%
-               }else
+               }else{
             %>
-            
-            <%
-            {
-            %>
-            
             
 			<%
-               for (int i = 10*(page_num-1); i < 10*(page_num+1); i++) {
+               for (int i = 12*(page_num-1); i < 12*(page_num); i++) {
             %>
             <div class="col-md-6 col-lg-3 ftco-animate">
                <div class="product">
@@ -311,17 +299,15 @@
       <div class="container py-4">
          <div class="row d-flex justify-content-center py-5">
             <div class="col-md-6">
-               <h2 style="font-size: 22px;" class="mb-0">Subcribe to our
-                  Newsletter</h2>
-               <span>Get e-mail updates about our latest shops and special
-                  offers</span>
+               <h2 style="font-size: 22px;" class="mb-0">새로운 상품에 대한 정기구독을 원한다면</h2>
+               <span>이메일 주소를 입력하고 신규 세일상품과 레시피를 확인해보세요.</span>
             </div>
             <div class="col-md-6 d-flex align-items-center">
                <form action="#" class="subscribe-form">
                   <div class="form-group d-flex">
                      <input type="text" class="form-control"
-                        placeholder="Enter email address"> <input type="submit"
-                        value="Subscribe" class="submit px-3">
+                        placeholder="이메일 주소를 입력하세요"> <input type="submit"
+                        value="제출" class="submit px-3">
                   </div>
                </form>
             </div>

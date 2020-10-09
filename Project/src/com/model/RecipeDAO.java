@@ -58,7 +58,7 @@ public class RecipeDAO {
 		// 기본정렬
 		if (check.equals("de")) {
 			try {
-				String sql = "select * from recipe order by Recipe_name asc";
+				String sql = "select * from recipe order by Recipe_IMG desc";
 				psmt = conn.prepareStatement(sql);
 				rs = psmt.executeQuery();
 				while(rs.next()) {
@@ -173,6 +173,11 @@ public class RecipeDAO {
 		}
 		
 // Message 값 parameter 받아서 세션대로 메시지 올려주기
-
+		public CommentVO comment(CommentVO cvo) {
+			CommentVO some = null;
+			
+			
+			return some;
+		}
 
 }

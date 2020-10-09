@@ -134,7 +134,7 @@
 			<div class="nav-item dropdown">
                <a class="nav-link dropdown-toggle" href="shop.html"
                   id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-controls = "dropdown-menu"
-                  aria-expanded="false">전체상품</a>
+                  aria-expanded="false">베스트상품</a>
                <div class="dropdown-menu" aria-labelledby="dropdown04">
                   <a class="dropdown-item" href="./itemView_controller" class="active">전체 상품</a> 
                   <a class="dropdown-item" href="./discount_controller?check=dh">높은할인율순</a>
@@ -151,7 +151,7 @@
          
             
 			<%
-               for (int i = 10*(page_num-1); i < 10*(page_num+1); i++) {
+               for (int i = 12*(page_num-1); i < 12*(page_num); i++) {
             %>
             <div class="col-md-6 col-lg-3 ftco-animate">
                <div class="product">
