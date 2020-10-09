@@ -1,3 +1,4 @@
+<%@page import="com.model.CommentVO"%>
 <%@page import="java.util.Date"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="com.model.RecipeDAO"%>
@@ -221,6 +222,10 @@
  	String pattern = "yyyy.MM.dd";
  	SimpleDateFormat time = new SimpleDateFormat(pattern);
  	String now_day = time.format(new Date());
+ 	CommentVO something = null;
+ 	if ((CommentVO)session.getAttribute("Comment")!=null){
+ 		something = (CommentVO)session.getAttribute("Comment");
+ 	}; %>
  	%>
  	<%@ include file="header.jsp"%>
  	
@@ -239,21 +244,27 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-13 ftco-animate">
-			<h2 class="mb-3" align="center"><%= sore.getRecipe_name() %></h2>
-            <p align="center"><%= sore.getRecipe_ingredient() %></p>
+			<h2 class="mb-3" align="center"><%= sore.getRecipe_name() %><br><br></h2>
+			<p align="center">평점 - <%= sore.getRecipe_rate() %></p>
+			<p align="center"> ♥ - <%= sore.getRecipe_preference() %></p>
+            <p align="center">재료 - <%= sore.getRecipe_ingredient() %><br><br></p>
             <p align="center"><img width = 500px height = 500px src="<%= sore.getRecipe_img()%>" alt="" class="img-fluid"></p>
-            <p align="center">레시피 설명 1 </p>
-            <h2 align="center"class="mb-3 mt-5" >#2. 레시피 상세설명 제목</h2>
-            <p align="center">레시피 상세설명 1</p>
-            <p align="center"><img width = 500px height = 500px src="images/image_2.jpg" alt="" class="img-fluid"></p>
-            <p align="center">레시피 만드는 과정 1</p>
-            <p align="center">레시피 만드는 과정 2</p>
-            <p align="center">레시피 만드는 과정 3</p>
-            <p align="center">레시피 만드는 과정 4</p>
-            
-            
-            <div class="review_score">
-					<b>별점 :</b>
+            <p align="center"><br><br><br><img src="ingredient.jpg"><br><br><br></p>
+            <h2 align="center"class="mb-3 mt-5" >#2. 돼지김치찌개 만드는 과정</h2>
+            <p align="center">돼지김치찌개, 어떻게 만들까요~?</p>
+            <p align="center"><img src="https://d1hk7gw6lgygff.cloudfront.net/video/906/Kimchi_stew_L.mp4" alt="" class="img-fluid"></p>
+            <p align="center"><img src="https://cloudfront.haemukja.com/vh.php?url=https://d1hk7gw6lgygff.cloudfront.net/uploads/direction/image_file/56751/org_resized_1.jpg&convert=jpgmin&rt=600"></p>
+            <p align="center">떡국떡은 찬물에 담궈주고 대파와 두부를 먹기좋게 손질해준다.<br></p>
+            <p align="center"><img src="https://cloudfront.haemukja.com/vh.php?url=https://d1hk7gw6lgygff.cloudfront.net/uploads/direction/image_file/56752/org_resized_2.jpg&convert=jpgmin&rt=600"></p>
+            <p align="center">식용유를 두른 냄비에 돼지고기를 볶다가 김치를 넣고 다시한번 볶아준다.<br></p>
+            <p align="center"><img src="https://cloudfront.haemukja.com/vh.php?url=https://d1hk7gw6lgygff.cloudfront.net/uploads/direction/image_file/56753/org_resized_3.jpg&convert=jpgmin&rt=600"></p>
+            <p align="center">물, 고춧가루, 설탕, 다진마늘을 넣고 한소끔 끓이다 손질한 재료를 넣어 한번 더 끓인다.<br></p>
+            <p align="center"><img src="https://cloudfront.haemukja.com/vh.php?url=https://d1hk7gw6lgygff.cloudfront.net/uploads/direction/image_file/56754/org_resized_4.jpg&convert=jpgmin&rt=600"></p>
+            <p align="center">끓어오르면 참기름을 넣고 불을 꺼주시면 완성됩니다.<br></p>
+          	<br><br>
+   
+  <div class="review_score">
+					<b style="float:left;line-height:50px;height:40px;font-size:20px; margin-right:20px" >평가하기</b>
   <div class="startRadio">
     <label class="startRadio__box">
         <input type="radio" name="star" id="">
@@ -295,25 +306,14 @@
         <input type="radio" name="star" id="">
         <span class="startRadio__img"><span class="blind">별 5.5개</span></span>
     </label>
-    
-    
 </div>
   <button type="button" class="btn_like">
   <span class="img_emoti">좋아요</span>
   <span class="ani_heart_m"></span>
   <%  %>
   </button>
-  
-  
-  
-  
-
-
-
-
- 
-					</div>
-          
+</div>
+<br><br>
             <div class="about-author d-flex p-4 bg-light">
               <div class="bio align-self-md-center mr-4">
                 <img width = 250px height = 250px src="images/person_1.jpg" alt="Image placeholder" class="img-fluid mb-4">
@@ -326,7 +326,7 @@
 
 
             <div class="pt-5 mt-5">
-              <h3 class="mb-5">6 Comments</h3>
+              <h3 class="mb-5">Comments</h3>
               <ul class="comment-list">
                 <li class="comment">
                   <div class="vcard bio">
@@ -379,7 +379,7 @@
                             <ul class="children">
                               <li class="comment">
                                 <div class="vcard bio">
-                                  <img src="images/person_3.jpg" alt="Image placeholder">
+                                  <img src="images/person_4.jpg" alt="Image placeholder">
                                 </div>
                                 <div class="comment-body">
                                   <h3>김건희</h3>
@@ -395,22 +395,23 @@
                   </ul>
                 </li>
                	<!-- 만약 comment 기능을 사용한다면 밑에 출력될 메시지들 -->
-                <!-- <li class="comment">
+                <% if (something!=null){ %>
+                <li class="comment">
                   <div class="vcard bio">
-                    <img src="basic.jpg" alt="Image placeholder">
+                    <img src="basic.jpg">
                   </div>
                   <div class="comment-body">
-                    <h3>info.getId</h3>
-                    <div class="meta">now_day</div>
-                    <p>Message input</p>
+                    <h3><%= something.getName()%></h3>
+                    <div class="meta"><%= something.getDate() %></div>
+                    <p><%= something.getMessage() %></p>
                     <p><a href="#" class="reply">Reply</a></p>
                   </div>
-              </ul> -->
+                  <% } %>
+              </ul>
               <!-- END comment-list -->
-              
+              <% if (info!=null) { %>
               <div class="comment-form-wrap pt-5">
-                <h3 class="mb-5">평가를 남겨주세요</h3>
-                <% if (info!=null) { %>
+                <h3 class="mb-5">평가를 남겨주세요</h3>    
                 <form action="comment_func" class="p-5 bg-light">
                   <div class="form-group">
                     <label for="c_name"><%= info.getName() %></label>

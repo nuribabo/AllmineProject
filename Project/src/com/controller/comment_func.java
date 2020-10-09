@@ -39,7 +39,8 @@ public class comment_func extends HttpServlet {
 	CommentVO cvo = new CommentVO(a,b,c);
 	
 //	리스폰스 고쳐줘야됌, 기존에 작업하던데에서 url 받아서, 다시 그쪽 url로 돌려주고 commentary 한줄 추가
-	response.sendRedirect("main1.jsp");
+	session.setAttribute("Comment", cvo);
+	response.sendRedirect("recipe_blog.jsp");
 	
 	}
 

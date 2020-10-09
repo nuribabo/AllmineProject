@@ -183,10 +183,10 @@
 								class="category-wrap-2 ftco-animate img align-self-stretch d-flex"
 								style="background-image: url(images/category.jpg);">
 								<div class="text text-center">
-									<h2>Vegetables</h2>
-									<p>Protect the health of every home</p>
+									<h2>Special Thanks GivingDay</h2>
+									<p>한가위, 사랑하는 가족들과 올마인하세요!</p>
 									<p>
-										<a href="#" class="btn btn-primary">Shop now</a>
+									<a href="#" class="btn btn-primary">둘러보기</a>
 									</p>
 								</div>
 							</div>
@@ -196,8 +196,8 @@
 								class="category-wrap ftco-animate img mb-4 d-flex align-items-end"
 								style="background-image: url(images/category-1.jpg);">
 								<div class="text px-3 py-1">
-									<h2 class="mb-0">
-										<a href="#">Fruits</a>
+									<h2 align=center class="mb-0">
+										<a href="#">두 손 가볍게! 추석 무료배송 상품</a>
 									</h2>
 								</div>
 							</div>
@@ -206,7 +206,7 @@
 								style="background-image: url(images/category-2.jpg);">
 								<div class="text px-3 py-1">
 									<h2 class="mb-0">
-										<a href="#">Vegetables</a>
+										<a href="#">딸기도 홍동백서? 과일특가상품</a>
 									</h2>
 								</div>
 							</div>
@@ -220,7 +220,7 @@
 						style="background-image: url(images/category-3.jpg);">
 						<div class="text px-3 py-1">
 							<h2 class="mb-0">
-								<a href="#">Juices</a>
+								<a href="#">식혜와 수정과는 그만~ 과일쥬스 레시피</a>
 							</h2>
 						</div>
 					</div>
@@ -228,7 +228,7 @@
 						style="background-image: url(images/category-4.jpg);">
 						<div class="text px-3 py-1">
 							<h2 class="mb-0">
-								<a href="#">Dried</a>
+								<a href="#">추석엔 부럼 깨면 안돼? 견과특가상품</a>
 							</h2>
 						</div>
 					</div>
@@ -246,13 +246,12 @@
 					<div
 						class="col-md-6 heading-section ftco-animate deal-of-the-day ftco-animate">
 						<span class="subheading">Best Price For You</span>
-						<h2 class="mb-4">Deal of the day</h2>
-						<p>Far far away, behind the word mountains, far from the
-							countries Vokalia and Consonantia</p>
+						<h2 class="mb-4">이번 주 특가 상품</h2>
+						<p>광주광역시 남구 송원동, 농부 이상어(20)씨가 사랑과 정성으로 키워낸 친환경 유기농 상추입니다.</p>
 						<h3>
-							<a href="#">Spinach</a>
+							<a href="#">상추</a>
 						</h3>
-						<span class="price">$10 <a href="#">now $5 only</a></span>
+						<span class="price">3,990원에서 <a href="#">3,390원</a></span>
 						<div id="timer" class="d-flex mt-5">
 							<div class="time" id="days"></div>
 							<div class="time pl-3" id="hours"></div>
@@ -271,8 +270,8 @@
 				<div class="col-md-12 heading-section text-center ftco-animate">
 					<span class="subheading">How about it?</span>
 					<!-- 여기다가 추천알고리즘 랜덤으로 뿌려놔도 될 것 같음 -->
-					<h2 class="mb-4">새로 나온 상품</h2>
-					<p>올마인이 엄선해서 골라 진열한 새로운 상품들을 소개합니다.</p>
+					<h2 class="mb-4">당신만을 위한 상품</h2>
+					<p>올마인이 엄선해서 골라서 추천하는 상품들입니다.</p>
 				</div>
 			</div>
 		</div>
@@ -341,8 +340,8 @@
 			<div class="row justify-content-center mb-5 pb-3">
 				<div class="col-md-7 heading-section ftco-animate text-center">
 					<span class="subheading">Recipe Review</span>
-					<h2 class="mb-4">Our satisfied customer says</h2>
-					<p>Cook with delicious ingredients through the latest popular recipes on our web page.</p>
+					<h2 class="mb-4">레시피 인기 리뷰</h2>
+					<p>최근 일주일간, 올마인이 선정한 가장 인기있는 리뷰입니다.</p>
 				</div>
 			</div>
 			<div class="row ftco-animate">
@@ -351,7 +350,7 @@
 						<div class="item">
 							<div class="testimony-wrap p-4 pb-5">
 								<div class="user-img mb-5"
-									style="background-image: url(images/person_1.jpg)">
+									style="background-image: url(jms.jpg)">
 									<span
 										class="quote d-flex align-items-center justify-content-center">
 										<i class="icon-quote-left"></i>
@@ -368,7 +367,7 @@
 						<div class="item">
 							<div class="testimony-wrap p-4 pb-5">
 								<div class="user-img mb-5"
-									style="background-image: url(images/person_2.jpg)">
+									style="background-image: url(hdj.jpg)">
 									<span
 										class="quote d-flex align-items-center justify-content-center">
 										<i class="icon-quote-left"></i>
@@ -385,7 +384,7 @@
 						<div class="item">
 							<div class="testimony-wrap p-4 pb-5">
 								<div class="user-img mb-5"
-									style="background-image: url(images/person_3.jpg)">
+									style="background-image: url(knl.jpg)">
 									<span
 										class="quote d-flex align-items-center justify-content-center">
 										<i class="icon-quote-left"></i>
@@ -402,7 +401,7 @@
 						<div class="item">
 							<div class="testimony-wrap p-4 pb-5">
 								<div class="user-img mb-5"
-									style="background-image: url(images/person_1.jpg)">
+									style="background-image: url(lmb.jpg)">
 									<span
 										class="quote d-flex align-items-center justify-content-center">
 										<i class="icon-quote-left"></i>
@@ -419,7 +418,7 @@
 						<div class="item">
 							<div class="testimony-wrap p-4 pb-5">
 								<div class="user-img mb-5"
-									style="background-image: url(images/person_1.jpg)">
+									style="background-image: url(lbm.jpg)">
 									<span
 										class="quote d-flex align-items-center justify-content-center">
 										<i class="icon-quote-left"></i>

@@ -137,7 +137,7 @@
 						class="img-fluid" alt="Colorlib Template"></a>
 				</div>
 				<div class="col-sm ftco-animate">
-					<a href="#" class="partner"><img src="https://lh3.googleusercontent.com/proxy/QTu3PFo38GIRJ7Ub1sYqbNEmYOOq0fLmuTINz4Cq3ViIwf5pqYkP0ql202Aocjetp-g5yPT82onSX3TwIahAd_Yrn87mj2I-2Z3EIRr1tYGNXae54WP0_ket"
+					<a href="#" class="partner"><img src="https://cdn.neow.in/news/images/uploaded/2016/04/eclipse-logo-new_story.jpg"
 						class="img-fluid" alt="Colorlib Template"></a>
 				</div>
 				<div class="col-sm ftco-animate">
