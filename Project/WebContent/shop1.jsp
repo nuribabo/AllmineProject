@@ -172,13 +172,13 @@
             %>
             <div class="col-md-6 col-lg-3 ftco-animate">
                <div class="product">
-                  <a href="product-single.jsp" class="img-prod"><img
+                  <a href="product-single.jsp?prod_name=<%=itemlist.get(i).getProduct_name() %>" class="img-prod"><img
                      class="img-fluid" src=<%=itemlist.get(i).getIMG_ADDR()%>
                      alt="Colorlib Template"> <span class="status"><%=itemlist.get(i).getDiscount_rate()%>%</span>
                      <div class="overlay"></div> </a>
                   <div class="text py-3 pb-4 px-3 text-center">
                      <h3>
-                        <a href="product-single.jsp"><%=itemlist.get(i).getProduct_name()%></a>
+                        <a href="product-single.jsp?prod_name=<%=itemlist.get(i).getProduct_name() %>"><%=itemlist.get(i).getProduct_name()%></a>
                      </h3>
                      <div class="d-flex">
                         <div class="pricing">
@@ -226,13 +226,13 @@
             %>
             <div class="col-md-6 col-lg-3 ftco-animate">
                <div class="product">
-                  <a href="product-single.jsp" class="img-prod"><img
+                  <a href="product-single.jsp?prod_name=<%=itemlist.get(i).getProduct_name() %>" class="img-prod"><img
                      class="img-fluid" src=<%=list.get(i).getIMG_ADDR()%>
                      alt="Colorlib Template"> <span class="status"><%=list.get(i).getDiscount_rate()%>%</span>
                      <div class="overlay"></div> </a>
                   <div class="text py-3 pb-4 px-3 text-center">
                      <h3>
-                        <a href="product-single.jsp"><%=list.get(i).getProduct_name()%></a>
+                        <a href="product-single.jsp?prod_name=<%=itemlist.get(i).getProduct_name() %>"><%=list.get(i).getProduct_name()%></a>
                      </h3>
                      <div class="d-flex">
                         <div class="pricing">

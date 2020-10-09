@@ -1,6 +1,6 @@
 select * from Product where product_id like '2%'
 select * from member;
-select * from product;
+select * from product where product_name == '소고기우둔살';
 
 
 <<<<<<< HEAD
