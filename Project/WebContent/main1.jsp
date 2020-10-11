@@ -45,6 +45,13 @@
 <link rel="stylesheet" href="css/style.css">
 
 <style type="text/css">
+
+.img-fluid {
+  width: 253.01px;
+  
+  min-height: 325.68px;
+}
+
 .container1 {
 	display: flex;
 	width: 250px;
