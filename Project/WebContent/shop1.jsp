@@ -295,6 +295,7 @@
                         	<li><a href="shop1.jsp?page_num=<%= Integer.toString(i)%>&name=<%= name%>" style="background-color:greenyellow"><%= Integer.toString(i)%></a></li>
                         	<%}%>
                         <%}%>
+                        <li><a href="#">></a></li>
                      </ul>
                   </div>
                </div>
