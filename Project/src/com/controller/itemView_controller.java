@@ -28,7 +28,7 @@ public class itemView_controller extends HttpServlet {
 		
 		if(cnt == "all") {
 			list = dao.select_by_All();
-			
+			System.out.println("all이다이색기야");
 		}
 		else {
 			list = dao.select_by_Fruit(cnt);

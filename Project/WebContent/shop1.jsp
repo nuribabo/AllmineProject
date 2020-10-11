@@ -27,6 +27,12 @@
 
 <style type="text/css">
 
+.img-fluid {
+  width: 253.01px;
+  
+  min-height: 325.68px;
+}
+
 .container1 {
    display: flex;
    width: 250px;
@@ -86,17 +92,18 @@
 		int page_num = Integer.parseInt(request.getParameter("page_num"));
 		
 		String name = request.getParameter("name");
+		if (name.equals("all")){
+			itemlist = null;
+		}
 		
-
 	 %>
  
 	<%
     	MemberDTO info = (MemberDTO) session.getAttribute("info");
 		ProductDAO dao = new ProductDAO();
 		ArrayList<ProductDTO> list = dao.select_by_All();
-		if (name.equals("all")){
-			itemlist = null;
-		}
+		System.out.println(list.size() + "이다이색기야야야야야야야");
+
 	%>
 	
 	<%@ include file="header.jsp"%>
@@ -164,7 +171,7 @@
          <div class="row">
             <%
             	
-            	if (itemlist != null){
+            	if (itemlist != null){System.out.println("여긴 왜들어왓냐 이색기야!!!!!!!!!");
             %>
             
             <%
@@ -218,7 +225,7 @@
                }
             %>
             <%
-               }else{
+               }else{ System.out.println("들어왓다이색기야!!!!!!!!!");
             %>
             
 			<%
@@ -226,13 +233,13 @@
             %>
             <div class="col-md-6 col-lg-3 ftco-animate">
                <div class="product">
-                  <a href="product-single.jsp?prod_name=<%=itemlist.get(i).getProduct_name() %>" class="img-prod"><img
+                  <a href="product-single.jsp?prod_name=<%=list.get(i).getProduct_name() %>" class="img-prod"><img
                      class="img-fluid" src=<%=list.get(i).getIMG_ADDR()%>
                      alt="Colorlib Template"> <span class="status"><%=list.get(i).getDiscount_rate()%>%</span>
                      <div class="overlay"></div> </a>
                   <div class="text py-3 pb-4 px-3 text-center">
                      <h3>
-                        <a href="product-single.jsp?prod_name=<%=itemlist.get(i).getProduct_name() %>"><%=list.get(i).getProduct_name()%></a>
+                        <a href="product-single.jsp?prod_name=<%=list.get(i).getProduct_name() %>"><%=list.get(i).getProduct_name()%></a>
                      </h3>
                      <div class="d-flex">
                         <div class="pricing">
