@@ -303,25 +303,6 @@
          </div>
    </section>
 
-   <section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light">
-      <div class="container py-4">
-         <div class="row d-flex justify-content-center py-5">
-            <div class="col-md-6">
-               <h2 style="font-size: 22px;" class="mb-0">새로운 상품에 대한 정기구독을 원한다면</h2>
-               <span>이메일 주소를 입력하고 신규 세일상품과 레시피를 확인해보세요.</span>
-            </div>
-            <div class="col-md-6 d-flex align-items-center">
-               <form action="#" class="subscribe-form">
-                  <div class="form-group d-flex">
-                     <input type="text" class="form-control"
-                        placeholder="이메일 주소를 입력하세요"> <input type="submit"
-                        value="제출" class="submit px-3">
-                  </div>
-               </form>
-            </div>
-         </div>
-      </div>
-   </section>
    <%@ include file="footer.jsp"%>
 
 	<!-- loader -->

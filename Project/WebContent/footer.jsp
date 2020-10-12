@@ -85,7 +85,7 @@
 					<div class="ftco-footer-widget mb-4 ml-md-5">
 						<h2 class="ftco-heading-2">메뉴</h2>
 						<ul class="list-unstyled">
-							<li><a href="shop1.jsp" class="py-2 d-block">제품</a></li>
+							<li><a href="./itemView_controller?name=all&page_num=<%=1%>" class="py-2 d-block">제품</a></li>
 							<li><a href="recipe_blog.jsp" class="py-2 d-block">레시피</a></li>
 							
 						</ul>
