@@ -32,26 +32,7 @@
 </head>
 <body>
 
-<!-- 	<section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light">
-		<div class="container py-4">
-			<div class="row d-flex justify-content-center py-5">
-				<div class="col-md-6">
-					<h2 style="font-size: 22px;" class="mb-0">Subcribe to our
-						Newsletter</h2>
-					<span>Get e-mail updates about our latest shops and special
-						offers</span>
-				</div>
-				<div class="col-md-6 d-flex align-items-center">
-					<form action="#" class="subscribe-form">
-						<div class="form-group d-flex">
-							<input type="text" class="form-control"
-								placeholder="Enter email address"> <input type="submit"
-								value="Subscribe" class="submit px-3">
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
+
 	</section> -->
 
 <footer class="ftco-footer ftco-section">
@@ -117,20 +98,20 @@
 						class="img-fluid" alt="Colorlib Template"></a>
 				</div> -->
 				<div class="col-sm ftco-animate">
-					<a href="#" class="partner"><img src="https://datascience.foundation/backend/web/uploads/blog/Working-with-Python-on-Cloud.png"
-						class="img-fluid" alt="Colorlib Template"></a>
+					<a href="#" class="partner"><img src="https://datascience.foundation/backend/web/uploads/blog/Working-with-Python-on-Cloud.png" 
+						style="background-size:207.5px 108.94px" class="img-fluid" alt="Colorlib Template"></a>
 				</div>
 				<div class="col-sm ftco-animate">
 					<a href="#" class="partner"><img src="https://cdn.neow.in/news/images/uploaded/2016/04/eclipse-logo-new_story.jpg"
-						class="img-fluid" alt="Colorlib Template"></a>
+						style="background-size:207.5px 108.94px" class="img-fluid" alt="Colorlib Template"></a>
 				</div>
 				<div class="col-sm ftco-animate">
 					<a href="#" class="partner"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--i_sb3chq--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://thepracticaldev.s3.amazonaws.com/i/fk0849hvg2rt13bpqhjy.jpg"
-						class="img-fluid" alt="Colorlib Template"></a>
+						style="background-size:207.5px 108.94px" class="img-fluid" alt="Colorlib Template"></a>
 				</div>
 				<div class="col-sm ftco-animate">
 					<a href="#" class="partner"><img src="https://miro.medium.com/max/480/1*MCpM5idqhNRjoWCfb_60OA.png"
-						class="img-fluid" alt="Colorlib Template"></a>
+						style="background-size:207.5px 108.94px" class="img-fluid" alt="Colorlib Template"></a>
 				</div>
 			</div>
 		</div>
