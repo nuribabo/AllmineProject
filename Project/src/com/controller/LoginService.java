@@ -46,7 +46,7 @@ public class LoginService extends HttpServlet {
 			
 			// 여기서 flask 연동
 			response.sendRedirect("main1.jsp");
-			// response.sendRedirect("http://localhost:9000/recom?id=" + member_id);
+			//response.sendRedirect("http://localhost:9000/recom?id=" + member_id);
 			
 		}else {
 			System.out.println("로그인 실패");

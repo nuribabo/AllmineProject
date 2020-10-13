@@ -144,7 +144,7 @@
                
                <% for (int i=0; i<arr.length; i++){ %>
                       <% if (arr[i].equals(name)) {%>
-                      		<li><a href="./itemView_controller?name=<%=arr[i]%>" style="background-color:greenyellow"><%= arr2[i]%></a></li>
+                      		<li><a href="./itemView_controller?name=<%=arr[i]%>" style="background-color:#4e790c"><%= arr2[i]%></a></li>
                         	
                         <%}else { %>
 <%--                         <% System.out.println("22222222222222"); %>
@@ -292,7 +292,7 @@
                         	<li><a href="shop1.jsp?page_num=<%= Integer.toString(i)%>&name=<%= name%>"><%= Integer.toString(i)%></a></li>
                         	
                         	<%}else { %>
-                        	<li><a href="shop1.jsp?page_num=<%= Integer.toString(i)%>&name=<%= name%>" style="background-color:greenyellow"><%= Integer.toString(i)%></a></li>
+                        	<li><a href="shop1.jsp?page_num=<%= Integer.toString(i)%>&name=<%= name%>" style="background-color:#4e790c"><%= Integer.toString(i)%></a></li>
                         	<%}%>
                         <%}%>
                         <li><a href="#">></a></li>

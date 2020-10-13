@@ -90,13 +90,13 @@
 				</div>
 			</div>
 			
-		<section class="ftco-section ftco-partner">
+		<!-- <section class="ftco-section ftco-partner">
 		<div class="container">
 			<div class="row">
-<!--			<div class="col-sm ftco-animate">
+			<div class="col-sm ftco-animate">
 					<a href="#" class="partner"><img src="images/partner-1.png"
 						class="img-fluid" alt="Colorlib Template"></a>
-				</div> -->
+				</div>
 				<div class="col-sm ftco-animate">
 					<a href="#" class="partner"><img src="https://datascience.foundation/backend/web/uploads/blog/Working-with-Python-on-Cloud.png" 
 						style="background-size:207.5px 108.94px" class="img-fluid" alt="Colorlib Template"></a>
@@ -115,7 +115,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 			
 			<div class="row">
 				<div class="col-md-12 text-center">
