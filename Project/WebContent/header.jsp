@@ -145,19 +145,13 @@
 			</button>
 
 			<div class="collapse navbar-collapse" id="ftco-nav">
-<<<<<<< HEAD
-				<ul class="navbar-nav ml-auto"><li class="nav-item active"><a href="main1.jsp" class="nav-link">Home</a></li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="./itemView_controller?name=all&page_num=<%=1%>" id="dropdown04"
-						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">상품 정보</a>
-=======
+
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle"
 						href="./itemView_controller?name=all&page_num=<%=1%>"
 						id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
 						aria-expanded="false">상품 정보</a>
->>>>>>> branch 'master' of https://github.com/nuribabo/AllmineProject.git
 						<div class="dropdown-menu" aria-labelledby="dropdown04">
 							<a class="dropdown-item"
 								href="./itemView_controller?name=all&page_num=<%=1%>">전체 상품</a>

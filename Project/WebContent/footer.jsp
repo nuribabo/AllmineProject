@@ -33,7 +33,7 @@
 <body>
 
 
-	</section> -->
+	</section>
 
 <footer class="ftco-footer ftco-section">
 		<div class="container">
